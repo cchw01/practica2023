@@ -1,7 +1,7 @@
 import { TableDb } from "../schemas/table.schema";
 import { Table } from "../models/table.model";
 
-export { getTable, saveTable, deleteTable };
+export { getTable, saveTable, deleteTable, updateTable };
 
 async function getTable(location: string): Promise<Error | Table | null> {
 
@@ -59,6 +59,32 @@ async function deleteTable(aTable: Partial<Table>): Promise<Error | Table | unde
     if (aTableExists) {
         await TableDb.deleteOne({location: aTable.location});
     }
+  } catch (ex: any) {
+    return ex;
+  }
+
+  return undefined;
+}
+
+async function updateTable(tableToChangeId: string, newTable:Partial<Table>): Promise<Error | Table | undefined> {
+  if (!tableToChangeId || typeof tableToChangeId !== "string") {
+    return Error("invalid params");
+  }
+  if (!newTable || typeof newTable !== "object" || !newTable.location) {
+    return Error("invalid params");
+  }
+
+  try {
+    var tableToUpdate = await TableDb.find<Table>({
+      _id:tableToChangeId
+    });
+    
+    if(tableToUpdate){
+      await TableDb.findOneAndUpdate<Table>({
+        _id:tableToChangeId
+      }, newTable);
+    }
+
   } catch (ex: any) {
     return ex;
   }

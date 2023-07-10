@@ -10,6 +10,8 @@ function getEnv() {
 
 		CREATE_TABLE_ROUTE: "/createTable",
 		DELETE_TABLE_ROUTE: "/deleteTable",
+		GET_TABLE_ROUTE: "/getTable",
+		UPDATE_TABLE_ROUTE: "/updateTable",
 
 		MONGO_URL: "mongodb://127.0.0.1:27017",
 		DB_NAME: "tables"

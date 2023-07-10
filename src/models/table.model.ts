@@ -11,4 +11,6 @@ export class Table{
         this.numberOfPlaces = model.numberOfPlaces || -1;
         this.location = model.location || "";
     }
+
+    
 }
