@@ -1,69 +1,115 @@
+import * as bcrypt from "bcrypt";
+
+const saltRounds = 10; // bcrypt
+const salt = bcrypt.genSaltSync(saltRounds); // bcrypt
+
 export class User {
-  ID!: number;
-  firstName!: string;
-  lastName!: string;
-  phoneNumber!: string;
-  email!: string;
-  password!: string;
-  role!: string;
+  private _id!: number;
+  private _firstName!: string;
+  private _lastName!: string;
+  private _phoneNumber!: string;
+  private _email!: string;
+  private _password!: string;
+  private _role!: string;
 
   constructor(user?: Partial<User>) {
     if (!user || !(user instanceof Object)) {
       user = <User>(<any>{});
     }
 
-    this.ID = user.ID || 0;
-    this.firstName = user.firstName || "";
-    this.lastName = user.lastName || "";
-    this.phoneNumber = user.phoneNumber || "";
-    this.email = user.email || "";
-    this.password = user.password || "";
-    this.role = user.role || "";
+    this._id = user.id || 0;
+    this._firstName = user.firstName || "";
+    this._lastName = user.lastName || "";
+    this._phoneNumber = user.phoneNumber || "";
+    if (!user.email) this._email = "";
+    else {
+      if (!this.verifyEmailFormat(user.email))
+        throw new Error("Invalid email format");
+      this._email = user.email;
+    }
+    if (!user.password) this._password = "";
+    else this._password = bcrypt.hashSync(user.password, salt);
+    this._role = user.role || "";
   }
 
-  // Getters
-  get getID(): number {
-    return this.ID;
+  public get id(): number {
+    return this._id;
   }
-  get getFirstName(): string {
-    return this.firstName;
+  public get firstName(): string {
+    return this._firstName;
   }
-  get getLastName(): string {
-    return this.lastName;
+  public get lastName(): string {
+    return this._lastName;
   }
-  get getPhoneNumber(): string {
-    return this.phoneNumber;
+  public get phoneNumber(): string {
+    return this._phoneNumber;
   }
-  get getEmail(): string {
-    return this.email;
+  public get email(): string {
+    return this._email;
   }
-  get getPassword(): string {
-    return this.password;
+  public get password(): string {
+    return this._password;
   }
-  get getRole(): string {
-    return this.role;
+  public get role(): string {
+    return this._role;
   }
 
-  // setters
-  set setID(newID: number) {
-    this.ID = newID;
+  public set setId(newid: number) {
+    this._id = newid;
   }
-  set setFirstName(newFirstName: string) {
-    this.firstName = newFirstName;
+  public set setFirstName(newFirstName: string) {
+    this._firstName = newFirstName;
   }
-  set setLastName(newLastName: string) {
-    this.lastName = newLastName;
+  public set setLastName(newLastName: string) {
+    this._lastName = newLastName;
   }
-  set setPhoneNumber(newPhoneNumber: string) {
-    this.phoneNumber = newPhoneNumber;
+  public set setPhoneNumber(newPhoneNumber: string) {
+    this._phoneNumber = newPhoneNumber;
   }
-  set setEmail(newEmail: string) {
-    this.email = newEmail;
+  public set setEmail(newEmail: string) {
+    if (!this.verifyEmailFormat(newEmail))
+      throw new Error("Invalid email format");
+    this._email = newEmail;
   }
-  set setPassword(newPassword: string) {
-    this.password = newPassword;
+  public set setPassword(newPassword: string) {
+    this._password = bcrypt.hashSync(newPassword, salt);
   }
-  set setRole(newRole: string) {
-    this.role = newRole;
+  public set setRole(newRole: string) {
+    this._role = newRole;
+  }
+
+  update(user: Partial<User>): void {
+    if (!user || !(user instanceof Object)) {
+      user = <User>(<any>{});
+    }
+
+    this._id = user.id || 0;
+    this._firstName = user.firstName || "";
+    this._lastName = user.lastName || "";
+    this._phoneNumber = user.phoneNumber || "";
+    if (!user.email) this._email = "";
+    else {
+      if (!this.verifyEmailFormat(user.email))
+        throw new Error("Invalid email format");
+      this._email = user.email;
+    }
+    if (!user.password) this._password = "";
+    else this._password = bcrypt.hashSync(user.password, salt);
+    this._role = user.role || "";
+  }
+
+  delete(): void {
+    this._id = 0;
+    this._firstName = "";
+    this._lastName = "";
+    this._phoneNumber = "";
+    this._email = "";
+    this._password = "";
+    this._role = "";
+  }
+
+  private verifyEmailFormat(checkEmail: string): boolean {
+    let emailRegex = new RegExp("^[a-z0-9._]+@[a-z0-9-]+.[a-z]{2,4}$");
+    return emailRegex.test(checkEmail);
   }
 }
