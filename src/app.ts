@@ -3,6 +3,7 @@ import { env } from "./env";
 import { IExpressError } from "./interfaces/IExpressError";
 export { makeApp };
 import mongoose from "mongoose";
+import { postATableRouter, deleteATableRouter } from "./routes/table.route";
 
 let app: express.Application;
 
@@ -17,7 +18,10 @@ async function makeApp() {
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
 
+
   // routes
+  app.use(env.CREATE_TABLE_ROUTE, postATableRouter(express.Router()));
+  app.use(env.DELETE_TABLE_ROUTE, deleteATableRouter(express.Router()));
 
   // 404
   app.use((_req, _res, next) => {
