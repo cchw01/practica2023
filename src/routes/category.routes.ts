@@ -67,26 +67,17 @@ inventoryCategoryRouter.put(
   "/:id",
   async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
-    //inventoryCategory: body;
-    if (body.name || body.parentCategory) {
-      try {
-        const findCategory = await CategoryDB.findByIdAndUpdate(
-          { _id: req.params.id },
-          {
-            name: body.name,
-            //parentCategory: body.parentCategory,
-          }
-        );
-        if (findCategory == null) return next("Could not find category!");
-        console.log("updated");
-        const categoryById = await CategoryDB.findById(req.params.id);
-        res.send(categoryById);
-      } catch (ex) {
-        return next(ex);
-      }
-    } else {
-      return next("No attributes found!");
+    let randomVariable: Error | Category | string | null;
+    try {
+      randomVariable = await categoryService.updateCategory(req.params.id, body);
+    } catch (ex) {
+      return next(ex);
     }
+    if (randomVariable instanceof Error) {
+      return next(randomVariable);
+    }
+
+    res.send(randomVariable);
   }
 );
 
