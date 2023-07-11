@@ -1,15 +1,11 @@
+import { ObjectId } from "mongoose";
+
 export class Category {
-	ID!: string;
-	Name!: string;
-	productList!: string;
+	_id!: ObjectId;
+	name!: string;
+	productList: string[];
 
 	constructor(category?: Partial<Category>) {
-		if (!category || !(category instanceof Object)) {
-		category = <Category>(<any>{});
-		}
-
-		this.ID = category.ID || "";
-		this.Name = category.Name || "";
-		this.productList = category.productList || "";
+		Object.assign(this, category);
 	}
 }
