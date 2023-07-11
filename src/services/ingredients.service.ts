@@ -18,7 +18,7 @@ export async function postIngredients(
   const NewIngredients = new IngredientsDB({
     name: Ingredients.name,
     stoc: Ingredients.stoc,
-    isAleregen: Ingredients.isAleregen,
+    isAlergen: Ingredients.isAlergen,
   });
   NewIngredients.save();
   return NewIngredients;

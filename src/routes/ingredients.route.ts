@@ -67,7 +67,7 @@ IngredientsRouter.put(
           {
             name: body.name,
             stoc: body.stoc,
-            isAleregen: body.isAleregen,
+            isAlergen: body.isAlergen,
           }
         );
         if (findIngredients == null) return next('Could not find ingredients!');

@@ -8,7 +8,7 @@ const IngredientsSchema = new Schema<Ingredients>(
   {
     name: { type: String, required: true, default: '' },
     stoc: { type: Number, required: true, default: 0 },
-    isAleregen: { type: Boolean, required: true, default: false },
+    isAlergen: { type: Boolean, required: true, default: false },
   },
   {
     collection: env.Ingredients_MANAGEMENT,
