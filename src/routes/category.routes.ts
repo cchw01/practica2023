@@ -1,6 +1,5 @@
 import { Router, Request, Response, NextFunction } from "express";
 import { Category } from "../models/category.model";
-import { CategoryDB } from "../schema/category.schema";
 import * as categoryService from "../services/category.service";
 
 //create inventory item

@@ -43,7 +43,7 @@ export async function postCategory(category: Partial<Category>): Promise<Error |
     return NewCategory;
 }
 
-export async function updateCategory(categoryId: string, newCategory: Category): Promise<Error | Category | string | null> {
+export async function updateCategory(categoryId: string, newCategory: Partial<Category>): Promise<Error | Category | string | null> {
 
     if (newCategory.name || newCategory.productList) {
       try {
@@ -57,7 +57,7 @@ export async function updateCategory(categoryId: string, newCategory: Category):
         if (findCategory == null)
             return "Could not find category!";
         console.log("updated");
-        const categoryById = await CategoryDB.findById(newCategory);
+        const categoryById = await CategoryDB.findById(newCategory._id);
         return categoryById;
       } catch (ex: any) {
         return ex;

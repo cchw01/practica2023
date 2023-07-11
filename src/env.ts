@@ -11,6 +11,7 @@ function getEnv() {
     A_JSON_ROUTE: "/api/json",
     GET_ROUTE: "/getCategory",
     POST_ROUTE: "/addCategory",
+    UPDATE_ROUTE: "/updateCategory",
     DELETE_ROUTE: "/deleteCategory",
     MONGO_URL: "mongodb://127.0.0.1:27017",
     DB_NAME: "categoryDB",
