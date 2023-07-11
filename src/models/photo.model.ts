@@ -1,16 +1,11 @@
-export class Photo{
-    id:string;
-    photoLink:string;
-    description:string;
+import { ObjectId } from "mongoose";
 
-    constructor(model?: Partial<Photo>){
-       if(!model || !(model instanceof Object)){
-       model=<Photo><any>{};
-       }
+export class Photo {
+  id: ObjectId;
+  photoLink: string;
+  description: string;
 
-        this.id=model.id || 'id';
-        this.photoLink=model.photoLink || 'link';
-        this.description=model.description  || 'description';
-    }
-  
+  public constructor(init?: Partial<Photo>) {
+    Object.assign(this, init);
+  }
 }
