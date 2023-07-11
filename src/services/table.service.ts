@@ -66,22 +66,19 @@ async function deleteTable(aTable: Partial<Table>): Promise<Error | Table | unde
   return undefined;
 }
 
-async function updateTable(tableToChangeId: string, newTable:Partial<Table>): Promise<Error | Table | undefined> {
-  if (!tableToChangeId || typeof tableToChangeId !== "string") {
-    return Error("invalid params");
-  }
-  if (!newTable || typeof newTable !== "object" || !newTable.location) {
+async function updateTable(newTable:Partial<Table>): Promise<Error | Table | undefined> {
+  if (!newTable || typeof newTable !== "object") {
     return Error("invalid params");
   }
 
   try {
     var tableToUpdate = await TableDb.find<Table>({
-      _id:tableToChangeId
+      _id:newTable._id
     });
     
     if(tableToUpdate){
       await TableDb.findOneAndUpdate<Table>({
-        _id:tableToChangeId
+        _id:newTable
       }, newTable);
     }
 

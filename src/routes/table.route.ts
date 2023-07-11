@@ -88,12 +88,11 @@ async function deleteATable(req: Request, res: Response, next: NextFunction){
 
 async function updateATable(req: Request, res: Response, next: NextFunction){
    
-   const _id:any = req.query.id;
    const body: any = req.body;
 
    let aTable: Error | Table | undefined;
    try {
-      aTable = await tableService.updateTable(_id, body);
+      aTable = await tableService.updateTable(body);
    } catch (ex) {
       return next(ex);
    }
