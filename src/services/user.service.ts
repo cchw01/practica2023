@@ -41,12 +41,12 @@ export async function postUser(user: User): Promise<Error | User> {
   return NewUser;
 }
 
-export async function getUser(_id: string): Promise<Error | User | null> {
-  if (!_id || typeof _id !== "string") {
+export async function getUser(userId: string): Promise<Error | User | null> {
+  if (!userId || typeof userId !== "string") {
     return Error("invalid params");
   }
   try {
-    const user = UserDB.findOne<User>({ _id: _id });
+    const user = await UserDB.findOne<User>({ _id: userId });
     return user;
   } catch (ex: any) {
     return ex;
