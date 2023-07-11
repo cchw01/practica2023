@@ -72,15 +72,14 @@ async function updateTable(newTable:Partial<Table>): Promise<Error | Table | und
   }
 
   try {
-    var tableToUpdate = await TableDb.find<Table>({
-      _id:newTable._id
-    });
-    
-    if(tableToUpdate){
-      await TableDb.findOneAndUpdate<Table>({
+      var updateResponse = await TableDb.findOneAndUpdate<Table>({
         _id:newTable
-      }, newTable);
-    }
+      }, 
+      newTable);
+      
+      if(updateResponse==null){
+        console.log("cannot find table to update");
+      }
 
   } catch (ex: any) {
     return ex;
