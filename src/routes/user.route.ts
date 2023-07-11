@@ -1,6 +1,5 @@
 import { Router, Request, Response, NextFunction } from "express";
 import { User } from "../models/user.model";
-import { UserDB } from "../schemas/user.schema";
 import * as userService from "../services/user.service";
 
 export { postUserRouter, getUserRouter, deleteUserRouter, updateUserRouter };
@@ -15,7 +14,7 @@ function getUserRouter(router: Router): Router {
   return router;
 }
 function deleteUserRouter(router: Router): Router {
-  router.delete("/", deleteUser);
+  router.delete("/:userId", deleteUser);
   return router;
 }
 function updateUserRouter(router: Router): Router {
@@ -41,7 +40,6 @@ async function postUser(req: Request, res: Response, next: NextFunction) {
 }
 
 async function getUser(req: Request, res: Response, next: NextFunction) {
-  //const userId: string = req.body["_id"];
   const userId: string = req.params.userId;
   let user: Error | User | null;
 
@@ -61,35 +59,37 @@ async function getUser(req: Request, res: Response, next: NextFunction) {
   return res.json(user);
 }
 
-async function deleteUser(
-  user: Partial<User>
-): Promise<Error | User | undefined> {
-  if (!user || typeof user !== "object" || !user._id) {
-    return Error("invalid params");
-  }
+async function deleteUser(req: Request, res: Response, next: NextFunction) {
+  const userId: string = req.params.userId;
+  let user: Error | User | null;
+
   try {
-    const userExists = await UserDB.findOne<User>({
-      _id: user._id,
-    });
-    if (userExists) {
-      await UserDB.deleteOne({ _id: user._id });
-    }
-  } catch (ex: any) {
-    return ex;
+    user = await userService.deleteUser(userId);
+  } catch (ex) {
+    return next(ex);
   }
-  return;
+  if (user instanceof Error) {
+    return next(user);
+  }
+
+  if (user === null) {
+    return res.status(404).end();
+  }
+
+  return res.json(user);
 }
+
 async function updateUser(req: Request, res: Response, next: NextFunction) {
   const body: any = req.body;
 
-  let aTable: Error | User | undefined;
+  let user: Error | User | undefined;
   try {
-    aTable = await userService.updateUser(body);
+    user = await userService.updateUser(body);
   } catch (ex) {
     return next(ex);
   }
 
-  if (aTable instanceof Error) {
+  if (user instanceof Error) {
     return res.status(404).json("Cannot find item to update!");
   }
 

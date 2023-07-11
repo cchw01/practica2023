@@ -53,6 +53,18 @@ export async function getUser(_id: string): Promise<Error | User | null> {
   }
 }
 
+export async function deleteUser(_id: string) {
+  if (!_id || typeof _id !== "string") {
+    return Error("invalid params");
+  }
+  try {
+    const user = await UserDB.findOneAndDelete({ _id: _id });
+    return user;
+  } catch (ex: any) {
+    return ex;
+  }
+}
+
 export async function updateUser(
   newUser: Partial<User>
 ): Promise<Error | User | undefined> {
@@ -62,9 +74,7 @@ export async function updateUser(
 
   try {
     var updateResponse = await UserDB.findOneAndUpdate<User>(
-      {
-        _id: newUser,
-      },
+      { _id: newUser._id },
       newUser
     );
 
