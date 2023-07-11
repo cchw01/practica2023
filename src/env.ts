@@ -5,7 +5,6 @@ function getEnv() {
 	// use process.env, process.argv
 	return {
     PORT: 80,
-    CATEGORY_MANAGEMENT: "category",
     NODE_ENV: "development",
 
     DISCOVERY_CLIENT_ROUTE: "/discovery/client",
@@ -13,5 +12,7 @@ function getEnv() {
 
     MONGO_URL: "mongodb://127.0.0.1:27017",
     DB_NAME: "a-json-db",
+
+    CATEGORY_MANAGEMENT: "category",
   };
 }
