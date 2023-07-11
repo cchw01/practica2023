@@ -11,7 +11,7 @@ function postUserRouter(router: Router): Router {
   return router;
 }
 function getUserRouter(router: Router): Router {
-  router.get("/", getUser);
+  router.get("/:userId", getUser);
   return router;
 }
 function deleteUserRouter(router: Router): Router {
@@ -41,7 +41,8 @@ async function postUser(req: Request, res: Response, next: NextFunction) {
 }
 
 async function getUser(req: Request, res: Response, next: NextFunction) {
-  const userId: string = req.body["_id"];
+  //const userId: string = req.body["_id"];
+  const userId: string = req.params.userId;
   let user: Error | User | null;
 
   try {
