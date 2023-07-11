@@ -1,8 +1,9 @@
-import * as express from "express";
-import { env } from "./env";
-import { IExpressError } from "./interfaces/IExpressError";
+import * as express from 'express';
+import { env } from './env';
+import { IExpressError } from './interfaces/IExpressError';
 export { makeApp };
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
+import { IngredientsRouter } from './routes/ingredients.route';
 
 let app: express.Application;
 
@@ -18,10 +19,11 @@ async function makeApp() {
   app.use(express.json());
 
   // routes
+  app.use('/ingredients', IngredientsRouter);
 
   // 404
   app.use((_req, _res, next) => {
-    const err: IExpressError = new Error("Not Found");
+    const err: IExpressError = new Error('Not Found');
     err.status = 404;
     next(err);
   });
@@ -36,7 +38,7 @@ async function makeApp() {
     ) => {
       res
         .status(err.status || 500)
-        .send(env.NODE_ENV === "development" ? err : {});
+        .send(env.NODE_ENV === 'development' ? err : {});
     }
   );
 

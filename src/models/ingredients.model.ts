@@ -1,14 +1,12 @@
-import {ObjectId} from "mongoose";
-
+import { ObjectId } from 'mongoose';
 
 export class Ingredients {
   id!: ObjectId;
   name!: string;
-  stoc: number;
-  isAleregen: boolean;
-
+  stoc!: number;
+  isAleregen!: boolean;
 
   public constructor(init?: Partial<Ingredients>) {
-  Object.assign(this, init);
+    Object.assign(this, init);
   }
 }

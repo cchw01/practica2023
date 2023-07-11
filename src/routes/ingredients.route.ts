@@ -1,77 +1,99 @@
-import { Router, Request, Response, NextFunction } from "express";
-import { Ingredients } from "../models/ingredients.model";
-import { CallTracker } from "assert";
+import { Router, Request, Response, NextFunction } from 'express';
+import { Ingredients } from '../models/ingredients.model';
+import { IngredientsDB } from '../schemas/ingredients.schema';
+import * as IngredientsService from '../services/ingredients.service';
 
 const IngredientsRouter = Router();
 
-IngredientsRouter.post("/",async (req:Request, res: Response, next: NextFunction) => {
+IngredientsRouter.post(
+  '/',
+  async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
     let addedVariable: Error | Ingredients;
     try {
-        addedVariable = await categoryService.postCategory(body);
-      } catch (ex) {
-        return next(ex);
-      }
-      if (addedVariable instanceof Error) {
-        return next(addedVariable);
-      }
-    
-      res.send(addedVariable);
-    });
-    
-    //get inventory item
-    IngredientsRouter.get("/:id", async (req: Request, res: Response, next: NextFunction) => {
-      try {
-        const categoryById = await CategoryDB.findById(req.params.id);
-        res.send(categoryById);
-      } catch (ex) {
-        return next(ex);
-      }
-    });
-    
-    //get all inventory items
-    IngredientsRouter.get("/", async (_req: Request, res: Response, next: NextFunction) => {
-      try {
-        const AllIngredients = await CategoryDB.find();
-        res.send(AllIngredients);
-      } catch (ex) {
-        return next(ex);
-      }
-    });
-    //update inventory item
-    IngredientsRouter.put("/:id", async (req: Request, res: Response, next: NextFunction) => {
-        const body = req.body;
-       Ingredient: body;
-        if(body.name || body.parentCategory)
-        { try { 
-            const findCategory = await CategoryDB.findByIdAndUpdate(
-              {_id: req.params.id},
-              {
-                name: body.name,
-                parentCategory:body.parentCategory
-              }
-            );
-            if(findCategory == null)
-                return next('Could not find category!');
-            console.log('updated');
-            const categoryById = await CategoryDB.findById(req.params.id);
-            res.send(categoryById);
-      } catch (ex) {
-        return next(ex);
-      }
-    }else{
-        return next('No attributes found!');
+      addedVariable = await IngredientsService.postIngredients(body);
+    } catch (ex) {
+      return next(ex);
     }
-    });
-    
-    //delete inventory item
-    IngredientsRouter.delete("/:id", async (req: Request, res: Response, next: NextFunction) => {
+    if (addedVariable instanceof Error) {
+      return next(addedVariable);
+    }
+
+    res.send(addedVariable);
+  }
+);
+
+//get ingredients
+IngredientsRouter.get(
+  '/:id',
+  async (req: Request, res: Response, next: NextFunction) => {
+    const query: any = req.body;
+    let ingredientsByName: Error | Ingredients | undefined;
+    try {
+      ingredientsByName = await IngredientsService.getIngredient(query);
+      res.json(ingredientsByName);
+    } catch (ex) {
+      return next(ex);
+    }
+    if (ingredientsByName instanceof Error) {
+      return next(ingredientsByName);
+    }
+  }
+);
+
+//get all ingredients
+IngredientsRouter.get(
+  '/',
+  async (_req: Request, res: Response, next: NextFunction) => {
+    try {
+      const AllIngredients = await IngredientsDB.find();
+      res.send(AllIngredients);
+    } catch (ex) {
+      return next(ex);
+    }
+  }
+);
+//update ingredients
+IngredientsRouter.put(
+  '/',
+  async (req: Request, res: Response, next: NextFunction) => {
+    const body = req.body;
+    console.log(body);
+    // Ingredient: body;
+    if (body.name) {
       try {
-        await CategoryDB.findByIdAndDelete(req.params.id);
-        res.send('Deleted Category');
+        const findIngredients = await IngredientsDB.findByIdAndUpdate(
+          { _id: req.body.id },
+          {
+            name: body.name,
+            stoc: body.stoc,
+            isAleregen: body.isAleregen,
+          }
+        );
+        if (findIngredients == null) return next('Could not find ingredients!');
+        console.log('updated');
+        const ingredientsById = await IngredientsDB.findById(req.params.id);
+        res.send(ingredientsById);
       } catch (ex) {
         return next(ex);
       }
-    });
-    
-    export { IngredientsRouter };
+    } else {
+      return next('No attributes found!');
+    }
+  }
+);
+
+//delete ingredients
+IngredientsRouter.delete(
+  '/:id',
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      await IngredientsDB.findByIdAndDelete(req.params.id);
+      res.send('Deleted Ingredients');
+    } catch (ex) {
+      return next(ex);
+    }
+  }
+);
+
+export { IngredientsRouter };
