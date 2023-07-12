@@ -8,6 +8,7 @@ export { setUserRouter };
 function setUserRouter(router: Router): Router {
   router.post("/", postUser);
   router.get("/:userId", getUser);
+  router.get("/",getUsers);
   router.delete("/:userId", deleteUser);
   router.put("/", updateUser);
   return router;
@@ -47,6 +48,25 @@ async function getUser(req: Request, res: Response, next: NextFunction) {
   }
 
   return res.json(user);
+}
+
+async function getUsers(_req: Request, res: Response, next: NextFunction) {
+  
+  let users: User[] | Error = [];
+  
+  try {
+      users = await userService.getUsers();
+  } catch (ex: any) {
+      return next(ex);
+  }
+  
+  if (users instanceof Error) {
+      return next(users);
+  }
+  
+  console.log("getPhotos(), photos ", users);
+  return res.json(users);
+
 }
 
 async function deleteUser(req: Request, res: Response, next: NextFunction) {

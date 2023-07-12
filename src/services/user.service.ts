@@ -71,6 +71,17 @@ export async function getUser(_id: string): Promise<Error | User | null> {
   }
 }
 
+export async function getUsers(): Promise<Error | User[]> {
+
+  try {
+    const photos = await UserDB.find<User>({});
+    return photos;
+  } catch (ex: any) {
+    return Error(ex.message);
+  }
+}
+
+
 export async function deleteUser(_id: string) {
   if (!_id || typeof _id !== "string") {
     return Error("invalid params");
