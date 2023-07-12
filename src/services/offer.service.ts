@@ -24,17 +24,18 @@ export async function getOfferById(offerId: string): Promise<Error | Offer | nul
 
 export async function postOffer(offer: Partial<Offer>): Promise<Error | Offer>{
     if (!offer || !offer.discountPercent || !offer.startDate || !offer.endDate) {
-        
+        console.log("Error from first condition");
         return Error("The parameters given are not valid!");
     }
     try {
-        const exists = await OfferDB.findOne({ name: offer._id });
+        const exists = await OfferDB.findOne({ _id: offer._id });
         if (exists) {
-          return Error("The item added to the database already exists!");
+            console.log("Error from second condition");
+            return Error("The item added to the database already exists!");
         }
     } catch (ex: any) {        
         return ex;
-      }
+    }
     const NewOffer = new OfferDB({
         discountPercent: offer.discountPercent,
         productList: offer.productList,
