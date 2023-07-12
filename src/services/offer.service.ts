@@ -28,7 +28,8 @@ export async function postOffer(offer: Partial<Offer>): Promise<Error | Offer>{
         return Error("The parameters given are not valid!");
     }
     try {
-        const exists = await OfferDB.findOne({ _id: offer._id });
+        const exists = await OfferDB.findOne({ discountPercent: offer.discountPercent, productList: offer.productList,
+        startDate: offer.startDate, endDate: offer.endDate });
         if (exists) {
             console.log("Error from second condition");
             return Error("The item added to the database already exists!");
