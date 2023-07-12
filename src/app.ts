@@ -3,6 +3,7 @@ import { env } from "./env";
 import { IExpressError } from "./interfaces/IExpressError";
 export { makeApp };
 import mongoose from "mongoose";
+import { inventoryOfferRouter } from "./routes/offer.routes";
 
 let app: express.Application;
 
@@ -18,6 +19,7 @@ async function makeApp() {
   app.use(express.json());
 
   // routes
+  app.use(env.OFFER_MANAGEMENT, inventoryOfferRouter);
 
   // 404
   app.use((_req, _res, next) => {
