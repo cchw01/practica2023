@@ -8,11 +8,7 @@ function getEnv() {
 
 		NODE_ENV: "development",
 
-		CREATE_TABLE_ROUTE: "/createTable",
-		DELETE_TABLE_ROUTE: "/deleteTable",
-		GET_TABLE_ROUTE: "/getTable",
-		GET_ALL_TABLES_ROUT: "/getTables",
-		UPDATE_TABLE_ROUTE: "/updateTable",
+		MAIN_ENDPOINT: "/",
 
 		MONGO_URL: "mongodb://127.0.0.1:27017",
 		DB_NAME: "restaurantDB"
