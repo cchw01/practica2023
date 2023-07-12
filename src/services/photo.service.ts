@@ -1,21 +1,35 @@
 import { PhotoDb } from "../schemas/photo.schema";
 import { Photo } from "../models/photo.model";
-import { ObjectId } from "mongoose";
 
 export { getPhoto, savePhoto, getPhotos, deletePhoto, updatePhoto};
 
-async function getPhoto(id: ObjectId): Promise<Error | Photo | null> {
+async function getPhoto(_id: string): Promise<Error | Photo | null> {
+ 
+  if (!_id || typeof _id !== "string") {
+    return Error("invalid params");
+  }
+
   try {
-    const photo = await PhotoDb.findOne<Photo>({ id: id });
+    const photo = await PhotoDb.findOne<Photo>({ _id:_id });
     return photo;
-  } catch (ex: any) {
+  }
+    catch (ex: any) {
     return Error(ex.message);
   }
 }
 
 async function savePhoto(photo: Partial<Photo>): Promise<Error | Photo> {
+
   if (!photo || !(photo instanceof Object)) {
     return Error("photo is required");
+  }
+
+  if (!photo.photoLink || typeof photo.photoLink !== "string") {
+    return Error("invalid photoLink");
+  }
+
+  if (!photo.description || typeof photo.description !== "string") {
+    return Error("invalid description");
   }
 
   const photoModel = new PhotoDb({
@@ -42,37 +56,41 @@ async function getPhotos(): Promise<Error | Photo[]> {
   }
 }
 
-async function deletePhoto(id: ObjectId): Promise<Error | Photo | null> {
+async function deletePhoto(_id: string): Promise<Error | Photo | null> {
 
-    try {
-        const photo = await PhotoDb.findOneAndDelete<Photo>({ id: id });
-        return photo;
-    } catch (ex: any) {
-        return Error(ex.message);
-    }
+  if (!_id || typeof _id !== "string") {
+    return Error("invalid params");
+  }
+  try {
+    const photo = await PhotoDb.findOneAndDelete({ _id: _id });
+    return photo;
+  } catch (ex: any) {
+    return ex;
+  }
 
 }
 
-async function updatePhoto(body:Photo): Promise<Error | Photo | null> {
+async function updatePhoto(newPhoto:Partial<Photo>): Promise<Error | Photo | null> {
 
-    try{
-      const photo = await PhotoDb.findById(body.id);
+  
+  if (!newPhoto || typeof newPhoto !== "object") {
+    return Error("invalid params");
+  }
 
-      if(!photo){
-        return Error("Photo not found");
-      }
-      
-      photo.photoLink=body.photoLink;
-      photo.description=body.description;
+  try {
+    var updateResponse = await PhotoDb.findOneAndUpdate<Photo>(
+      { _id: newPhoto._id },
+      newPhoto
+    );
 
-      await photo.save();
-
-      return photo;
+    if (updateResponse == null) {
+      return Error("Invalid");
     }
+  } catch (ex: any) {
+    return ex;
+  }
 
-    catch (ex: any) {
-      return new Error(ex.message);
-    }
+  return null;
 }
     
 
