@@ -4,8 +4,8 @@ export class Offer {
 	_id!: ObjectId;
 	productList!: string[];
     discountPercent!: number;
-    startDate!: string;
-    endDate!: string;
+    startDate!: Date;
+    endDate!: Date;
 
 	constructor(offer?: Partial<Offer>) {
 		Object.assign(this, offer);

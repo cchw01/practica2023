@@ -8,8 +8,8 @@ const OfferSchema = new Schema<Offer>(
   {
     productList: [{ type: String , required: false, default:"" }],
     discountPercent: { type: Number, required: true, default:0 },
-    startDate: { type: String, required: true, default: "" },
-    endDate: { type: String, required: true, default: "" },
+    startDate: { type: Date, required: true, default: null },
+    endDate: { type: Date, required: true, default: null },
   },
   {
     collection: env.OFFER_MANAGEMENT,
