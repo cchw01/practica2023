@@ -22,15 +22,15 @@ async function makeApp() {
   app.use(express.json());
 
   // routes
-  app.use(env.USER_MANAGEMENT, getUserRouter(express.Router()));
   app.use(env.USER_MANAGEMENT, postUserRouter(express.Router()));
+  app.use(env.USER_MANAGEMENT, getUserRouter(express.Router()));
   app.use(env.USER_MANAGEMENT, updateUserRouter(express.Router()));
   app.use(env.USER_MANAGEMENT, deleteUserRouter(express.Router()));
 
   // 404
   app.use((_req, _res, next) => {
-    const err: IExpressError = new Error("Not Found");
-    err.status = 404;
+    const err: IExpressError =  new Error("Not Found");
+    err.status = 400;
     next(err);
   });
 

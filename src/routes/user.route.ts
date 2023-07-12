@@ -7,6 +7,7 @@ export { postUserRouter, getUserRouter, deleteUserRouter, updateUserRouter };
 //create user
 function postUserRouter(router: Router): Router {
   router.post("/", postUser);
+  console.log("el");
   return router;
 }
 function getUserRouter(router: Router): Router {
@@ -25,10 +26,10 @@ function updateUserRouter(router: Router): Router {
 async function postUser(req: Request, res: Response, next: NextFunction) {
   const body = req.body;
   let randomVariable: Error | User;
-
   try {
     randomVariable = await userService.postUser(body);
     res.json(randomVariable);
+    console.log("b");
   } catch (ex) {
     return next(ex);
   }

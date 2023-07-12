@@ -1,6 +1,6 @@
 import { UserDB } from "../schemas/user.schema";
 import { User } from "../models/user.model";
-
+import * as bcrypt from 'bcrypt';
 export async function postUser(user: User): Promise<Error | User> {
   if (
     !user ||
@@ -24,19 +24,25 @@ export async function postUser(user: User): Promise<Error | User> {
     if (phoneNumberExists) {
       return Error("The user number added to the database already exists!");
     }
+    
   } catch (ex: any) {
     return ex;
   }
 
+  if(user.password.length < 8){
+    return Error("Password is too short!");
+  }
+
+  const hashPass: string = await bcrypt.hash(user.password, 10);
   const NewUser = new UserDB({
     firstName: user.firstName,
     lastName: user.lastName,
     phoneNumber: user.phoneNumber,
     email: user.email,
-    password: user.password,
+    password: hashPass,
     role: user.role,
   });
-  NewUser.save();
+  await NewUser.save();
   console.log("save user check");
   return NewUser;
 }
