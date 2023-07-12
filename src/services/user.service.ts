@@ -3,7 +3,6 @@ import { User } from "../models/user.model";
 import * as bcrypt from "bcrypt";
 
 const salt = 10;
-const minPassLength = 8;
 
 export async function postUser(user: User): Promise<Error | User> {
   if (
@@ -32,9 +31,19 @@ export async function postUser(user: User): Promise<Error | User> {
     return ex;
   }
 
-  if (user.password.length < minPassLength) {
-    return Error("Password is too short!");
-  }
+   // Regex pattern for email validation
+   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+   if (!emailRegex.test(user.email)) {
+     return Error("Invalid email format!");
+   }
+ 
+   // Regex pattern for password validation (at least 8 characters and one number)
+   const passwordRegex = /^(?=.*\d).{8,}$/;
+ 
+   if (!passwordRegex.test(user.password)) {
+     return Error("Invalid password format! Password must be at least 8 characters long and contain at least one number.");
+   }
 
   const hashPass: string = await bcrypt.hash(user.password, salt);
   const NewUser = new UserDB({

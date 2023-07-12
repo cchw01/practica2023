@@ -2,7 +2,6 @@ const env = getEnv();
 export { env };
 
 function getEnv() {
-  // use process.env, process.argv
   return {
     PORT: 80,
 
