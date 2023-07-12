@@ -1,6 +1,10 @@
 import { UserDB } from "../schemas/user.schema";
 import { User } from "../models/user.model";
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from "bcrypt";
+
+const salt = 10;
+const minPassLength = 8;
+
 export async function postUser(user: User): Promise<Error | User> {
   if (
     !user ||
@@ -24,16 +28,15 @@ export async function postUser(user: User): Promise<Error | User> {
     if (phoneNumberExists) {
       return Error("The user number added to the database already exists!");
     }
-    
   } catch (ex: any) {
     return ex;
   }
 
-  if(user.password.length < 8){
+  if (user.password.length < minPassLength) {
     return Error("Password is too short!");
   }
 
-  const hashPass: string = await bcrypt.hash(user.password, 10);
+  const hashPass: string = await bcrypt.hash(user.password, salt);
   const NewUser = new UserDB({
     firstName: user.firstName,
     lastName: user.lastName,
@@ -76,6 +79,10 @@ export async function updateUser(
 ): Promise<Error | User | undefined> {
   if (!newUser || typeof newUser !== "object") {
     return Error("invalid params");
+  }
+
+  if (newUser.password) {
+    newUser.password = await bcrypt.hash(newUser.password, salt);
   }
 
   try {
