@@ -6,11 +6,13 @@ import { Offer } from "../models/offer.model";
 
 const OfferSchema = new Schema<Offer>(
   {
-    name: { type: String, required: true, default: "" },
     productList: [{ type: String , required: false, default:"" }],
+    discountPercent: { type: Number, required: true, default:0 },
+    startDate: { type: String, required: true, default: "" },
+    endDate: { type: String, required: true, default: "" },
   },
   {
-    collection: env.CATEGORY_MANAGEMENT,
+    collection: env.OFFER_MANAGEMENT,
   }
 );
 
