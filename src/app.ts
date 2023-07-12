@@ -5,6 +5,7 @@ import { setUserRouter } from "./routes/user.route";
 export { makeApp };
 import mongoose from "mongoose";
 import { tableRouter } from "./routes/table.route";
+import { setPhotoRouter } from "./routes/photo.route";
 
 let app: express.Application;
 
@@ -25,6 +26,7 @@ async function makeApp() {
   // routes
   app.use(env.MAIN_ENDPOINT, tableRouter);
 
+  app.use(env.PHOTO_ROUTE, setPhotoRouter(express.Router()));
   // 404
   app.use((_req, _res, next) => {
     const err: IExpressError = new Error("Not Found");
