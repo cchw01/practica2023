@@ -1,6 +1,7 @@
 import * as express from "express";
 import { env } from "./env";
 import { IExpressError } from "./interfaces/IExpressError";
+import { setUserRouter } from "./routes/user.route";
 export { makeApp };
 import mongoose from "mongoose";
 import { tableRouter} from "./routes/table.route";
@@ -18,14 +19,16 @@ async function makeApp() {
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
 
+  // routes
+  app.use(env.USER_MANAGEMENT, setUserRouter(express.Router()));
 
   // routes
   app.use(env.MAIN_ENDPOINT, tableRouter)
   
   // 404
   app.use((_req, _res, next) => {
-    const err: IExpressError = new Error("Not Found");
-    err.status = 404;
+    const err: IExpressError =  new Error("Not Found");
+    err.status = 400;
     next(err);
   });
 

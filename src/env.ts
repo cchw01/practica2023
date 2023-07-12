@@ -2,12 +2,18 @@ const env = getEnv();
 export { env };
 
 function getEnv() {
-	// use process.env, process.argv
-	return {
-		PORT: 80,
+  return {
+    PORT: 80,
 
-		NODE_ENV: "development",
+    NODE_ENV: "development",
 
+    DISCOVERY_CLIENT_ROUTE: "/discovery/client",
+    USER_ROUTE: "/api/user",
+    USER_MANAGEMENT: "/user",
+
+    MONGO_URL: "mongodb://127.0.0.1:27017",
+    DB_NAME: "restaurant-db",
+  };
 		MAIN_ENDPOINT: "/",
 
 		MONGO_URL: "mongodb://127.0.0.1:27017",
