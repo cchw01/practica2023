@@ -2,23 +2,13 @@ import { Router, Request, Response, NextFunction } from "express";
 import { User } from "../models/user.model";
 import * as userService from "../services/user.service";
 
-export { postUserRouter, getUserRouter, deleteUserRouter, updateUserRouter };
+export { setUserRouter };
 
 //create user
-function postUserRouter(router: Router): Router {
+function setUserRouter(router: Router): Router {
   router.post("/", postUser);
-  console.log("el");
-  return router;
-}
-function getUserRouter(router: Router): Router {
   router.get("/:userId", getUser);
-  return router;
-}
-function deleteUserRouter(router: Router): Router {
   router.delete("/:userId", deleteUser);
-  return router;
-}
-function updateUserRouter(router: Router): Router {
   router.put("/", updateUser);
   return router;
 }

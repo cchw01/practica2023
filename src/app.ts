@@ -1,10 +1,7 @@
 import * as express from "express";
 import { env } from "./env";
 import { IExpressError } from "./interfaces/IExpressError";
-import { getUserRouter } from "./routes/user.route";
-import { postUserRouter } from "./routes/user.route";
-import { updateUserRouter } from "./routes/user.route";
-import { deleteUserRouter } from "./routes/user.route";
+import { setUserRouter } from "./routes/user.route";
 export { makeApp };
 import mongoose from "mongoose";
 
@@ -22,10 +19,7 @@ async function makeApp() {
   app.use(express.json());
 
   // routes
-  app.use(env.USER_MANAGEMENT, postUserRouter(express.Router()));
-  app.use(env.USER_MANAGEMENT, getUserRouter(express.Router()));
-  app.use(env.USER_MANAGEMENT, updateUserRouter(express.Router()));
-  app.use(env.USER_MANAGEMENT, deleteUserRouter(express.Router()));
+  app.use(env.USER_MANAGEMENT, setUserRouter(express.Router()));
 
   // 404
   app.use((_req, _res, next) => {
