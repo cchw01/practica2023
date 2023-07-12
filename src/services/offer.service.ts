@@ -75,7 +75,10 @@ export async function updateOffer(offerId: string, NewOffer: Partial<Offer>): Pr
 
 export async function deleteOffer(offerId: string): Promise<string | Error> {
     try {
-        await OfferDB.findByIdAndDelete(offerId);
+        const existsOfferById = await OfferDB.findByIdAndDelete(offerId);
+        if(!existsOfferById){
+            return Error("Item not found");
+        }
         return "Deleted offer";
     } catch (ex: any) {
         return ex;
