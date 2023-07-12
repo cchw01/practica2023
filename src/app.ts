@@ -19,7 +19,7 @@ async function makeApp() {
   app.use(express.json());
 
   // routes
-  app.use('/ingredients', IngredientsRouter);
+  app.use(env.Ingredients_MANAGEMENT, IngredientsRouter);
 
   // 404
   app.use((_req, _res, next) => {

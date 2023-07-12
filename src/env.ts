@@ -9,7 +9,7 @@ function getEnv() {
     NODE_ENV: 'development',
 
     DISCOVERY_CLIENT_ROUTE: '/discovery/client',
-    Ingredients_MANAGEMENT: 'ingredients',
+    Ingredients_MANAGEMENT: '/ingredients',
     A_JSON_ROUTE: '/api/json',
 
     MONGO_URL: 'mongodb://127.0.0.1:27017',
