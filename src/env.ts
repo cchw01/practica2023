@@ -10,7 +10,7 @@ function getEnv() {
 
     DISCOVERY_CLIENT_ROUTE: '/discovery/client',
     A_JSON_ROUTE: '/api/json',
-    ReviewRestaurant_MANAGEMENT: 'reviewRestaurant',
+    ReviewRestaurant_MANAGEMENT: '/reviewRestaurant',
 
     MONGO_URL: 'mongodb://127.0.0.1:27017',
     DB_NAME: 'a-json-db',
