@@ -31,19 +31,21 @@ export async function postUser(user: User): Promise<Error | User> {
     return ex;
   }
 
-   // Regex pattern for email validation
-   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Regex pattern for email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-   if (!emailRegex.test(user.email)) {
-     return Error("Invalid email format!");
-   }
- 
-   // Regex pattern for password validation (at least 8 characters and one number)
-   const passwordRegex = /^(?=.*\d).{8,}$/;
- 
-   if (!passwordRegex.test(user.password)) {
-     return Error("Invalid password format! Password must be at least 8 characters long and contain at least one number.");
-   }
+  if (!emailRegex.test(user.email)) {
+    return Error("Invalid email format!");
+  }
+
+  // Regex pattern for password validation (at least 8 characters and one number)
+  const passwordRegex = /^(?=.*\d).{8,}$/;
+
+  if (!passwordRegex.test(user.password)) {
+    return Error(
+      "Invalid password format! Password must be at least 8 characters long and contain at least one number."
+    );
+  }
 
   const hashPass: string = await bcrypt.hash(user.password, salt);
   const NewUser = new UserDB({
@@ -90,7 +92,24 @@ export async function updateUser(
     return Error("invalid params");
   }
 
+  if (newUser.email) {
+    // Regex pattern for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(newUser.email)) {
+      return Error("Invalid email format!");
+    }
+  }
+
   if (newUser.password) {
+    // Regex pattern for password validation (at least 8 characters and one number)
+    const passwordRegex = /^(?=.*\d).{8,}$/;
+
+    if (!passwordRegex.test(newUser.password)) {
+      return Error(
+        "Invalid password format! Password must be at least 8 characters long and contain at least one number."
+      );
+    }
     newUser.password = await bcrypt.hash(newUser.password, salt);
   }
 
