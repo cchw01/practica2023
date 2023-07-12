@@ -1,7 +1,7 @@
 import { ObjectId } from "mongoose";
 
 export class Photo {
-  id!: ObjectId;
+  _id!: ObjectId;
   photoLink!: string;
   description!: string;
 

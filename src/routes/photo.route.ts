@@ -14,18 +14,22 @@ function setPhotoRouter(router: Router): Router {
 }
 
 async function getPhoto(req: Request, res: Response, next: NextFunction) {
-  const query: any = req.query.id;
+  const photoId: string = req.params.id;
 
   let photo: Photo | null | Error = null;
 
   try {
-    photo = await photoService.getPhoto(query);
+    photo = await photoService.getPhoto(photoId);
   } catch (ex: any) {
     return next(ex);
   }
 
   if (photo instanceof Error) {
     return next(photo);
+  }
+
+  if(photo === null) {
+    return res.status(404).json({message: "Photo not found"});
   }
 
   console.log("getPhoto(), photo ", photo);
@@ -70,7 +74,7 @@ async function postPhoto(req: Request, res: Response, next: NextFunction) {
 
 async function deletePhoto(req: Request, res: Response, next: NextFunction) {
 
-    const query: any = req.query.id;
+    const query: string = req.params.id;
 
     let photo: Photo | null | Error = null;
 
@@ -97,19 +101,15 @@ async function updatePhoto(req: Request, res: Response, next: NextFunction) {
     let photo: Photo= new Photo();
 
     try {
-        photo.id=body.id;
-        photo.photoLink=body.photoLink;
-        photo.description=body.description;
-        await photoService.updatePhoto(photo);
+          await photoService.updatePhoto(body);
       } catch (ex: any) {
         return next(ex);
       }
 
       if (photo instanceof Error) {
-        return next(photo);
+        return res.status(404).json("Cannot find item to update!");
       }
     
-      console.log("updatePhoto(), photo ", photo);
-      return res.json(photo);
+      return res.status(200).json("Item successfully updated!");
 
 }
