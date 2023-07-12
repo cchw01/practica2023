@@ -7,15 +7,8 @@ function getEnv() {
     PORT: 80,
     NODE_ENV: "development",
 
-    DISCOVERY_CLIENT_ROUTE: "/discovery/client",
-    A_JSON_ROUTE: "/api/json",
-    GET_ROUTE: "/getCategory",
-    POST_ROUTE: "/addCategory",
-    UPDATE_ROUTE: "/updateCategory",
-    DELETE_ROUTE: "/deleteCategory",
+    CATEGORY_MANAGEMENT: "/category",
     MONGO_URL: "mongodb://127.0.0.1:27017",
-    DB_NAME: "restaurantDB",
-
-    CATEGORY_MANAGEMENT: "category",
+    DB_NAME: "restaurantDB"
   };
 }

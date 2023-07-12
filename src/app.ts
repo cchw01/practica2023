@@ -19,10 +19,7 @@ async function makeApp() {
   app.use(express.json());
 
   // routes
-  app.use(env.GET_ROUTE, inventoryCategoryRouter);
-  app.use(env.POST_ROUTE, inventoryCategoryRouter);
-  app.use(env.DELETE_ROUTE, inventoryCategoryRouter);
-  app.use(env.UPDATE_ROUTE, inventoryCategoryRouter);
+  app.use(env.CATEGORY_MANAGEMENT, inventoryCategoryRouter);
 
   // 404
   app.use((_req, _res, next) => {
