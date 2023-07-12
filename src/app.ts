@@ -3,7 +3,7 @@ import { env } from "./env";
 import { IExpressError } from "./interfaces/IExpressError";
 export { makeApp };
 import mongoose from "mongoose";
-import { postATableRouter, deleteATableRouter, getATableRouter, updateATableRouter } from "./routes/table.route";
+import { postATableRouter, deleteATableRouter, getATableRouter, updateATableRouter, getAllTableRouter} from "./routes/table.route";
 
 let app: express.Application;
 
@@ -24,6 +24,7 @@ async function makeApp() {
   app.use(env.DELETE_TABLE_ROUTE, deleteATableRouter(express.Router()));
   app.use(env.GET_TABLE_ROUTE, getATableRouter(express.Router()));
   app.use(env.UPDATE_TABLE_ROUTE, updateATableRouter(express.Router()));
+  app.use(env.GET_ALL_TABLES_ROUT, getAllTableRouter(express.Router()));
 
 
   // 404

@@ -1,7 +1,7 @@
 import { TableDb } from "../schemas/table.schema";
 import { Table } from "../models/table.model";
 
-export { getTable, saveTable, deleteTable, updateTable };
+export { getTable, saveTable, deleteTable, updateTable, getAllTables};
 
 async function getTable(location: string): Promise<Error | Table | null> {
 
@@ -16,6 +16,16 @@ async function getTable(location: string): Promise<Error | Table | null> {
   return ex;
  }
 }
+
+async function getAllTables(): Promise<Error | Table[] | null> {
+ 
+  try {
+   const tables = await TableDb.find<Table>({});
+   return tables;
+  } catch (ex: any) {
+   return ex;
+  }
+ }
 
 async function saveTable(aTable: Partial<Table>): Promise<Error | Table> {
 

@@ -2,12 +2,17 @@ import { Router, Request, Response, NextFunction } from "express";
 import { Table } from "../models/table.model";
 import * as tableService from "../services/table.service";
 
-export { getATableRouter, postATableRouter, deleteATableRouter, updateATableRouter };
+export { getATableRouter, postATableRouter, deleteATableRouter, updateATableRouter, getAllTableRouter };
 
 function getATableRouter(router: Router): Router {
  router.get("/", getATable);
  return router;
 }
+
+function getAllTableRouter(router: Router): Router {
+   router.get("/", getAllTables);
+   return router;
+  }
 
 function postATableRouter(router: Router): Router {
  router.post("/", postATable);
@@ -24,6 +29,28 @@ function updateATableRouter(router: Router): Router {
    return router;
 }
 
+async function getAllTables(req: Request, res: Response, next: NextFunction) {
+   
+   let allTable: Error | Table[] | null;
+  
+   try {
+    allTable = await tableService.getAllTables();
+   } catch (ex) {
+    console.log(req);
+    return next(ex);
+   }
+  
+   if (allTable instanceof Error) {
+  
+     return next(allTable);
+   }
+  
+   if (allTable === null) {
+    return res.status(404).end();
+   }
+  
+   return res.json(allTable);
+  }
 
 async function getATable(req: Request, res: Response, next: NextFunction) {
 
