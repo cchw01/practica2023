@@ -1,9 +1,9 @@
 const env = getEnv();
-export {env};
+export { env };
 
 function getEnv() {
-	// use process.env, process.argv
-	return {
+  // use process.env, process.argv
+  return {
     PORT: 80,
     NODE_ENV: "development",
 
@@ -14,7 +14,7 @@ function getEnv() {
     UPDATE_ROUTE: "/updateCategory",
     DELETE_ROUTE: "/deleteCategory",
     MONGO_URL: "mongodb://127.0.0.1:27017",
-    DB_NAME: "categoryDB",
+    DB_NAME: "restaurantDB",
 
     CATEGORY_MANAGEMENT: "category",
   };
