@@ -88,7 +88,7 @@ async function updateTable(newTable:Partial<Table>): Promise<Error | Table | und
       newTable);
       
       if(updateResponse==null){
-        console.log("cannot find table to update");
+        return Error("Invalid");
       }
 
   } catch (ex: any) {

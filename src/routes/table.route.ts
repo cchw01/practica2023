@@ -125,7 +125,7 @@ async function updateATable(req: Request, res: Response, next: NextFunction){
    }
 
    if (aTable instanceof Error) {
-      return next(aTable);
+      return res.status(404).json("Cannot find item to update!");
    }
 
    return res.status(200).json("Item successfully updated!");
