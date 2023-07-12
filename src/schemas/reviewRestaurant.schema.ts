@@ -7,7 +7,11 @@ import { reviewRestaurant } from '../models/reviewRestaurant.model';
 const reviewRestaurantSchema = new Schema<reviewRestaurant>(
   {
     user: { type: String, required: true, default: '' },
-    reviewDate: { type: String, required: false, default: '11/07/2023' },
+    reviewDate: {
+      type: Date,
+      required: false,
+      default: Date.now,
+    },
     ratingStars: { type: Number, required: false, default: 5 },
     message: { type: String, required: false, default: '' },
   },

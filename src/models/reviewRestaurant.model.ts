@@ -3,7 +3,7 @@ import { ObjectId } from 'mongoose';
 export class reviewRestaurant {
   id!: ObjectId;
   user!: string;
-  reviewDate: string;
+  reviewDate: Date;
   ratingStars: number;
   message: string;
 
