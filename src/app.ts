@@ -19,7 +19,7 @@ async function makeApp() {
   app.use(express.json());
 
   // routes
-  app.use('/reviewRestaurant', reviewRestaurantRouter);
+  app.use(env.ReviewRestaurant_MANAGEMENT, reviewRestaurantRouter);
 
   // 404
   app.use((_req, _res, next) => {
