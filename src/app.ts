@@ -6,6 +6,7 @@ export { makeApp };
 import mongoose from "mongoose";
 import { tableRouter } from "./routes/table.route";
 import { setPhotoRouter } from "./routes/photo.route";
+import { setOrderRouter } from "./routes/order.route";
 
 let app: express.Application;
 
@@ -25,6 +26,9 @@ async function makeApp() {
 
   // routes
   app.use(env.MAIN_ENDPOINT, tableRouter);
+
+  //
+  app.use(env.ORDER_ROUTE, setOrderRouter(express.Router()));
 
   app.use(env.PHOTO_ROUTE, setPhotoRouter(express.Router()));
   // 404

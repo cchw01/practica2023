@@ -13,6 +13,7 @@ tableRouter.delete("/deleteTable", deleteATable);
 tableRouter.put("/updateTable", updateATable);
 
 async function getAllTables(req: Request, res: Response, next: NextFunction) {
+  
   let allTable: Error | Table[] | null;
 
   try {

@@ -10,7 +10,7 @@ export class Order {
   totalPrice!: string;
   userNotes!: string;
   date!: Date;
-  orderStatus!: boolean;
+  orderStatus!: orderStatus;
 
   public constructor(init?: Partial<Order>) {
     Object.assign(this, init);
@@ -20,4 +20,10 @@ export class Order {
 export enum deliveryType{
     PickUp = "pickUp",
     HomeDelivery = "homeDelivery",
+}
+
+export enum orderStatus{
+  Pending = "pending",
+  InProgress = "inProgress",
+  Delivered = "delivered"
 }
