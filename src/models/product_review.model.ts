@@ -3,10 +3,10 @@ import { ObjectId } from "mongoose";
 export class Product_review {
   id!: ObjectId;
   Product!: string;
-  reviewDate!: string;
+  reviewDate: Date;
   User!: string;
   Message!: string;
-  starRating!: string;
+  starRating!: number;
 
   public constructor(init?: Partial<Product_review>) {
     Object.assign(this, init);

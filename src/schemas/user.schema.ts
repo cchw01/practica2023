@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { model, Schema } = mongoose;
 
-import { env } from "../env";
+//import { env } from "../env";
 import { User } from "../models/user.model";
 
 const UserSchema = new Schema<User>(
@@ -14,7 +14,7 @@ const UserSchema = new Schema<User>(
     role: { type: String, required: true },
   },
   {
-    collection: env.DB_NAME,
+    collection: "userDB",
   }
 );
 

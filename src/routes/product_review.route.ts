@@ -8,8 +8,8 @@ function setProduct_reviewRouter(router: Router): Router {
   router.get("/:id", getProduct_review);
   router.get("/", getProduct_reviews);
   router.post("/", postProduct_review);
-  //   router.delete("/:id", deleteProduct_reviews);
-  //   router.put("/", updateProduct_review);
+  router.delete("/:id", deleteProduct_review);
+  router.put("/:id", updateProduct_review);
   return router;
 }
 
@@ -49,18 +49,18 @@ async function postProduct_review(
 ) {
   const body: any = req.body;
   let product_review: Error | Product_review;
-
+  console.log("dsdfsdf");
   try {
     product_review = await product_reviewServices.saveProduct_review(body);
   } catch (ex) {
     return next(ex);
   }
-
+  console.log("safd");
   if (product_review instanceof Error) {
     return next(product_review);
   }
   console.log("postProduct_review(),", product_review);
-  return res.status(201).json(product_review);
+  res.send(product_review);
 }
 
 async function getProduct_reviews(
@@ -82,4 +82,48 @@ async function getProduct_reviews(
 
   console.log("getProduct_reviews(), product_reviews ", product_reviews);
   return res.json(product_reviews);
+}
+
+async function deleteProduct_review(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  const query: string = req.params.id;
+
+  let product_review: Product_review | null | Error = null;
+
+  try {
+    product_review = await product_reviewServices.deleteProduct_review(query);
+  } catch (ex: any) {
+    return next(ex);
+  }
+
+  if (product_review instanceof Error) {
+    return next(product_review);
+  }
+
+  console.log("deleteReview(),", product_review);
+  return res.json(product_review);
+}
+async function updateProduct_review(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  const body: any = req.body;
+
+  let product_review: Product_review = new Product_review();
+
+  try {
+    await product_reviewServices.updateProduct_review(body);
+  } catch (ex: any) {
+    return next(ex);
+  }
+
+  if (product_review instanceof Error) {
+    return res.status(404).json("Cannot find item to update!");
+  }
+
+  return res.json(product_review);
 }
