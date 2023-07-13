@@ -10,7 +10,7 @@ function getEnv() {
 
 		OFFER_MANAGEMENT: "/offer",
 
-		MONGO_URL: "mongodb://127.0.0.1:27017",
-		DB_NAME: "restautantDB"
+		MONGO_URL: "mongodb://127.0.0.1:27017/restaurant",
+		OFFER_DB: "offerDB"
 	};
 }

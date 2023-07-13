@@ -12,7 +12,7 @@ const OfferSchema = new Schema<Offer>(
     endDate: { type: Date, required: true, default: null },
   },
   {
-    collection: env.OFFER_MANAGEMENT,
+    collection: env.OFFER_DB,
   }
 );
 
