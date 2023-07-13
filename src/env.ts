@@ -15,6 +15,7 @@ function getEnv() {
     USER_MANAGEMENT: '/user',
     Ingredients_MANAGEMENT: '/ingredients',
     PHOTO_ROUTE: '/photo',
+    PRODUCT_MANAGEMENT: '/product',
     ReviewRestaurant_MANAGEMENT: '/reviewRestaurant',
     DB_NAME: 'restaurantDB',
     USER_DB: 'userDB',
