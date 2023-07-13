@@ -19,7 +19,6 @@ export async function postreviewRestaurant(
   }
   const NewreviewRestaurant = new reviewRestaurantDB({
     user: reviewRestaurant.user,
-    reviewDate: reviewRestaurant.reviewDate,
     ratingStars: reviewRestaurant.ratingStars,
     message: reviewRestaurant.message,
   });

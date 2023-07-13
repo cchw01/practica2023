@@ -65,7 +65,7 @@ reviewRestaurantRouter.put(
           { _id: req.body.id },
           {
             user: body.user,
-            reviewDate: body.reviewDate,
+            reviewDate: Date.now(),
             ratingStars: body.ratingStars,
             message: body.message,
           }
