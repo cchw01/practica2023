@@ -1,11 +1,13 @@
-import * as express from "express";
-import { env } from "./env";
-import { IExpressError } from "./interfaces/IExpressError";
-import { setUserRouter } from "./routes/user.route";
+import * as express from 'express';
+import { env } from './env';
+import { IExpressError } from './interfaces/IExpressError';
 export { makeApp };
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
+import { reviewRestaurantRouter } from './routes/reviewRestaurant.route';
+import { setUserRouter } from "./routes/user.route";
 import { tableRouter } from "./routes/table.route";
 import { setPhotoRouter } from "./routes/photo.route";
+
 
 let app: express.Application;
 
@@ -21,6 +23,7 @@ async function makeApp() {
   app.use(express.json());
 
   // routes
+  app.use(env.ReviewRestaurant_MANAGEMENT, reviewRestaurantRouter);
   app.use(env.USER_MANAGEMENT, setUserRouter(express.Router()));
 
   // routes
@@ -44,7 +47,7 @@ async function makeApp() {
     ) => {
       res
         .status(err.status || 500)
-        .send(env.NODE_ENV === "development" ? err : {});
+        .send(env.NODE_ENV === 'development' ? err : {});
     }
   );
 
