@@ -6,7 +6,7 @@ export { setProductRouter };
 
 //create(product)
 function setProductRouter(router: Router): Router {
-  router.post("/product", postProduct);
+  router.post("/", postProduct);
   router.get("/:productId", getProduct);
   router.get("/",getProducts);
   router.delete("/:productId", deleteProduct);

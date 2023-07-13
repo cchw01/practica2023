@@ -14,7 +14,7 @@ const ProductSchema = new Schema<Product>(
     reviewsList: [{ type: Schema.Types.ObjectId, ref: 'reviewRestaurant'}]  
   },
   {
-    collection: env.PRODUCT_MANAGEMENT,
+    collection: env.PRODUCT_DB,
   }
 );
 

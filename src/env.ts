@@ -19,6 +19,7 @@ function getEnv() {
     ReviewRestaurant_MANAGEMENT: '/reviewRestaurant',
     DB_NAME: 'restaurantDB',
     USER_DB: 'userDB',
+    PRODUCT_DB:'productDB',
     reviewRestaurantDB: 'reviewRestaurantDB',
     ingredientsDB:'ingredientsDB',
     TABLE_ROUTE: "/",
