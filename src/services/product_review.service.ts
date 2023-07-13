@@ -7,6 +7,7 @@ export {
   saveProduct_review,
   getProduct_reviews,
   deleteProduct_review,
+  updateProduct_review,
 };
 
 async function getProduct_review(
@@ -83,30 +84,40 @@ async function deleteProduct_review(
   }
 }
 
-export function updateProduct_review(productId: string, body: Product_review) {
-  throw new Error("Function not implemented.");
-}
-// async function updateProduct_review(
-//   Product_review: Product_review
-// ): Promise<Error | Product_review | null> {
-//   if (!Product_review || !Product_review.User) {
-//     return Error("The parameters given are not valid!");
-//   }
-//   try {
-//     const exists = await Product_reviewDB.findOne({
-//       user: Product_review.User,
-//     });
-//     if (exists) {
-//       return Error("The item added to the database already exists!");
-//     }
-//   } catch (ex: any) {
-//     return ex;
-//   }
-//   const NewreviewRestaurant = new Product_reviewDB({
-//     user: Product_review.User,
-//     ratingStars: Product_review.starRating,
-//     message: Product_review.Message,
-//   });
-//   NewreviewRestaurant.save();
-//   return NewreviewRestaurant;
+// export function updateProduct_review(productId: string, body: Product_review) {
+//   throw new Error("Function not implemented.");
 // }
+async function updateProduct_review(
+  id: string,
+  updatedData: Partial<Product_review>
+): Promise<Error | Product_review> {
+  try {
+    const existingProductReview = await Product_reviewDB.findById(id);
+
+    if (!existingProductReview) {
+      return new Error("Product review not found");
+    }
+
+    if (updatedData.Product) {
+      existingProductReview.Product = updatedData.Product;
+    }
+
+    if (updatedData.User) {
+      existingProductReview.User = updatedData.User;
+    }
+
+    if (updatedData.Message) {
+      existingProductReview.Message = updatedData.Message;
+    }
+
+    if (updatedData.starRating) {
+      existingProductReview.starRating = updatedData.starRating;
+    }
+
+    await existingProductReview.save();
+
+    return existingProductReview;
+  } catch (ex: any) {
+    return new Error(ex.message);
+  }
+}
