@@ -4,6 +4,10 @@ import { IExpressError } from './interfaces/IExpressError';
 export { makeApp };
 import mongoose from 'mongoose';
 import { IngredientsRouter } from './routes/ingredients.route';
+import { reviewRestaurantRouter } from './routes/reviewRestaurant.route';
+import { setUserRouter } from "./routes/user.route";
+import { tableRouter } from "./routes/table.route";
+import { setPhotoRouter } from "./routes/photo.route";
 
 let app: express.Application;
 
@@ -20,11 +24,14 @@ async function makeApp() {
 
   // routes
   app.use(env.Ingredients_MANAGEMENT, IngredientsRouter);
-
+  app.use(env.ReviewRestaurant_MANAGEMENT, reviewRestaurantRouter);
+  app.use(env.USER_MANAGEMENT, setUserRouter(express.Router()));
+  app.use(env.MAIN_ENDPOINT, tableRouter);
+  app.use(env.PHOTO_ROUTE, setPhotoRouter(express.Router()));
   // 404
   app.use((_req, _res, next) => {
-    const err: IExpressError = new Error('Not Found');
-    err.status = 404;
+    const err: IExpressError = new Error("Not Found");
+    err.status = 400;
     next(err);
   });
 
