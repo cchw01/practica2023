@@ -1,9 +1,8 @@
 import { ObjectId } from 'mongoose';
-import { User } from './user.model';
 
 export class reviewRestaurant {
   id!: ObjectId;
-  user!: User;
+  user!: ObjectId;
   reviewDate: Date;
   ratingStars: number;
   message: string;
