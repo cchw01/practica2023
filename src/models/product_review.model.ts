@@ -4,7 +4,7 @@ export class Product_review {
   id!: ObjectId;
   Product!: string;
   reviewDate: Date;
-  User!: string;
+  User!: ObjectId;
   Message!: string;
   starRating!: number;
 

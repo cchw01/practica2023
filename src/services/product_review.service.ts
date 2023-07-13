@@ -35,10 +35,6 @@ async function saveProduct_review(
     throw new Error("Invalid product");
   }
 
-  if (!product_review.User || typeof product_review.User !== "string") {
-    throw new Error("Invalid user");
-  }
-
   if (!product_review.Message || typeof product_review.Message !== "string") {
     throw new Error("Invalid message");
   }
@@ -84,9 +80,6 @@ async function deleteProduct_review(
   }
 }
 
-// export function updateProduct_review(productId: string, body: Product_review) {
-//   throw new Error("Function not implemented.");
-// }
 async function updateProduct_review(
   id: string,
   updatedData: Partial<Product_review>

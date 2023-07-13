@@ -8,7 +8,7 @@ const Product_reviewSchema = new Schema<Product_review>(
   {
     Product: { type: String, required: true, default: "" },
     reviewDate: { type: Date, required: true, default: Date.now() },
-    User: { type: String, required: true, default: "" },
+    User: { type: Schema.Types.ObjectId, ref: "User" },
     Message: { type: String, required: true, default: "" },
     starRating: { type: Number, required: true, default: 5 },
   },

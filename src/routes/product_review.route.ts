@@ -106,27 +106,6 @@ async function deleteProduct_review(
   console.log("deleteReview(),", product_review);
   return res.json(product_review);
 }
-// async function updateProduct_review(
-//   req: Request,
-//   res: Response,
-//   next: NextFunction
-// ) {
-//   const body: any = req.body;
-
-//   let product_review: Product_review = new Product_review();
-
-//   try {
-//     await product_reviewServices.updateProduct_review(body);
-//   } catch (ex: any) {
-//     return next(ex);
-//   }
-
-//   if (product_review instanceof Error) {
-//     return res.status(404).json("Cannot find item to update!");
-//   }
-
-//   return res.json(product_review);
-// }
 
 async function updateProduct_review(
   req: Request,
