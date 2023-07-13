@@ -11,7 +11,7 @@ const IngredientsSchema = new Schema<Ingredients>(
     isAlergen: { type: Boolean, required: true, default: false },
   },
   {
-    collection: env.Ingredients_MANAGEMENT,
+    collection: env.ingredientsDB,
   }
 );
 
