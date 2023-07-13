@@ -1,10 +1,11 @@
-import * as express from 'express';
-import { env } from './env';
-import { IExpressError } from './interfaces/IExpressError';
+import * as express from "express";
+import { env } from "./env";
+import { IExpressError } from "./interfaces/IExpressError";
 export { makeApp };
-import mongoose from 'mongoose';
-import { IngredientsRouter } from './routes/ingredients.route';
-import { reviewRestaurantRouter } from './routes/reviewRestaurant.route';
+import mongoose from "mongoose";
+import { IngredientsRouter } from "./routes/ingredients.route";
+import { rezervationRouter } from "./routes/rezervation.route";
+import { reviewRestaurantRouter } from "./routes/reviewRestaurant.route";
 import { setUserRouter } from "./routes/user.route";
 import { setTableRouter } from "./routes/table.route";
 import { setPhotoRouter } from "./routes/photo.route";
@@ -23,6 +24,7 @@ async function makeApp() {
   app.use(express.json());
 
   // routes
+  app.use(env.rezervation_MANAGEMENT, rezervationRouter);
   app.use(env.Ingredients_MANAGEMENT, IngredientsRouter);
   app.use(env.ReviewRestaurant_MANAGEMENT, reviewRestaurantRouter);
   app.use(env.USER_MANAGEMENT, setUserRouter(express.Router()));
@@ -45,7 +47,7 @@ async function makeApp() {
     ) => {
       res
         .status(err.status || 500)
-        .send(env.NODE_ENV === 'development' ? err : {});
+        .send(env.NODE_ENV === "development" ? err : {});
     }
   );
 

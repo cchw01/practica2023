@@ -5,7 +5,7 @@ function getEnv() {
   return {
     PORT: 80,
 
-    NODE_ENV: 'development',
+    NODE_ENV: "development",
 
     DISCOVERY_CLIENT_ROUTE: '/discovery/client',
     A_JSON_ROUTE: '/api/json',
@@ -21,5 +21,8 @@ function getEnv() {
     reviewRestaurantDB: 'reviewRestaurantDB',
     ingredientsDB:'ingredientsDB',
     TABLE_ROUTE: "/",
+    rezervation_MANAGEMENT: "/rezervation",
+    rezervationDB: "rezervationDB",
+    MAIN_ENDPOINT: "/",
   };
 }
