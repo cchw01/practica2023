@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { model, Schema } = mongoose;
 
-import { env } from "../env";
+// import { env } from "../env";
 import { Photo } from "../models/photo.model";
 
 const photoSchema = new Schema<Photo>(
@@ -10,7 +10,7 @@ const photoSchema = new Schema<Photo>(
     description: { type: String, default: "" },
   },
   {
-    collection: env.DB_NAME,
+    collection: "photoDB",
   }
 );
 

@@ -11,6 +11,7 @@ function getEnv() {
     USER_ROUTE: "/api/user",
     USER_MANAGEMENT: "/user",
     PHOTO_ROUTE: "/photo",
+    PRODUCUT_REVIEW: "/product_review",
 
     MONGO_URL: "mongodb://127.0.0.1:27017",
     DB_NAME: "restaurantDB",
