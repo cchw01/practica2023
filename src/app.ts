@@ -26,7 +26,7 @@ async function makeApp() {
   app.use(env.Ingredients_MANAGEMENT, IngredientsRouter);
   app.use(env.ReviewRestaurant_MANAGEMENT, reviewRestaurantRouter);
   app.use(env.USER_MANAGEMENT, setUserRouter(express.Router()));
-  app.use(env.TABLE_ENDPOINT, setTableRouter(express.Router()));
+  app.use(env.TABLE_ROUTE, setTableRouter(express.Router()));
   app.use(env.PHOTO_ROUTE, setPhotoRouter(express.Router()));
   // 404
   app.use((_req, _res, next) => {

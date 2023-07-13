@@ -20,6 +20,6 @@ function getEnv() {
     USER_DB: 'userDB',
     reviewRestaurantDB: 'reviewRestaurantDB',
     ingredientsDB:'ingredientsDB',
-    TABLE_ENDPOINT: "/",
+    TABLE_ROUTE: "/",
   };
 }
