@@ -1,6 +1,6 @@
-import { Router, Request, Response, NextFunction } from 'express';
-import { Category } from '../models/category.model';
-import * as categoryService from '../services/category.service';
+import { Router, Request, Response, NextFunction } from "express";
+import { Category } from "../models/category.model";
+import * as categoryService from "../services/category.service";
 
 //create inventory item
 const inventoryCategoryRouter = Router();
@@ -27,7 +27,7 @@ inventoryCategoryRouter.post(
 
 //get inventory item
 inventoryCategoryRouter.get(
-  '/:id',
+  "/:id",
   async (req: Request, res: Response, next: NextFunction) => {
     let randomVariable: Error | Category | null;
     try {
@@ -45,7 +45,7 @@ inventoryCategoryRouter.get(
 
 //get all inventory items
 inventoryCategoryRouter.get(
-  '/',
+  "/",
   async (_req: Request, res: Response, next: NextFunction) => {
     let randomVariable: Error | Category[] | null;
     try {
@@ -68,10 +68,7 @@ inventoryCategoryRouter.put(
     const body = req.body;
     let randomVariable: Error | Category | string | null;
     try {
-      randomVariable = await categoryService.updateCategory(
-        req.params.id,
-        body
-      );
+      randomVariable = await categoryService.updateCategory(req.params.id, body);
     } catch (ex) {
       return next(ex);
     }
