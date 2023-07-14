@@ -13,15 +13,7 @@ import { setTableRouter } from "./routes/table.route";
 import { setPhotoRouter } from "./routes/photo.route";
 import { setProductRouter } from "./routes/product.route";
 import { setProduct_reviewRouter } from "./routes/product_review.route";
-import { inventoryCategoryRouter } from "./routes/category.route";
-import { inventoryOfferRouter } from "./routes/offer.route";
-import { rezervationRouter } from './routes/rezervation.route';
-import { IngredientsRouter } from './routes/ingredients.route';
-import { reviewRestaurantRouter } from './routes/reviewRestaurant.route';
-import { setUserRouter } from './routes/user.route';
-import { setTableRouter } from './routes/table.route';
-import { setPhotoRouter } from './routes/photo.route';
-import { setProductRouter } from './routes/product.route';
+
 
 let app: express.Application;
 
