@@ -8,8 +8,7 @@ export async function postProduct(product: Product): Promise<Error | Product> {
     !product.price ||
     !product.isAvailable||
     !product.photo ||
-    !product.ingredientsList ||
-    !product.reviewsList
+    !product.ingredientsList 
     ) 
     return Error("The parameters given are not valid!");
     try {
@@ -25,8 +24,7 @@ export async function postProduct(product: Product): Promise<Error | Product> {
        price:product.price,
        isAvailable:product.isAvailable,
        photo:product.photo,
-       ingredientsList:product.ingredientsList,
-       reviewsList:product.reviewsList
+       ingredientsList:product.ingredientsList
       });
       await NewProduct.save();
       console.log("save product check");
