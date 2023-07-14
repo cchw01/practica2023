@@ -2,22 +2,22 @@ const env = getEnv();
 export { env };
 
 function getEnv() {
+  // use process.env, process.argv
   return {
     PORT: 80,
-
-    NODE_ENV: "development",
-
-    DISCOVERY_CLIENT_ROUTE: '/discovery/client',
-    A_JSON_ROUTE: '/api/json',
-
-    MONGO_URL: 'mongodb://127.0.0.1:27017',
-    USER_ROUTE: '/api/user',
+    NODE_ENV: 'development',
+		MONGO_URL: "mongodb://127.0.0.1:27017/restaurant",
+		OFFER_DB: "offerDB",
+    CATEGORY_MANAGEMENT: "/category",
     USER_MANAGEMENT: '/user',
     Ingredients_MANAGEMENT: '/ingredients',
     PHOTO_ROUTE: '/photo',
+    PRODUCT_MANAGEMENT: '/product',
     ReviewRestaurant_MANAGEMENT: '/reviewRestaurant',
     DB_NAME: 'restaurantDB',
     USER_DB: 'userDB',
+    PRODUCT_DB:'productDB',
+		OFFER_MANAGEMENT: "/offer",
     reviewRestaurantDB: 'reviewRestaurantDB',
     ingredientsDB:'ingredientsDB',
     TABLE_ROUTE: "/",
