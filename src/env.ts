@@ -2,19 +2,29 @@ const env = getEnv();
 export { env };
 
 function getEnv() {
+  // use process.env, process.argv
   return {
     PORT: 80,
-
     NODE_ENV: "development",
-
-    DISCOVERY_CLIENT_ROUTE: "/discovery/client",
-    USER_ROUTE: "/api/user",
+    MONGO_URL: "mongodb://127.0.0.1:27017/restaurant",
+    OFFER_DB: "offerDB",
+    CATEGORY_MANAGEMENT: "/category",
     USER_MANAGEMENT: "/user",
+    Ingredients_MANAGEMENT: "/ingredients",
     PHOTO_ROUTE: "/photo",
+    PRODUCT_MANAGEMENT: "/product",
     PRODUCT_REVIEW: "/product_review",
 
-    MONGO_URL: "mongodb://127.0.0.1:27017",
+    ReviewRestaurant_MANAGEMENT: "/reviewRestaurant",
     DB_NAME: "restaurantDB",
+    USER_DB: "userDB",
+    PRODUCT_DB: "productDB",
+    OFFER_MANAGEMENT: "/offer",
+    reviewRestaurantDB: "reviewRestaurantDB",
+    ingredientsDB: "ingredientsDB",
+    TABLE_ROUTE: "/",
+    rezervation_MANAGEMENT: "/rezervation",
+    rezervationDB: "rezervationDB",
     MAIN_ENDPOINT: "/",
   };
 }
