@@ -2,7 +2,7 @@ import { ObjectId } from "mongoose";
 
 export class Offer {
 	_id!: ObjectId;
-	productList!: string[];
+	productList!: ObjectId[];
     discountPercent!: number;
     startDate!: Date;
     endDate!: Date;
