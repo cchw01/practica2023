@@ -1,19 +1,19 @@
-import { Router, Request, Response, NextFunction } from "express";
-import { Category } from "../models/category.model";
-import * as categoryService from "../services/category.service";
+import { Router, Request, Response, NextFunction } from 'express';
+import { Offer } from '../models/offer.model';
+import * as offerService from '../services/offer.service';
 
 //create inventory item
-const inventoryCategoryRouter = Router();
+const inventoryOfferRouter = Router();
 
-inventoryCategoryRouter.post(
-  "/",
+inventoryOfferRouter.post(
+  '/',
   async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
-    let randomVariable: Error | Category;
+    let randomVariable: Error | Offer;
     console.log(body);
 
     try {
-      randomVariable = await categoryService.postCategory(body);
+      randomVariable = await offerService.postOffer(body);
     } catch (ex) {
       return next(ex);
     }
@@ -26,12 +26,12 @@ inventoryCategoryRouter.post(
 );
 
 //get inventory item
-inventoryCategoryRouter.get(
-  "/:id",
+inventoryOfferRouter.get(
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
-     let randomVariable: Error | Category | null;
-      try {
-      randomVariable = await categoryService.getCategoryById(req.params.id);
+    let randomVariable: Error | Offer | null;
+    try {
+      randomVariable = await offerService.getOfferById(req.params.id);
     } catch (ex) {
       return next(ex);
     }
@@ -44,14 +44,14 @@ inventoryCategoryRouter.get(
 );
 
 //get all inventory items
-inventoryCategoryRouter.get(
-  "/",
+inventoryOfferRouter.get(
+  '/',
   async (_req: Request, res: Response, next: NextFunction) => {
-    let randomVariable: Error | Category[] | null;
+    let randomVariable: Error | Offer[] | null;
     try {
-       randomVariable = await categoryService.getAllCategories();
-     } catch (ex) {
-       return next(ex);
+      randomVariable = await offerService.getAllOffers();
+    } catch (ex) {
+      return next(ex);
     }
     if (randomVariable instanceof Error) {
       return next(randomVariable);
@@ -62,13 +62,13 @@ inventoryCategoryRouter.get(
 );
 
 //update inventory item
-inventoryCategoryRouter.put(
-  "/:id",
+inventoryOfferRouter.put(
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
-    let randomVariable: Error | Category | string | null;
+    let randomVariable: Error | Offer | string | null;
     try {
-      randomVariable = await categoryService.updateCategory(req.params.id, body);
+      randomVariable = await offerService.updateOffer(req.params.id, body);
     } catch (ex) {
       return next(ex);
     }
@@ -81,12 +81,12 @@ inventoryCategoryRouter.put(
 );
 
 //delete inventory item
-inventoryCategoryRouter.delete(
-  "/:id",
+inventoryOfferRouter.delete(
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
     let randomVariable: Error | string | null;
     try {
-      randomVariable = await categoryService.deleteCategory(req.params.id);
+      randomVariable = await offerService.deleteOffer(req.params.id);
     } catch (ex) {
       return next(ex);
     }
@@ -98,4 +98,4 @@ inventoryCategoryRouter.delete(
   }
 );
 
-export { inventoryCategoryRouter };
+export { inventoryOfferRouter };

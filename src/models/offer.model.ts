@@ -1,13 +1,13 @@
-import { ObjectId } from "mongoose";
+import { ObjectId } from 'mongoose';
 
 export class Offer {
-	_id!: ObjectId;
-	productList!: ObjectId[];
-    discountPercent!: number;
-    startDate!: Date;
-    endDate!: Date;
+  _id!: ObjectId;
+  productList!: ObjectId[];
+  discountPercent!: number;
+  startDate!: Date;
+  endDate!: Date;
 
-	constructor(offer?: Partial<Offer>) {
-		Object.assign(this, offer);
-	}
+  constructor(offer?: Partial<Offer>) {
+    Object.assign(this, offer);
+  }
 }

@@ -1,19 +1,19 @@
-import { Router, Request, Response, NextFunction } from "express";
-import { Offer } from "../models/offer.model";
-import * as offerService from "../services/offer.service";
+import { Router, Request, Response, NextFunction } from 'express';
+import { Category } from '../models/category.model';
+import * as categoryService from '../services/category.service';
 
 //create inventory item
-const inventoryOfferRouter = Router();
+const inventoryCategoryRouter = Router();
 
-inventoryOfferRouter.post(
-  "/",
+inventoryCategoryRouter.post(
+  '/',
   async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
-    let randomVariable: Error | Offer;
+    let randomVariable: Error | Category;
     console.log(body);
 
     try {
-      randomVariable = await offerService.postOffer(body);
+      randomVariable = await categoryService.postCategory(body);
     } catch (ex) {
       return next(ex);
     }
@@ -26,12 +26,12 @@ inventoryOfferRouter.post(
 );
 
 //get inventory item
-inventoryOfferRouter.get(
-  "/:id",
+inventoryCategoryRouter.get(
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
-    let randomVariable: Error | Offer | null;
+    let randomVariable: Error | Category | null;
     try {
-      randomVariable = await offerService.getOfferById(req.params.id);
+      randomVariable = await categoryService.getCategoryById(req.params.id);
     } catch (ex) {
       return next(ex);
     }
@@ -44,12 +44,12 @@ inventoryOfferRouter.get(
 );
 
 //get all inventory items
-inventoryOfferRouter.get(
-  "/",
+inventoryCategoryRouter.get(
+  '/',
   async (_req: Request, res: Response, next: NextFunction) => {
-    let randomVariable: Error | Offer[] | null;
+    let randomVariable: Error | Category[] | null;
     try {
-      randomVariable = await offerService.getAllOffers();
+      randomVariable = await categoryService.getAllCategories();
     } catch (ex) {
       return next(ex);
     }
@@ -62,13 +62,16 @@ inventoryOfferRouter.get(
 );
 
 //update inventory item
-inventoryOfferRouter.put(
-  "/:id",
+inventoryCategoryRouter.put(
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
-    let randomVariable: Error | Offer | string | null;
+    let randomVariable: Error | Category | string | null;
     try {
-      randomVariable = await offerService.updateOffer(req.params.id, body);
+      randomVariable = await categoryService.updateCategory(
+        req.params.id,
+        body
+      );
     } catch (ex) {
       return next(ex);
     }
@@ -81,12 +84,12 @@ inventoryOfferRouter.put(
 );
 
 //delete inventory item
-inventoryOfferRouter.delete(
-  "/:id",
+inventoryCategoryRouter.delete(
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
     let randomVariable: Error | string | null;
     try {
-      randomVariable = await offerService.deleteOffer(req.params.id);
+      randomVariable = await categoryService.deleteCategory(req.params.id);
     } catch (ex) {
       return next(ex);
     }
@@ -98,4 +101,4 @@ inventoryOfferRouter.delete(
   }
 );
 
-export { inventoryOfferRouter };
+export { inventoryCategoryRouter };

@@ -1,19 +1,17 @@
-import * as express from "express";
-import { env } from "./env";
-import { IExpressError } from "./interfaces/IExpressError";
+import * as express from 'express';
+import { env } from './env';
+import { IExpressError } from './interfaces/IExpressError';
 export { makeApp };
-import mongoose from "mongoose";
-import { IngredientsRouter } from "./routes/ingredients.route";
-import { rezervationRouter } from "./routes/rezervation.route";
-import { reviewRestaurantRouter } from "./routes/reviewRestaurant.route";
-import { inventoryCategoryRouter } from "./routes/category.routes";
-import { inventoryOfferRouter } from "./routes/offer.routes";
+import mongoose from 'mongoose';
+import { rezervationRouter } from './routes/rezervation.route';
+import { inventoryCategoryRouter } from './routes/category.route';
+import { inventoryOfferRouter } from './routes/offer.route';
 import { IngredientsRouter } from './routes/ingredients.route';
 import { reviewRestaurantRouter } from './routes/reviewRestaurant.route';
-import { setUserRouter } from "./routes/user.route";
-import { setTableRouter } from "./routes/table.route";
-import { setPhotoRouter } from "./routes/photo.route";
-import { setProductRouter } from "./routes/product.route";
+import { setUserRouter } from './routes/user.route';
+import { setTableRouter } from './routes/table.route';
+import { setPhotoRouter } from './routes/photo.route';
+import { setProductRouter } from './routes/product.route';
 
 let app: express.Application;
 
@@ -41,7 +39,7 @@ async function makeApp() {
 
   // 404
   app.use((_req, _res, next) => {
-    const err: IExpressError = new Error("Not Found");
+    const err: IExpressError = new Error('Not Found');
     err.status = 400;
     next(err);
   });
@@ -56,7 +54,7 @@ async function makeApp() {
     ) => {
       res
         .status(err.status || 500)
-        .send(env.NODE_ENV === "development" ? err : {});
+        .send(env.NODE_ENV === 'development' ? err : {});
     }
   );
 
