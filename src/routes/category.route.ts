@@ -6,7 +6,7 @@ import * as categoryService from "../services/category.service";
 const inventoryCategoryRouter = Router();
 
 inventoryCategoryRouter.post(
-  "/",
+  '/',
   async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
     let randomVariable: Error | Category;
@@ -29,8 +29,8 @@ inventoryCategoryRouter.post(
 inventoryCategoryRouter.get(
   "/:id",
   async (req: Request, res: Response, next: NextFunction) => {
-     let randomVariable: Error | Category | null;
-      try {
+    let randomVariable: Error | Category | null;
+    try {
       randomVariable = await categoryService.getCategoryById(req.params.id);
     } catch (ex) {
       return next(ex);
@@ -49,9 +49,9 @@ inventoryCategoryRouter.get(
   async (_req: Request, res: Response, next: NextFunction) => {
     let randomVariable: Error | Category[] | null;
     try {
-       randomVariable = await categoryService.getAllCategories();
-     } catch (ex) {
-       return next(ex);
+      randomVariable = await categoryService.getAllCategories();
+    } catch (ex) {
+      return next(ex);
     }
     if (randomVariable instanceof Error) {
       return next(randomVariable);
@@ -63,7 +63,7 @@ inventoryCategoryRouter.get(
 
 //update inventory item
 inventoryCategoryRouter.put(
-  "/:id",
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
     let randomVariable: Error | Category | string | null;
@@ -82,7 +82,7 @@ inventoryCategoryRouter.put(
 
 //delete inventory item
 inventoryCategoryRouter.delete(
-  "/:id",
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
     let randomVariable: Error | string | null;
     try {

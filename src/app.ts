@@ -5,12 +5,15 @@ export { makeApp };
 import mongoose from "mongoose";
 import { inventoryCategoryRouter } from "./routes/category.route";
 import { inventoryOfferRouter } from "./routes/offer.routes";
+import { rezervationRouter } from './routes/rezervation.route';
+import { inventoryCategoryRouter } from './routes/category.route';
+import { inventoryOfferRouter } from './routes/offer.route';
 import { IngredientsRouter } from './routes/ingredients.route';
 import { reviewRestaurantRouter } from './routes/reviewRestaurant.route';
-import { setUserRouter } from "./routes/user.route";
-import { setTableRouter } from "./routes/table.route";
-import { setPhotoRouter } from "./routes/photo.route";
-import { setProductRouter } from "./routes/product.route";
+import { setUserRouter } from './routes/user.route';
+import { setTableRouter } from './routes/table.route';
+import { setPhotoRouter } from './routes/photo.route';
+import { setProductRouter } from './routes/product.route';
 
 let app: express.Application;
 
@@ -26,6 +29,7 @@ async function makeApp() {
   app.use(express.json());
 
   // routes
+  app.use(env.rezervation_MANAGEMENT, rezervationRouter);
   app.use(env.CATEGORY_MANAGEMENT, inventoryCategoryRouter);
   app.use(env.OFFER_MANAGEMENT, inventoryOfferRouter);
   app.use(env.Ingredients_MANAGEMENT, IngredientsRouter);
@@ -37,7 +41,7 @@ async function makeApp() {
 
   // 404
   app.use((_req, _res, next) => {
-    const err: IExpressError = new Error("Not Found");
+    const err: IExpressError = new Error('Not Found');
     err.status = 400;
     next(err);
   });

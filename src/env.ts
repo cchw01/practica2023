@@ -6,11 +6,9 @@ function getEnv() {
   return {
     PORT: 80,
     NODE_ENV: 'development',
-
-		MONGO_URL: "mongodb://127.0.0.1:27017/restaurant",
-    
-		OFFER_DB: "offerDB",
-    CATEGORY_MANAGEMENT: "/category",
+    MONGO_URL: 'mongodb://127.0.0.1:27017/restaurant',
+    OFFER_DB: 'offerDB',
+    CATEGORY_MANAGEMENT: '/category',
     USER_MANAGEMENT: '/user',
     Ingredients_MANAGEMENT: '/ingredients',
     PHOTO_ROUTE: '/photo',
@@ -22,7 +20,10 @@ function getEnv() {
     CATEGORY_DB: 'category',
 		OFFER_MANAGEMENT: "/offer",
     reviewRestaurantDB: 'reviewRestaurantDB',
-    ingredientsDB:'ingredientsDB',
-    TABLE_ROUTE: "/",
+    ingredientsDB: 'ingredientsDB',
+    TABLE_ROUTE: '/',
+    rezervation_MANAGEMENT: '/rezervation',
+    rezervationDB: 'rezervationDB',
+    MAIN_ENDPOINT: '/',
   };
 }
