@@ -10,8 +10,7 @@ const ProductSchema = new Schema<Product>(
     isAvailable: { type: Boolean, required: true },
     price: {type: Number, required:true},
     photo: { type: Schema.Types.ObjectId, ref: 'Photo'},
-    ingredientsList:[{ type: Schema.Types.ObjectId, ref: 'Ingredients'}],
-    reviewsList: [{ type: Schema.Types.ObjectId, ref: 'reviewRestaurant'}]  
+    ingredientsList:[{ type: Schema.Types.ObjectId, ref: 'Ingredients'}]
   },
   {
     collection: env.PRODUCT_DB,
