@@ -6,7 +6,7 @@ import { Product_review } from "../models/product_review.model";
 
 const Product_reviewSchema = new Schema<Product_review>(
   {
-    Product: { type: String, required: true, default: "" },
+    Product: { type: Schema.Types.ObjectId },
     reviewDate: { type: Date, required: true, default: Date.now() },
     User: { type: Schema.Types.ObjectId, ref: "User" },
     Message: { type: String, required: true, default: "" },

@@ -2,7 +2,7 @@ import { ObjectId } from "mongoose";
 
 export class Product_review {
   id!: ObjectId;
-  Product!: string;
+  Product!: ObjectId;
   reviewDate: Date;
   User!: ObjectId;
   Message!: string;
