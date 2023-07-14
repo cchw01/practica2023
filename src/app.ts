@@ -3,7 +3,7 @@ import { env } from './env';
 import { IExpressError } from './interfaces/IExpressError';
 export { makeApp };
 import mongoose from "mongoose";
-import { inventoryCategoryRouter } from "./routes/category.routes";
+import { inventoryCategoryRouter } from "./routes/category.route";
 import { inventoryOfferRouter } from "./routes/offer.routes";
 import { IngredientsRouter } from './routes/ingredients.route';
 import { reviewRestaurantRouter } from './routes/reviewRestaurant.route';
