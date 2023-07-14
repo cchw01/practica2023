@@ -80,40 +80,6 @@ export async function deleteOrder(_id: string) {
   }
 }
 
-// export async function updateOrder(
-//   newOrder: Partial<Order>
-// ): Promise<Error | Order | undefined> {
-//   if (!newOrder || typeof newOrder !== "object") {
-//     return Error("Invalid parameters!");
-//   }
-
-//   try {
-//     var updateResponse = await OrderDB.findOneAndUpdate<Order>(
-//       { _id: newOrder._id },
-//       {
-//         user: newOrder.user,
-//         address: newOrder.address,
-//         productList: newOrder.productList,
-//         deliveryType: newOrder.deliveryType,
-//         totalPrice: newOrder.totalPrice,
-//         userNotes: newOrder.userNotes,
-//         date: newOrder.date,
-//         orderStatus: newOrder.orderStatus
-//       }
-//     );
-
-//     if (updateResponse == null) {
-//       return Error("Invalid");
-//     }
-//   } catch (ex: any) {
-//     return ex;
-//   }
-
-//   return undefined;
-// }
-
-
-
 export async function updateOrder(newOrder:Partial<Order>): Promise<Error | Order | undefined> {
   if (!newOrder || typeof newOrder !== "object") {
     return Error("invalid params");
