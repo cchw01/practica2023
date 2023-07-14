@@ -7,10 +7,10 @@ import { Category } from "../models/category.model";
 const CategorySchema = new Schema<Category>(
   {
     name: { type: String, required: true, default: "" },
-    productList: [{ type: Schema.Types.ObjectId , required: false, default:"" }],
+    productList: [{ type: Schema.Types.ObjectId, required: false, default: "" },],
   },
   {
-    collection: env.CATEGORY_MANAGEMENT,
+    collection: env.CATEGORY_DB,
   }
 );
 

@@ -1,6 +1,6 @@
 //import { ObjectId } from "mongoose";
 import { Category } from "../models/category.model";
-import { CategoryDB } from "../schema/category.schema";
+import { CategoryDB } from "../schemas/category.schema";
 
 export async function getAllCategories(): Promise<Error | Category[]> {
 
