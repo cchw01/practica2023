@@ -11,7 +11,8 @@ export async function postUser(user: User): Promise<Error | User> {
     !user.lastName ||
     !user.phoneNumber ||
     !user.password ||
-    !user.role
+    !user.role ||
+    !user.email
   ) {
     return Error("The parameters given are not valid!");
   }
