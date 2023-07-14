@@ -1,12 +1,12 @@
-import { Router, Request, Response, NextFunction } from "express";
-import { Category } from "../models/category.model";
-import * as categoryService from "../services/category.service";
+import { Router, Request, Response, NextFunction } from 'express';
+import { Category } from '../models/category.model';
+import * as categoryService from '../services/category.service';
 
 //create inventory item
 const inventoryCategoryRouter = Router();
 
 inventoryCategoryRouter.post(
-  "/",
+  '/',
   async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
     let randomVariable: Error | Category;
@@ -27,10 +27,10 @@ inventoryCategoryRouter.post(
 
 //get inventory item
 inventoryCategoryRouter.get(
-  "/:id",
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
-     let randomVariable: Error | Category | null;
-      try {
+    let randomVariable: Error | Category | null;
+    try {
       randomVariable = await categoryService.getCategoryById(req.params.id);
     } catch (ex) {
       return next(ex);
@@ -45,13 +45,13 @@ inventoryCategoryRouter.get(
 
 //get all inventory items
 inventoryCategoryRouter.get(
-  "/",
+  '/',
   async (_req: Request, res: Response, next: NextFunction) => {
     let randomVariable: Error | Category[] | null;
     try {
-       randomVariable = await categoryService.getAllCategories();
-     } catch (ex) {
-       return next(ex);
+      randomVariable = await categoryService.getAllCategories();
+    } catch (ex) {
+      return next(ex);
     }
     if (randomVariable instanceof Error) {
       return next(randomVariable);
@@ -63,12 +63,15 @@ inventoryCategoryRouter.get(
 
 //update inventory item
 inventoryCategoryRouter.put(
-  "/:id",
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
     let randomVariable: Error | Category | string | null;
     try {
-      randomVariable = await categoryService.updateCategory(req.params.id, body);
+      randomVariable = await categoryService.updateCategory(
+        req.params.id,
+        body
+      );
     } catch (ex) {
       return next(ex);
     }
@@ -82,7 +85,7 @@ inventoryCategoryRouter.put(
 
 //delete inventory item
 inventoryCategoryRouter.delete(
-  "/:id",
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
     let randomVariable: Error | string | null;
     try {

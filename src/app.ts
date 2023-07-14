@@ -4,7 +4,7 @@ import { IExpressError } from './interfaces/IExpressError';
 export { makeApp };
 import mongoose from 'mongoose';
 import { rezervationRouter } from './routes/rezervation.route';
-import { inventoryCategoryRouter } from './routes/category.routes';
+import { inventoryCategoryRouter } from './routes/category.route';
 import { inventoryOfferRouter } from './routes/offer.route';
 import { IngredientsRouter } from './routes/ingredients.route';
 import { reviewRestaurantRouter } from './routes/reviewRestaurant.route';
