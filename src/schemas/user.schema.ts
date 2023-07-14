@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 const { model, Schema } = mongoose;
 
-import { env } from '../env';
-import { User } from '../models/user.model';
+import { env } from "../env";
+import { User } from "../models/user.model";
 
 const UserSchema = new Schema<User>(
   {
@@ -18,6 +18,6 @@ const UserSchema = new Schema<User>(
   }
 );
 
-const UserDB = model<User>('user', UserSchema);
+const UserDB = model<User>("user", UserSchema);
 
 export { UserDB };
