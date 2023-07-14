@@ -9,7 +9,7 @@ import { Order, deliveryType, orderStatus } from "../models/order.model";
 
 const OrderSchema = new Schema<Order>(
   {
-    user: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    user: { type: Schema.Types.ObjectId, ref: 'User' },
     address: { type: String, required: true },
     productList: { type: String, required: true },
     deliveryType: { type: String, enum: Object.values(deliveryType), required: true },

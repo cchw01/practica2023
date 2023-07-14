@@ -14,7 +14,7 @@ const UserSchema = new Schema<User>(
     role: { type: String, required: true },
   },
   {
-    collection: env.DB_NAME,
+    collection: env.USER_DB,
   }
 );
 

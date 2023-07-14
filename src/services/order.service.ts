@@ -4,7 +4,7 @@ import { Order } from "../models/order.model";
 export async function postOrder(order: Order): Promise<Error | Order> {
   if (
     !order ||
-    !order.user ||
+    !order.user||
     !order.address ||
     !order.productList ||
     !order.deliveryType ||
@@ -16,10 +16,8 @@ export async function postOrder(order: Order): Promise<Error | Order> {
     console.log(order);
     return Error("The parameters given are not valid!");
   }
-
-  try {
-    const orderExists = await OrderDB.findOne({ 
-      order: order.user,
+  const newOrder = new OrderDB({
+      user: order.user,
       address: order.address,
       productList: order.productList,
       deliveryType: order.deliveryType,
@@ -27,16 +25,24 @@ export async function postOrder(order: Order): Promise<Error | Order> {
       userNotes: order.userNotes,
       date: order.date,
       orderStatus: order.orderStatus
-    });
+  });
+
+  try {
+    const orderExists = await OrderDB.findOne(order);
     if (orderExists) {
       return Error("The order added to the database already exists!");
     }
-    
+  } catch (ex: any) {
+    return ex;
+  }
+
+  try{
+    await newOrder.save();
   } catch (ex: any) {
     return ex;
   }
   
-  return order;
+  return newOrder;
 }
 
 export async function getOrder(_id: string): Promise<Error | Order | null> {
@@ -74,22 +80,55 @@ export async function deleteOrder(_id: string) {
   }
 }
 
-export async function updateOrder(
-  newOrder: Partial<Order>
-): Promise<Error | Order | undefined> {
+// export async function updateOrder(
+//   newOrder: Partial<Order>
+// ): Promise<Error | Order | undefined> {
+//   if (!newOrder || typeof newOrder !== "object") {
+//     return Error("Invalid parameters!");
+//   }
+
+//   try {
+//     var updateResponse = await OrderDB.findOneAndUpdate<Order>(
+//       { _id: newOrder._id },
+//       {
+//         user: newOrder.user,
+//         address: newOrder.address,
+//         productList: newOrder.productList,
+//         deliveryType: newOrder.deliveryType,
+//         totalPrice: newOrder.totalPrice,
+//         userNotes: newOrder.userNotes,
+//         date: newOrder.date,
+//         orderStatus: newOrder.orderStatus
+//       }
+//     );
+
+//     if (updateResponse == null) {
+//       return Error("Invalid");
+//     }
+//   } catch (ex: any) {
+//     return ex;
+//   }
+
+//   return undefined;
+// }
+
+
+
+export async function updateOrder(newOrder:Partial<Order>): Promise<Error | Order | undefined> {
   if (!newOrder || typeof newOrder !== "object") {
-    return Error("Invalid parameters!");
+    return Error("invalid params");
   }
 
   try {
-    var updateResponse = await OrderDB.findOneAndUpdate<Order>(
-      { _id: newOrder._id },
-      newOrder
-    );
+      var updateResponse = await OrderDB.findOneAndUpdate<Order>({
+        _id:newOrder._id
+      }, 
+      newOrder);
+      
+      if(updateResponse==null){
+        return Error("Invalid");
+      }
 
-    if (updateResponse == null) {
-      return Error("Invalid");
-    }
   } catch (ex: any) {
     return ex;
   }

@@ -14,8 +14,10 @@ function getEnv() {
     ORDER_ROUTE: "/order",
 
     MONGO_URL: "mongodb://127.0.0.1:27017/restaurant",
-    ORDER_DB:"orders",
-    TABLE_DB:"table",
-    MAIN_ENDPOINT: "/",
+    PHOTO_DB:"photoDB",
+    USER_DB:"userDB",
+    ORDER_DB:"orderDB",
+    TABLE_DB:"tableDB",
+    TABLE_ROUTE: "/table",
   };
 }

@@ -1,9 +1,8 @@
 import { Date, ObjectId } from "mongoose";
-import { User } from "./user.model";
 
 export class Order {
   _id!: ObjectId;
-  user!: User; 
+  user!: ObjectId; 
   address!: string;
   productList!: string;
   deliveryType!: deliveryType;

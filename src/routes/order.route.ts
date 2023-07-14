@@ -88,19 +88,37 @@ async function deleteOrder(req: Request, res: Response, next: NextFunction) {
   return res.json(order);
 }
 
+// async function updateOrder(req: Request, res: Response, next: NextFunction) {
+//   const body: any = req.body;
+
+//   let order: Error | Order | undefined;
+//   try {
+//     order = await orderService.updateOrder(body);
+//   } catch (ex) {
+//     return next(ex);
+//   }
+
+//   if (order instanceof Error) {
+//     return res.status(404).json("Cannot find order to update!");
+//   }
+
+//   return res.status(200).json("Order successfully updated!");
+// }
+
+
 async function updateOrder(req: Request, res: Response, next: NextFunction) {
   const body: any = req.body;
 
-  let order: Error | Order | undefined;
+  let anOrder: Error | Order | undefined;
   try {
-    order = await orderService.updateOrder(body);
+    anOrder = await orderService.updateOrder(body);
   } catch (ex) {
     return next(ex);
   }
 
-  if (order instanceof Error) {
-    return res.status(404).json("Cannot find order to update!");
+  if (anOrder instanceof Error) {
+    return res.status(404).json("Cannot find item to update!");
   }
 
-  return res.status(200).json("Order successfully updated!");
+  return res.status(200).json("Item successfully updated!");
 }

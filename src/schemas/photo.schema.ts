@@ -10,7 +10,7 @@ const photoSchema = new Schema<Photo>(
     description: { type: String, default: "" },
   },
   {
-    collection: env.DB_NAME,
+    collection: env.PHOTO_DB,
   }
 );
 

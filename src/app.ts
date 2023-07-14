@@ -4,7 +4,7 @@ import { IExpressError } from "./interfaces/IExpressError";
 import { setUserRouter } from "./routes/user.route";
 export { makeApp };
 import mongoose from "mongoose";
-import { tableRouter } from "./routes/table.route";
+import { setTableRouter } from "./routes/table.route";
 import { setPhotoRouter } from "./routes/photo.route";
 import { setOrderRouter } from "./routes/order.route";
 
@@ -25,7 +25,7 @@ async function makeApp() {
   app.use(env.USER_MANAGEMENT, setUserRouter(express.Router()));
 
   // routes
-  app.use(env.MAIN_ENDPOINT, tableRouter);
+  app.use(env.TABLE_ROUTE, setTableRouter(express.Router()));
 
   //
   app.use(env.ORDER_ROUTE, setOrderRouter(express.Router()));

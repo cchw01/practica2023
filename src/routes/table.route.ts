@@ -2,15 +2,16 @@ import { Router, Request, Response, NextFunction } from "express";
 import { Table } from "../models/table.model";
 import * as tableService from "../services/table.service";
 
-export { tableRouter };
+export { setTableRouter };
 
-const tableRouter = Router();
-
-tableRouter.get("/getTable", getATable);
-tableRouter.get("/getTables", getAllTables);
-tableRouter.post("/createTable", postATable);
-tableRouter.delete("/deleteTable", deleteATable);
-tableRouter.put("/updateTable", updateATable);
+function setTableRouter(router: Router): Router {
+  router.get("/:location", getATable);
+  router.get("/", getAllTables);
+  router.post("/", postATable);
+  router.delete("/", deleteATable);
+  router.put("/", updateATable);
+  return router;
+}
 
 async function getAllTables(req: Request, res: Response, next: NextFunction) {
   
