@@ -1,12 +1,12 @@
-import { Router, Request, Response, NextFunction } from "express";
-import { Offer } from "../models/offer.model";
-import * as offerService from "../services/offer.service";
+import { Router, Request, Response, NextFunction } from 'express';
+import { Offer } from '../models/offer.model';
+import * as offerService from '../services/offer.service';
 
 //create inventory item
 const inventoryOfferRouter = Router();
 
 inventoryOfferRouter.post(
-  "/",
+  '/',
   async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
     let randomVariable: Error | Offer;
@@ -27,7 +27,7 @@ inventoryOfferRouter.post(
 
 //get inventory item
 inventoryOfferRouter.get(
-  "/:id",
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
     let randomVariable: Error | Offer | null;
     try {
@@ -45,7 +45,7 @@ inventoryOfferRouter.get(
 
 //get all inventory items
 inventoryOfferRouter.get(
-  "/",
+  '/',
   async (_req: Request, res: Response, next: NextFunction) => {
     let randomVariable: Error | Offer[] | null;
     try {
@@ -63,7 +63,7 @@ inventoryOfferRouter.get(
 
 //update inventory item
 inventoryOfferRouter.put(
-  "/:id",
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
     let randomVariable: Error | Offer | string | null;
@@ -82,7 +82,7 @@ inventoryOfferRouter.put(
 
 //delete inventory item
 inventoryOfferRouter.delete(
-  "/:id",
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
     let randomVariable: Error | string | null;
     try {
