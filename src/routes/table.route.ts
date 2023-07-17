@@ -5,15 +5,16 @@ import * as tableService from "../services/table.service";
 export { setTableRouter };
 
 function setTableRouter(router: Router): Router {
-  router.get("/getTable", getATable);
-  router.get("/getTables", getAllTables);
-  router.post("/createTable", postATable);
-  router.delete("/deleteTable", deleteATable);
-  router.put("/updateTable", updateATable);
+  router.get("/:location", getATable);
+  router.get("/", getAllTables);
+  router.post("/", postATable);
+  router.delete("/", deleteATable);
+  router.put("/", updateATable);
   return router;
 }
 
 async function getAllTables(req: Request, res: Response, next: NextFunction) {
+  
   let allTable: Error | Table[] | null;
 
   try {

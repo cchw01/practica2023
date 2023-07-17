@@ -10,7 +10,7 @@ const TableSchema = new Schema<Table>(
     location: { type: String, required: true },
   },
   {
-    collection: env.DB_NAME
+    collection: env.TABLE_DB,
   }
 );
 
