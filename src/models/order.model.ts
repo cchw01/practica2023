@@ -4,7 +4,7 @@ export class Order {
   _id!: ObjectId;
   user!: ObjectId; 
   address!: string;
-  productList!: string;
+  productList!: ObjectId[];
   deliveryType!: deliveryType;
   totalPrice!: string;
   userNotes!: string;

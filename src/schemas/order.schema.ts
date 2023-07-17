@@ -11,7 +11,7 @@ const OrderSchema = new Schema<Order>(
   {
     user: { type: Schema.Types.ObjectId, ref: 'User' },
     address: { type: String, required: true },
-    productList: { type: String, required: true },
+    productList: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
     deliveryType: { type: String, enum: Object.values(deliveryType), required: true },
     totalPrice: { type: String, required: true },
     userNotes: { type: String, required: true },
