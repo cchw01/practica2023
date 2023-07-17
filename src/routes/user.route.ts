@@ -19,15 +19,16 @@ async function postUser(req: Request, res: Response, next: NextFunction) {
   let randomVariable: Error | User;
   try {
     randomVariable = await userService.postUser(body);
+    if (randomVariable instanceof Error) {
+      console.log(randomVariable);
+      return next(randomVariable);
+    }
     res.json(randomVariable);
-    console.log("b");
   } catch (ex) {
-    return next(ex);
-  }
-  if (randomVariable instanceof Error) {
-    return next(randomVariable);
-  }
 
+    return next(ex);
+
+  }
 }
 
 async function getUser(req: Request, res: Response, next: NextFunction) {
