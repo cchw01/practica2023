@@ -12,8 +12,6 @@ import { setUserRouter } from "./routes/user.route";
 import { setTableRouter } from "./routes/table.route";
 import { setPhotoRouter } from "./routes/photo.route";
 import { setProductRouter } from "./routes/product.route";
-import { setProduct_reviewRouter } from "./routes/product_review.route";
-
 import { setOrderRouter } from "./routes/order.route";
 
 let app: express.Application;
@@ -38,11 +36,12 @@ async function makeApp() {
   app.use(env.USER_MANAGEMENT, setUserRouter(express.Router()));
 
   // routes
-  app.use(env.MAIN_ENDPOINT, tableRouter);
+  app.use(env.TABLE_ROUTE, setTableRouter(express.Router()));
 
   app.use(env.PHOTO_ROUTE, setPhotoRouter(express.Router()));
   app.use(env.PRODUCT_MANAGEMENT, setProductRouter(express.Router()));
 
+  app.use(env.ORDER_ROUTE, setOrderRouter(express.Router()))
   // 404
   app.use((_req, _res, next) => {
     const err: IExpressError = new Error("Not Found");
