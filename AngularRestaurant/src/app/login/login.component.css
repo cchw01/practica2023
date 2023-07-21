@@ -1,54 +1,61 @@
-/* styles.css */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f1f1f1;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
-.container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  height: 200px;
+body {
+  /* font-family: "Lato", sans-serif;font-family: "Lato", sans-serif; */
+}
+form {
   margin: auto;
-  margin-top: 10%;
+  margin-top: 200px;
+  width: 400px;
 }
 
 h1 {
   text-align: center;
-}
-
-.form-group {
-  margin-bottom: 15px;
+  font-size: 60px;
+  font-family: "Lato", sans-serif;
 }
 
 label {
-  display: block;
-  margin-bottom: 5px;
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
 }
 
-input {
+input[type="text"],
+input[type="password"] {
   width: 100%;
-  padding: 10px;
   font-size: 16px;
+  padding: 12px 20px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-family: "Lato", sans-serif;
+  display: inline-block;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 button {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
   background-color: black;
-  color: #fff;
+  color: white;
+  font-size: 20px;
+  padding: 14px 20px;
+  margin: 8px 0;
   border: none;
-  border-radius: 5px;
+  font-family: "Lato", sans-serif;
   cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 16px;
+}
+
+#wrapper {
+  width: 80%;
+  margin: auto;
+  height: 100%;
+  display: flex;
 }
