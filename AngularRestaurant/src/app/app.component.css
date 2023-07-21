@@ -1,5 +1,64 @@
 .content{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    margin:0 auto;
     background-image: url('/assets/images/restaurantbg.png');
+    background-size: cover;
+    display: grid;
+    grid-template-areas: "theNav theContent";
+    background-color: aliceblue;
 }
+
+.row{
+    display: flex;
+    margin:0px auto;
+}
+
+.column-nav{
+    margin-left: 100px;
+    margin-right: 30px;
+    margin-bottom:0px;
+    background-color:rgba(185, 110, 6, 0.9);
+}
+.column-content{
+    margin-top:0px auto;
+}
+
+a {
+    display: block;
+    width: 200px;
+    margin-left:100px;
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+
+  nav ul{
+  float: left;
+  margin-top: 120px;
+  margin-bottom:0px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  }
+
+  nav ul li{
+    list-style-type: none;
+    transition: 0.7s all;
+    opacity:1;
+    font-size: 17px;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  nav ul li:hover{
+    background-color:rgb(0, 0, 0);
+    font-weight: bold;
+    transition: 0.15s all;
+  }
+
+  nav ul li a{
+    text-decoration: none;
+    color: #fff;
+  }
+
+
+  
