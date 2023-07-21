@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../services/menu.service';
-import { Product } from '../interfaces/product';
+import { Product } from '../interfaces/product.interface';
+import { Observable } from 'rxjs';
+import { Ingredient } from '../interfaces/ingredient.interface';
 
 @Component({
   selector: 'app-menu',
@@ -10,11 +12,26 @@ import { Product } from '../interfaces/product';
 export class MenuComponent implements OnInit {
 
   productList!: Product[];
+  ingredientList!: Ingredient[];
 
-  constructor(private productMenuService: MenuService) { }
+  constructor(private productMenuService: MenuService) {
+    this.productMenuService.getProductList().subscribe(product => {
+      this.productList = product;
+    });
+    this.productMenuService.getIngredientList().subscribe(ingredient => {
+      this.ingredientList = ingredient;
+      console.log(ingredient);
+    })
+    console.log(this.productList);
+    console.log(this.ingredientList);
+  }
 
   ngOnInit(): void {
-    this.productMenuService.getProductList();
-    //console.log(this.productList);
+    // this.productList = this.productMenuService.getProductList();
+    // console.log(this.productList);
+  }
+
+  onClick() {
+    console.log(this.ingredientList);
   }
 }
