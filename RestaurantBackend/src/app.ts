@@ -13,6 +13,7 @@ import { setTableRouter } from "./routes/table.route";
 import { setPhotoRouter } from "./routes/photo.route";
 import { setProductRouter } from "./routes/product.route";
 import { setOrderRouter } from "./routes/order.route";
+import * as cors from 'cors';
 
 let app: express.Application;
 
@@ -20,6 +21,8 @@ async function makeApp() {
   if (app) return app;
 
   app = express();
+
+  app.use(cors());
 
   await mongoose.connect(env.MONGO_URL);
 
