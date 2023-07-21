@@ -8,7 +8,8 @@ import { MenuComponent } from './menu/menu.component';
 @NgModule({
   declarations: [AppComponent, MenuComponent],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [],
-  bootstrap: [AppComponent],
 })
+
+
+
 export class AppModule {}

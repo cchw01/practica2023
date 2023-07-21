@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { HomePageComponent } from './templates/home-page/home-page.component';
 import { MenuComponent } from './menu/menu.component';
 
+
 const routes: Routes = [
-  {path: '', component: HomePageComponent},
-  
+  { path: '', component: HomePageComponent },
+
   //to modify component for the rest of the pages
 
   {path: 'menu', component: MenuComponent},
