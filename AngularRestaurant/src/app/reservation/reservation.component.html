@@ -1,0 +1,82 @@
+<div class="main">
+  <div class="container">
+    <div class="header-container">
+      <h1>Reservations</h1>
+    </div>
+    <form (ngSubmit)="OnSubmit()" [formGroup]="addReservationForm">
+      <p class="desc">
+        We’ll reserve a table just for you! Call us or use the form below.
+      </p>
+      <div class="row">
+        <p class="field">
+          <mat-form-field appearance="outline" class="fullName">
+            <mat-label>Full Name</mat-label>
+            <input
+              matInput
+              placeholder="Full Name"
+              type="text"
+              formControlName="user"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field appearance="outline" class="numberOfGuests">
+            <mat-label># Of Guests</mat-label>
+            <input
+              matInput
+              placeholder="# Of Guests"
+              type="number"
+              formControlName="numberOfPersons"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field appearance="outline" class="time-start">
+            <mat-label>Start time</mat-label>
+            <input
+              matInput
+              placeholder="Start time"
+              type="datetime-local"
+              formControlName="reservationStart"
+            />
+          </mat-form-field>
+        </p>
+        <p class="field">
+          <mat-form-field appearance="outline" class="time-end">
+            <mat-label>End time</mat-label>
+            <input
+              matInput
+              placeholder="End time"
+              type="datetime-local"
+              formControlName="reservationEnd"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field appearance="outline" class="comments">
+            <mat-label>Comments(optional)</mat-label>
+            <textarea
+              matInput
+              type="text"
+              formControlName="userNotes"
+            ></textarea>
+          </mat-form-field>
+        </p>
+      </div>
+      <button
+        mat-raised-button
+        type="submit"
+        class="submit-button"
+        [disabled]="!addReservationForm.valid"
+      >
+        Send Request
+      </button>
+    </form>
+  </div>
+</div>
