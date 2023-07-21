@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+form {
+  margin: auto;
+  margin-top: 200px;
+  width: 400px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  font-family: "Lato", sans-serif;
+}
+
+label {
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+}
+
+label[for="role"] {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-family: "Lato", sans-serif;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  font-family: "Lato", sans-serif;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 16px;
+}
+
+#wrapper {
+  width: 80%;
+  margin: auto;
+  height: 100%;
+  display: flex;
+}
