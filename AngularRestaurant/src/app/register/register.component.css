@@ -1,21 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
-/* 
 form {
   margin: auto;
   margin-top: 50px;
   width: 600px;
-
-
 }
 
 h1 {
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   font-family: "Lato", sans-serif;
+  margin-top: 80px;
 }
 
-.sections {
+.section {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -27,78 +25,35 @@ label {
   font-family: "Lato", sans-serif;
 }
 
-label[for="role"] {
-  font-size: 15px;
-  font-weight: 300;
-}
-
-.role {
-  margin-top: 45px;
-}
-
 input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"] {
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px;
-  margin-top: 15px;
-  margin-bottom: 20px;
   font-family: "Lato", sans-serif;
   display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-.section1 {
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px;
-  margin-top: 15px;
-  margin-bottom: 20px;
-  font-family: "Lato", sans-serif;
-  display: inline-block;
-  box-sizing: border-box;
-}
-
-.section2 {
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px;
-  margin-top: 15px;
-  margin-bottom: 20px;
-  font-family: "Lato", sans-serif;
-  display: inline-block;
+  border: 1px solid rgb(204, 204, 204);
   box-sizing: border-box;
 }
 
 button {
   background-color: black;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 20px;
   padding: 14px 80px;
-  margin: 8px 20px;
-  border: none;
+  border: 4px solid rgb(228, 170, 61);
+  border-radius: 100px;
   font-family: "Lato", sans-serif;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 190px;
-
+  margin-left: 210px;
+  margin-top: 40px;
 }
 
 button:hover {
-  opacity: 0.8;
+  background-color: rgb(228, 170, 61);
 }
-
-.container {
-
-  position: relative;
-
-}
-
 
 #wrapper {
   width: 80%;
@@ -108,12 +63,13 @@ button:hover {
 }
 
 .copy {
+  font-size: 16px;
   background-color: black;
   color: white;
   font-family: "Lato", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 119px;
+  margin-top: 92px;
   padding: 12px;
-} */
+} 
