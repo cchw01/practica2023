@@ -17,12 +17,14 @@ import { StarRatingModule } from 'angular-star-rating';
 import { RestaurantReviewPageComponent } from './templates/restaurant-review-page/restaurant-review-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { AllReviewsComponent } from './templates/all-reviews/all-reviews.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantReviewComponent,
-    RestaurantReviewPageComponent
+    RestaurantReviewPageComponent,
+    AllReviewsComponent
   ],
   imports: [
     BrowserModule,
