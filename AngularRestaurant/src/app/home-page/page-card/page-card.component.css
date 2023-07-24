@@ -1,0 +1,17 @@
+.card {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left:5px;
+    margin-right:5px;
+    max-width: 220px;
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+img{
+    object-fit: cover;
+    display: block;
+    width: 220px;
+    height: 220px;
+    padding-bottom: 20px;
+}
