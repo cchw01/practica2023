@@ -2,18 +2,18 @@
 
 form {
   margin: auto;
-  margin-top: 200px;
-  width: 400px;
+  margin-top: 50px;
+  width: 300px;
 }
 
 h1 {
   text-align: center;
-  font-size: 60px;
+  font-size: 30px;
   font-family: "Lato", sans-serif;
 }
 
 label {
-  font-size: 20px;
+  font-size: 15px;
   font-family: "Lato", sans-serif;
 }
 
@@ -55,4 +55,15 @@ button:hover {
   margin: auto;
   height: 100%;
   display: flex;
+}
+
+.copy {
+  background-color: black;
+  color: white;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 245px;
+  padding: 12px;
 }

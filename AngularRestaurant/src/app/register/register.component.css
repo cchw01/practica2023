@@ -1,25 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
+
 form {
   margin: auto;
-  margin-top: 200px;
-  width: 400px;
+  margin-top: 50px;
+  width: 600px;
+  /* position: absolute; */
+
 }
 
 h1 {
   text-align: center;
-  font-size: 60px;
+  font-size: 30px;
   font-family: "Lato", sans-serif;
 }
 
+.sections {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+}
+
 label {
-  font-size: 20px;
+  font-size: 15px;
   font-family: "Lato", sans-serif;
 }
 
 label[for="role"] {
   font-size: 15px;
   font-weight: 300;
+}
+
+.role {
+  margin-top: 45px;
 }
 
 input[type="text"],
@@ -37,16 +51,42 @@ input[type="tel"] {
   box-sizing: border-box;
 }
 
+.section1 {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-family: "Lato", sans-serif;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.section2 {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-family: "Lato", sans-serif;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
 button {
   background-color: black;
   color: white;
   font-size: 20px;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 14px 80px;
+  margin: 8px 20px;
   border: none;
   font-family: "Lato", sans-serif;
   cursor: pointer;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 190px;
+
 }
 
 button:hover {
@@ -54,12 +94,26 @@ button:hover {
 }
 
 .container {
-  padding: 16px;
+
+  position: relative;
+
 }
+
 
 #wrapper {
   width: 80%;
   margin: auto;
   height: 100%;
   display: flex;
+}
+
+.copy {
+  background-color: black;
+  color: white;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 119px;
+  padding: 12px;
 }
