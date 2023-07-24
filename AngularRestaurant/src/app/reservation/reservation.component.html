@@ -10,10 +10,10 @@
       <div class="row">
         <p class="field">
           <mat-form-field appearance="outline" class="fullName">
-            <mat-label>Full Name</mat-label>
+            <mat-label>User</mat-label>
             <input
               matInput
-              placeholder="Full Name"
+              placeholder="User"
               type="text"
               formControlName="user"
             />
@@ -29,6 +29,7 @@
               placeholder="# Of Guests"
               type="number"
               formControlName="numberOfPersons"
+              ngModel="name"
             />
           </mat-form-field>
         </p>
@@ -42,6 +43,8 @@
               placeholder="Start time"
               type="datetime-local"
               formControlName="reservationStart"
+              class="input-time-start"
+              (ngModelChange)="takeDate($event)"
             />
           </mat-form-field>
         </p>
@@ -53,6 +56,8 @@
               placeholder="End time"
               type="datetime-local"
               formControlName="reservationEnd"
+              class="input-time-end"
+              [(ngModel)]="collect_date"
             />
           </mat-form-field>
         </p>
