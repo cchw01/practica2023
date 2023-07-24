@@ -3,14 +3,15 @@ import { Product } from '../interfaces/product.interface';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Ingredient } from '../interfaces/ingredient.interface';
+import { Category } from '../interfaces/category.interface';
+import { Photo } from '../interfaces/photo.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService implements OnInit {
 
-  http: string = "http://localhost:80";
-  productList!: Observable<Product[]>;
+  httpUrl: string = "http://localhost:80";
 
   constructor(private httpClient: HttpClient) {
     
@@ -21,10 +22,30 @@ export class MenuService implements OnInit {
   }
 
   getProductList(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.http + "/product");
+    return this.httpClient.get<Product[]>(this.httpUrl + "/product");
+  }
+
+  getProductById(id: string): Observable<Product> {
+    return this.httpClient.get<Product>(this.httpUrl + '/product/' + id);
   }
 
   getIngredientList(): Observable<Ingredient[]> {
-    return this.httpClient.get<Ingredient[]>(this.http + "/ingredients");
+    return this.httpClient.get<Ingredient[]>(this.httpUrl + "/ingredients");
+  }
+
+  getCategoryList(): Observable<Category[]> {
+    return this.httpClient.get<Category[]>(this.httpUrl + "/category");
+  }
+
+  getCategoryById(id: string): Observable<Category> {
+    return this.httpClient.get<Category>(this.httpUrl + "/category/" + id);
+  }
+
+  getPhotoList(): Observable<Photo[]> {
+    return this.httpClient.get<Photo[]>(this.httpUrl + "/photo");
+  }
+
+  getPhotoById(id: string): Observable<Photo> {
+    return this.httpClient.get<Photo>(this.httpUrl + '/photo/' + id);
   }
 }

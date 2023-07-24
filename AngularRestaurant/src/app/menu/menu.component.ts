@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../services/menu.service';
 import { Product } from '../interfaces/product.interface';
-import { Observable } from 'rxjs';
 import { Ingredient } from '../interfaces/ingredient.interface';
+import { Category } from '../interfaces/category.interface';
+import { Photo } from '../interfaces/photo.interface';
 
 @Component({
   selector: 'app-menu',
@@ -11,27 +12,31 @@ import { Ingredient } from '../interfaces/ingredient.interface';
 })
 export class MenuComponent implements OnInit {
 
-  productList!: Product[];
-  ingredientList!: Ingredient[];
+  productList: Product[] = [];
+  ingredientsList: Ingredient[] = [];
+  categoryList: Category[] = [];
+  photoList: Photo[] = [];
 
   constructor(private productMenuService: MenuService) {
+
     this.productMenuService.getProductList().subscribe(product => {
       this.productList = product;
     });
+
     this.productMenuService.getIngredientList().subscribe(ingredient => {
-      this.ingredientList = ingredient;
-      console.log(ingredient);
-    })
-    console.log(this.productList);
-    console.log(this.ingredientList);
+      this.ingredientsList = ingredient;
+    });
+
+    this.productMenuService.getCategoryList().subscribe(category => {
+      this.categoryList = category;
+    });
+
+    this.productMenuService.getPhotoList().subscribe(photo => {
+      this.photoList = photo;
+    });
   }
 
   ngOnInit(): void {
-    // this.productList = this.productMenuService.getProductList();
-    // console.log(this.productList);
-  }
 
-  onClick() {
-    console.log(this.ingredientList);
   }
 }

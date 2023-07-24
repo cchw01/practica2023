@@ -1,1 +1,7 @@
-<button (click)="onClick()">Test</button>
+<div class="main-container">
+    <h1>MENU</h1>
+    <div *ngFor="let category of categoryList">
+        <app-category-section class="app-category-section" [category]="category">
+        </app-category-section> 
+    </div>
+</div>

@@ -1,5 +1,5 @@
 export class Ingredient {
-    id!: number;
+    _id!: string;
     name!: string;
     stoc!: number;
     isAlergen!: boolean;

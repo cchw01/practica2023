@@ -1,0 +1,8 @@
+<div *ngIf="product.isAvailable" class="product-container">
+    <img class="photo" src={{photo.photoLink}}>
+    <div class="product-content">
+        <h5 (click)="viewProduct()">{{product.name}}</h5><span>{{product.price}} RON</span>
+        <p>Ingredients: {{ingredientsList.join(', ')}}</p>
+    </div>
+    <p class="ingredients"></p>
+</div>

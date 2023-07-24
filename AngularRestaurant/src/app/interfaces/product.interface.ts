@@ -1,9 +1,9 @@
 export class Product {
-    _id!: number;
+    _id!: string;
     name!: string;
     photo!: string;
     price!: number;
-    ingredientList!: string[];
+    ingredientsList!: string[];
     isAvailable!: boolean;
 
     public constructor(init?: Partial<Product>) {
