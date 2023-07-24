@@ -15,7 +15,7 @@
 
 .column-nav{
   margin-left: 100px;
-  margin-right: 30px;
+  margin-right: 50px;
   margin-bottom:0px;
   background-color:rgba(185, 110, 6, 0.9);
 }
@@ -24,6 +24,8 @@
 .column-content{
     margin-top:0px auto;
     background-color: aliceblue;
+    width: 800px;
+    height: 100%;
 }
 
 

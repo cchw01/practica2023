@@ -43,3 +43,14 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
+.icons li{
+    display:inline-block;
+    margin-left:25%;
+    padding-top:5%;
+}
+
+.icons{
+    align-content: center;
+}
+
