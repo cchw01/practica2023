@@ -22,4 +22,9 @@ export class RegisterService {
         console.log(data.id);
       });
   }
+  loginUser(user: User) {
+    this.http.get<any>('http://localhost:80/user').subscribe(() => {
+      console.log(user._id);
+    });
+  }
 }

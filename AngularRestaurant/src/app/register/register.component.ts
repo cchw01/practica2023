@@ -27,14 +27,14 @@ export class RegisterComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       phoneNumber: ['', Validators.required],
-      password: ['', Validators.required],
-      email: ['', Validators.required],
+      password: ['', Validators.minLength(8)],
+      email: ['', Validators.email],
       role: [' ', Validators.required],
     });
   }
 
   OnSubmit() {
-    //this.user = new User(this.addUserForm.value);
+    this.user = new User(this.addUserForm.value);
     console.log('OnSubmit from register');
     this.registerservice.addUser(this.user);
   }
