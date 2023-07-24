@@ -11,7 +11,9 @@
         <textarea matInput formControlName="description"></textarea>
       <mat-error *ngIf="false">Campul este obligatoriu</mat-error>
     </mat-form-field>
-</form>
-<star-rating [starType]="'svg'" [rating]="0"></star-rating>
-<button mat-raised-button type="submit" >Trimite</button>
+    <star-rating [starType]="'svg'" [rating]="0"></star-rating>
+    <div class="review-sumbit-button">
+      <button mat-raised-button type="submit">Trimite</button>
+    </div>
+  </form>
 </mat-card>
