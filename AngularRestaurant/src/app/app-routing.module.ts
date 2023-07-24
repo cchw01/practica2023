@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomePageComponent } from './templates/home-page/home-page.component';
-import { MenuComponent } from './menu/menu.component';
 
 
 const routes: Routes = [
@@ -10,7 +9,7 @@ const routes: Routes = [
 
   //to modify component for the rest of the pages
 
-  {path: 'menu', component: MenuComponent},
+  {path: 'menu', component: HomePageComponent},
   {path: 'orders', component: HomePageComponent},
   {path: 'reservations', component: HomePageComponent},
   {path: 'contact', component: HomePageComponent},
@@ -26,5 +25,4 @@ const routes: Routes = [
 export class AppRoutingModule {}
 export const RoutingComponents = {
   HomePageComponent,
-  MenuComponent
 };
