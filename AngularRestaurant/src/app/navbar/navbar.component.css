@@ -1,6 +1,8 @@
+.navbar {
+  display:flexbox;
+}
 
-
-a {
+nav ul li a {
     display: block;
     width: 200px;
     margin-left:100px;
@@ -10,7 +12,7 @@ a {
 
   nav ul{
   float: left;
-  margin-top: 120px;
+  margin-top: 50px;
   margin-bottom:0px;
   display: flex;
   flex-direction: column;
@@ -39,18 +41,20 @@ a {
 .logo{
   width: 250px;
   display: block;
-  padding-top: 20px;
+  padding-top: 5vh;
   margin-left: auto;
   margin-right: auto;
 }
 
-.icons li{
-    display:inline-block;
-    margin-left:25%;
-    padding-top:5%;
+.divider{
+  border-top-color:rgb(255, 255, 255);
+  border-top-width:1vh;
+  margin-top:10vh;
+  border-top-style:solid;
+  border-radius: 90%;
 }
 
-.icons{
-    align-content: center;
-}
+
+
+
 

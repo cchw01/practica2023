@@ -6,6 +6,7 @@
     background-size: cover;
     display: grid;
     grid-template-areas: "theNav theContent";
+    position:fixed;
 }
 
 .row{
@@ -18,16 +19,21 @@
   margin-right: 50px;
   margin-bottom:0px;
   background-color:rgba(185, 110, 6, 0.9);
+  overflow:hidden;
 }
 
 
 .column-content{
     margin-top:0px auto;
     background-color: aliceblue;
-    width: 800px;
-    height: 100%;
+    width: 110vh;
+    max-height: 100vh; 
+    overflow-y: scroll;
 }
 
 
 
-  
+
+
+
+
