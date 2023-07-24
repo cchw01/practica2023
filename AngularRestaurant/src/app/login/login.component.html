@@ -1,11 +1,12 @@
-  <!--<div id="wrapper">
-  <form [formGroup]="addItemForm" (ngSubmit)="onSubmit()">
+<
+<div id="wrapper">
+  <form [formGroup]="addItemForm" (ngSubmit)="OnSubmit()">
     <div class="container">
       <h1>Login</h1>
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Username</mat-label>
-          
+
           <input
             matInput
             placeholder="Enter Username"
@@ -19,19 +20,19 @@
         </mat-form-field>
       </p>
       <p>
-      <mat-form-field appearance="outline">
-        <label for="psw"><b>Password</b></label>
-        <input
-          type="password"
-          placeholder="Enter Password"
-          name="psw"
-          required
-        />
-        <mat-error *ngIf="hasError('psw', 'required')">
-          Password is required
-        </mat-error>
+        <mat-form-field appearance="outline">
+          <label for="psw"><b>Password</b></label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="psw"
+            required
+          />
+          <mat-error *ngIf="hasError('psw', 'required')">
+            Password is required
+          </mat-error>
+        </mat-form-field>
       </p>
-      </mat-form-field>
       <button type="submit">Login</button>
     </div>
   </form>
@@ -39,4 +40,4 @@
 
 <footer>
   <p class="copy">&copy; Restaurant 2023.</p>
-</footer> -->
+</footer>
