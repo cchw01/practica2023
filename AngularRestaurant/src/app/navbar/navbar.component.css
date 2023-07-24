@@ -35,3 +35,11 @@ a {
     text-decoration: none;
     color: #fff;
   }
+
+.logo{
+  width: 250px;
+  display: block;
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
