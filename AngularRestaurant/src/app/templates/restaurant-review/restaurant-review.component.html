@@ -5,13 +5,13 @@
     <p>Scrie-ne o recenzie</p>
   </div>
 
-  <form [formGroup]="addReviewFormGroup" (ngSubmit)="[]" class="reviewForm">
+  <form [formGroup]="addReviewFormGroup" (ngSubmit)="onSubmit()" class="reviewForm">
     <mat-form-field appearance="outline" class="review-form-field">
-      <mat-label >Recenzia ta</mat-label>
-        <textarea matInput formControlName="description"></textarea>
+      <mat-label>Recenzia ta</mat-label>
+      <textarea matInput formControlName="message"></textarea>
       <mat-error *ngIf="false">Campul este obligatoriu</mat-error>
     </mat-form-field>
-</form>
-<star-rating [starType]="'svg'" [rating]="0"></star-rating>
-<button mat-raised-button type="submit" >Trimite</button>
+    <button mat-raised-button type="submit">Trimite</button>
+  </form>
+  <star-rating [starType]="'svg'" [rating]="0" (starClickChange)="onClick($event)"></star-rating>
 </mat-card>
