@@ -6,7 +6,6 @@
     background-size: cover;
     display: grid;
     grid-template-areas: "theNav theContent";
-    background-color: aliceblue;
 }
 
 .row{
@@ -22,6 +21,7 @@
 }
 .column-content{
     margin-top:0px auto;
+    background-color: aliceblue;
 }
 
 a {
