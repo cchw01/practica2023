@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent],
@@ -19,8 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     MatInputModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
