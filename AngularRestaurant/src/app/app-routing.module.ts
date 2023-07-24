@@ -1,7 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RestaurantReviewPageComponent } from './templates/restaurant-review-page/restaurant-review-page.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'review', component:RestaurantReviewPageComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

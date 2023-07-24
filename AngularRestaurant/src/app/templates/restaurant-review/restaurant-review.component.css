@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.review-form-card{
+  background-image: linear-gradient(45deg,#093028,#237A57);
+  width: 800px;
+}
+
+.review-helper-text{
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  padding-left: 50px;
+  padding-right: 50px;
+
+  >p{
+    font-size: 30px;
+  }
+
+  font-size: 40px;
+  font-weight: 500;
+  font-family: 'Bebas Neue', sans-serif;
+
+  background-color: #f3ec78;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  background-size: 100%;
+
+  /* help text gradient */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  /*  ---   */
+
+  line-height: 40px;
+  height: fit-content;
+
+}
+.reviewForm{
+  display: flex;
+  justify-content: center;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  .review-form-field{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
