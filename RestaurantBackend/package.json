@@ -16,6 +16,7 @@
   "dependencies": {
     "@types/mongoose": "^5.11.97",
     "bcrypt": "^5.1.0",
+    "course": "^0.0.1",
     "express": "^4.18.2",
     "mongoose": "^7.3.4"
   },

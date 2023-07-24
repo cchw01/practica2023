@@ -11,15 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   addUserForm!: FormGroup;
-  user: User = {
-    _id: '64bda421c0206cbbee74ba34',
-    firstName: 'stefan',
-    lastName: 'chiper',
-    phoneNumber: '12343125235',
-    password: 'asdfasdgasdga',
-    role: 'admin',
-    email: 'stefan814759@gmail.com',
-  };
+  user!: User;
 
   constructor(
     private fb: FormBuilder,
@@ -37,6 +29,7 @@ export class RegisterComponent implements OnInit {
       phoneNumber: ['', Validators.required],
       password: ['', Validators.required],
       email: ['', Validators.required],
+      role: [' ', Validators.required],
     });
   }
 

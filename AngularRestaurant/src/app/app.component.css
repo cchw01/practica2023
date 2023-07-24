@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: black;;
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+    font-family: "Lato", sans-serif;
+ 
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+}
+

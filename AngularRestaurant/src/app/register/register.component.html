@@ -1,32 +1,80 @@
-<div id="wrapper">
-  <form>
-    <div class="container">
-      <h1>Register page</h1>
-      <label for="fname"><b>First Name</b></label>
-      <input type="text" placeholder="Enter First Name" name="fname" required />
-
-      <label for="lname"><b>Last Name</b></label>
-      <input type="text" placeholder="Enter Last Name" name="lname" required />
-
-      <label for="pnumber"><b>Phone Number</b></label>
-      <input
-        type="tel"
-        placeholder="Enter Phone Number"
-        name="pnumber"
-        required
-      />
-
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required />
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required />
-
-      <label>Role: </label>
-      <input type="radio" name="role" checked required disabled />
-      <label for="role"><b>User</b></label>
-
-      <button type="submit">Register</button>
+<div class="main">
+  <div class="container">
+    <div class="header-container">
+      <h1>Register</h1>
     </div>
-  </form>
+    <form (ngSubmit)="OnSubmit()" [formGroup]="addUserForm">
+      <div class="row">
+        <p class="field">
+          <mat-form-field appearance="outline" class="firstName">
+            <mat-label>User</mat-label>
+            <input
+              matInput
+              placeholder="First Name"
+              type="text"
+              formControlName="firstName"
+            />
+          </mat-form-field>
+        </p>
+        <p class="field">
+          <mat-form-field appearance="outline" class="lastName">
+            <mat-label>User</mat-label>
+            <input
+              matInput
+              placeholder="Last Name"
+              type="text"
+              formControlName="lastName"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field appearance="outline" class="email">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="email"
+              type="email"
+              formControlName="email"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field appearance="outline" class="password">
+            <mat-label>Start time</mat-label>
+            <input
+              matInput
+              placeholder="Password"
+              type="password"
+              formControlName="password"
+              class="password"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field appearance="outline" class="role">
+            <mat-label>Role:</mat-label>
+            <input
+              matInput
+              formControlName="role"
+              checked="checked"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <button
+        mat-raised-button
+        type="submit"
+        class="submit-button"
+  
+      >
+        Send Request
+      </button>
+    </form>
+  </div>
 </div>
