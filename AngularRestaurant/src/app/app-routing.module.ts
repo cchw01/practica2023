@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EditUserAdminComponent } from './edit-user-admin/edit-user-admin.component';
+import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
 import { UserAdminComponent } from './user/user-admin/user-admin.component';
 
-const routes: Routes = [ 
+const routes: Routes = [
   { path: '', component: UserAdminComponent },
-  { path: 'edit/:id', component: EditUserAdminComponent }];
+  { path: 'edit/:id', component: EditUserAdminComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-export const RoutingComponents = [
-  EditUserAdminComponent
-];
+export class AppRoutingModule {}
+export const RoutingComponents = [EditUserAdminComponent];

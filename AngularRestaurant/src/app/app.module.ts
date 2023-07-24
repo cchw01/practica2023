@@ -10,7 +10,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { EditUserAdminComponent } from './edit-user-admin/edit-user-admin.component';
+import { MatButtonModule } from '@angular/material/button';
+import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
 
 @NgModule({
   declarations: [AppComponent, UserAdminComponent, EditUserAdminComponent],
@@ -22,6 +23,7 @@ import { EditUserAdminComponent } from './edit-user-admin/edit-user-admin.compon
     MatFormFieldModule,
     MatTableModule,
     MatInputModule,
+    MatButtonModule,
     MatPaginatorModule,
     FormsModule,
     ReactiveFormsModule,

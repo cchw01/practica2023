@@ -13,14 +13,15 @@ form {
 .header-container {
   background-color: aliceblue;
   text-align: center;
-  padding: 2vh 10vw;
+  padding: 2vh 5vw;
   border-bottom: 0.3vh solid #999;
 }
 .container {
-  padding-top: 4vh;
+  padding-top: 2vh;
   background-color: aliceblue;
   display: flex;
   flex-direction: column;
+  width: 45vw;
 }
 .field {
   padding: 0 1vw;
@@ -36,10 +37,10 @@ form {
 .date {
   align-self: flex-end;
 }
-.desc {
-  padding: 5vh;
+/* .row:first-child {
+  padding-top: 5vh;
   text-align: center;
-}
+} */
 .submit-button {
   margin: 1vh 1vw;
   width: 10vw;
