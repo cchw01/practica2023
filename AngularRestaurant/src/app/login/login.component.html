@@ -1,13 +1,37 @@
 <div id="wrapper">
-  <form>
+  <form [formGroup]="addItemForm" (ngSubmit)="onSubmit()">
     <div class="container">
       <h1>Login</h1>
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required />
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required />
-
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <!-- <label for="uname"><b>Username</b></label> -->
+          <input
+            matInput
+            placeholder="Enter Username"
+            type="text"
+            formControlName="uname"
+            required
+          />
+          <mat-error *ngIf="hasError('uname', 'required')">
+            User name is required
+          </mat-error>
+        </mat-form-field>
+      </p>
+      <p>
+      <mat-form-field appearance="outline">
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          required
+        />
+        <mat-error *ngIf="hasError('psw', 'required')">
+          Password is required
+        </mat-error>
+      </p>
+      </mat-form-field>
       <button type="submit">Login</button>
     </div>
   </form>
