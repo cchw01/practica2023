@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../app-logic/services/user';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+  ValidationErrors,
+  ValidatorFn,
+} from '@angular/forms';
 import { RegisterService } from '../app-logic/services/register.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -22,15 +29,27 @@ export class RegisterComponent implements OnInit {
     this.route.params.subscribe((params) => {});
   }
 
+  passwordValidator(control: AbstractControl): ValidationErrors | null {
+    const password = control.value;
+    const hasNumber = /\d/.test(password);
+    const hasLength = password.length >= 8;
+
+    if (!hasNumber || !hasLength) {
+      return { passwordRequirements: true };
+    }
+
+    return null;
+  }
+
   ngOnInit(): void {
     this.addUserForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       phoneNumber: ['', Validators.required],
-      password: ['', Validators.minLength(8)],
+      password: ['', [Validators.required, this.passwordValidator]],
       email: ['', Validators.email],
-      role: [' ', Validators.required],
-    });
+      role: ['', Validators.required],
+    }); // Apply the custom role validator
   }
 
   OnSubmit() {
@@ -38,4 +57,24 @@ export class RegisterComponent implements OnInit {
     console.log('OnSubmit from register');
     this.registerservice.addUser(this.user);
   }
+
+  // // Custom role validator function
+  // roleValidator(): ValidatorFn {
+  //   return (formGroup: FormGroup): ValidationErrors | null => {
+  //     const roleControl = formGroup.get('role');
+
+  //     // Check if the role is neither 'admin' nor 'user'
+  //     if (roleControl && roleControl.value !== 'admin' && roleControl.value !== 'user') {
+  //       roleControl.setErrors({ invalidRole: true });
+  //       return { invalidRole: true };
+  //     }
+
+  //     roleControl.setErrors(null);
+  //     return null;
+  //   };
+  // }
+
+  public hasError = (controlName: string, errorName: string) => {
+    return this.addUserForm.controls[controlName].hasError(errorName);
+  };
 }

@@ -4,83 +4,67 @@
       <h1>Register</h1>
     </div>
     <form (ngSubmit)="OnSubmit()" [formGroup]="addUserForm">
+      <!-- First Name -->
       <div class="row">
         <p class="field">
           <mat-form-field appearance="outline" class="firstName">
             <mat-label>First Name</mat-label>
-            <input
-              matInput
-              placeholder="First Name"
-              type="text"
-              formControlName="firstName"
-            />
+            <input matInput placeholder="First Name" type="text" formControlName="firstName" />
+            <mat-error *ngIf="hasError('firstName', 'required')">First Name required</mat-error>
           </mat-form-field>
         </p>
+        <!-- Last Name -->
         <p class="field">
           <mat-form-field appearance="outline" class="lastName">
             <mat-label>Last Name</mat-label>
-            <input
-              matInput
-              placeholder="Last Name"
-              type="text"
-              formControlName="lastName"
-            />
+            <input matInput placeholder="Last Name" type="text" formControlName="lastName" />
+            <mat-error *ngIf="hasError('lastName', 'required')">Last Name required</mat-error>
           </mat-form-field>
         </p>
       </div>
+      <!-- Phone Number -->
       <p class="field">
         <mat-form-field appearance="outline" class="phoneNumber">
-          <mat-label>Phone </mat-label>
-          <input
-            matInput
-            placeholder="phoneNumber"
-            type="text"
-            formControlName="phoneNumber"
-          />
+          <mat-label>Phone</mat-label>
+          <input matInput placeholder="Phone number" type="text" formControlName="phoneNumber" />
+          <mat-error *ngIf="hasError('phoneNumber', 'required')">Phone number required</mat-error>
         </mat-form-field>
       </p>
+      <!-- Email -->
       <div class="row">
         <p class="field">
           <mat-form-field appearance="outline" class="email">
             <mat-label>Email</mat-label>
-            <input
-              matInput
-              placeholder="email"
-              type="email"
-              formControlName="email"
-            />
+            <input matInput placeholder="Email" type="email" formControlName="email" />
+            <mat-error *ngIf="hasError('email', 'email')">Invalid email</mat-error>
           </mat-form-field>
         </p>
       </div>
+      <!-- Password -->
       <div class="row">
         <p class="field">
           <mat-form-field appearance="outline" class="password">
-            <mat-label>Start time</mat-label>
-            <input
-              matInput
-              placeholder="Password"
-              type="password"
-              formControlName="password"
-              class="password"
-            />
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" type="password" formControlName="password" class="password" />
+            <mat-error *ngIf="hasError('password', 'required')">Password required</mat-error>
+            <mat-error class="password-error" *ngIf="hasError('password', 'passwordRequirements')">
+              The password must contain 8 characters long and at least a number.
+            </mat-error>
           </mat-form-field>
         </p>
       </div>
-
+      <!-- Role -->
       <div class="row">
         <p class="field">
           <mat-form-field appearance="outline" class="role">
             <mat-label>Role:</mat-label>
             <input matInput formControlName="role" checked="checked" />
+            <mat-error *ngIf="hasError('role', 'required')">Role required</mat-error>
           </mat-form-field>
         </p>
       </div>
-      <button
-        mat-raised-button
-        type="submit"
-        class="submit-button"
-        [disabled]="!addUserForm.valid"
-      >
+      <!-- Submit Button -->
+      <button mat-raised-button type="submit" class="submit-button" [disabled]="!addUserForm.valid">
         Send Request
       </button>
     </form>

@@ -12,6 +12,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginUserForm!: FormGroup;
   user!: User;
+  email: string = '';
+  password: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -30,22 +32,16 @@ export class LoginComponent implements OnInit {
   }
 
   OnSubmit() {
-    //this.user = new User(this.addUserForm.value);
-    console.log('OnSubmit from register');
+    this.user = new User(this.loginUserForm.value);
     this.loginService.loginUser(this.user);
   }
 
   hasError(field: string | number, errorType: string | number) {
-    // Assume you have an errors object containing error messages for different fields
     const errors = {
       uname: {
         required: 'Username is required.',
-        // Add more error types and messages for the 'uname' field if needed
       },
-      // Add more error messages for other fields if needed
     };
-
-    // Check if the field exists in the errors object and if it has the specified errorType
     return errors;
   }
 
