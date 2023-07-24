@@ -1,0 +1,99 @@
+<div class="main">
+    <div class="container">
+      <div class="header-container">
+        <h1>Reservations</h1>
+      </div>
+      <form (ngSubmit)="OnSubmit()" [formGroup]="addUserForm">
+        <p class="desc">
+          We’ll reserve a table just for you! Call us or use the form below.
+        </p>
+        <div class="row">
+          <p class="field">
+            <mat-form-field appearance="outline" class="fullName">
+              <mat-label>First Name</mat-label>
+              <input
+                matInput
+                placeholder="First name"
+                type="text"
+                formControlName="firstName"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="row">
+          <p class="field">
+            <mat-form-field appearance="outline" class="">
+              <mat-label>Last Name</mat-label>
+              <input
+                matInput
+                placeholder="Last name"
+                type="text"
+                formControlName="lastName"
+                ngModel="name"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="row">
+          <p class="field">
+            <mat-form-field appearance="outline" class="time-start">
+              <mat-label>phoneNumber</mat-label>
+              <input
+                matInput
+                placeholder=""
+                type="string"
+                formControlName="Phone number"
+                class="input-time-start"
+                
+              />
+            </mat-form-field>
+          </p>
+          <p class="field">
+            <mat-form-field appearance="outline" class="time-end">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                placeholder="Email"
+                type="email"
+                formControlName="Email"
+                class="input-time-end"
+               
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="row">
+          <p class="field">
+            <mat-form-field appearance="outline" class="comments">
+              <mat-label>Password</mat-label>
+              <textarea
+                matInput
+                type="Password"
+                formControlName="Password"
+              ></textarea>
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="row">
+            <p class="field">
+              <mat-form-field appearance="outline" class="comments">
+                <mat-label>Role</mat-label>
+                <textarea
+                  matInput
+                  type="string"
+                  formControlName="Role"
+                ></textarea>
+              </mat-form-field>
+            </p>
+        
+        <button
+          mat-raised-button
+          type="submit"
+          class="submit-button"
+          [disabled]="!addUserForm.valid"
+        >
+          Send Request
+        </button>
+      </form>
+    </div>
+  </div>
