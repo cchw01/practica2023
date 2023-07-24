@@ -5,28 +5,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserAdminComponent } from './user/user-admin/user-admin.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http'
-import {MatTableModule} from '@angular/material/table'
+import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input'; 
+import { MatInputModule } from '@angular/material/input';
+import { EditUserAdminComponent } from './edit-user-admin/edit-user-admin.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserAdminComponent
-  ],
+  declarations: [AppComponent, UserAdminComponent, EditUserAdminComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatTableModule,MatInputModule,
+    MatTableModule,
+    MatInputModule,
     MatPaginatorModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

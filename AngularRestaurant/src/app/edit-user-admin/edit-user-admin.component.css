@@ -1,0 +1,47 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header-container {
+  background-color: aliceblue;
+  text-align: center;
+  padding: 2vh 10vw;
+  border-bottom: 0.3vh solid #999;
+}
+.container {
+  padding-top: 4vh;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+}
+.field {
+  padding: 0 1vw;
+  display: flex;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.all {
+  width: 32vw;
+}
+.date {
+  align-self: flex-end;
+}
+.desc {
+  padding: 5vh;
+  text-align: center;
+}
+.submit-button {
+  margin: 1vh 1vw;
+  width: 10vw;
+  align-self: flex-end;
+}
