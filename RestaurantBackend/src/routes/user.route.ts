@@ -8,9 +8,10 @@ export { setUserRouter };
 function setUserRouter(router: Router): Router {
   router.post("/", postUser);
   router.get("/:userId", getUser);
-  router.get("/",getUsers);
+  router.get("/", getUsers);
   router.delete("/:userId", deleteUser);
   router.put("/", updateUser);
+  router.get("/email/:userEmail", getByEmail);
   return router;
 }
 
@@ -25,10 +26,28 @@ async function postUser(req: Request, res: Response, next: NextFunction) {
     }
     res.json(randomVariable);
   } catch (ex) {
-
     return next(ex);
-
   }
+}
+
+async function getByEmail(req: Request, res: Response, next: NextFunction) {
+  const userEmail: string = req.params.userEmail;
+  let user: Error | User | null;
+  console.log("user route");
+  try {
+    user = await userService.getByEmail(userEmail);
+  } catch (ex) {
+    return next(ex);
+  }
+  if (user instanceof Error) {
+    return next(user);
+  }
+
+  if (user === null) {
+    return res.status(404).end();
+  }
+
+  return res.json(user);
 }
 
 async function getUser(req: Request, res: Response, next: NextFunction) {
@@ -52,22 +71,20 @@ async function getUser(req: Request, res: Response, next: NextFunction) {
 }
 
 async function getUsers(_req: Request, res: Response, next: NextFunction) {
-  
   let users: User[] | Error = [];
-  
+
   try {
-      users = await userService.getUsers();
+    users = await userService.getUsers();
   } catch (ex: any) {
-      return next(ex);
+    return next(ex);
   }
-  
+
   if (users instanceof Error) {
-      return next(users);
+    return next(users);
   }
-  
+
   console.log("getPhotos(), photos ", users);
   return res.json(users);
-
 }
 
 async function deleteUser(req: Request, res: Response, next: NextFunction) {

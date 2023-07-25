@@ -24,9 +24,11 @@ export class RegisterService {
       });
   }
   loginUser(user: User) {
-    this.http.get<User>('http://localhost:80/user'+ user._id).subscribe((data) => {
-      console.log(data);
-      console.log('Login succesfuly');
-    });
+    this.http
+      .get<User>('http://localhost:80/user/email/' + user.email)
+      .subscribe((data) => {
+        console.log(data);
+        console.log('Login succesfuly');
+      });
   }
 }
