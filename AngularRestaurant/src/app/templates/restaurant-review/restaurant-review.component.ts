@@ -58,7 +58,7 @@ export class RestaurantReviewComponent implements OnInit {
         id: "",
         message: this.addReviewFormGroup.value.message,
         ratingStars: this.addReviewFormGroup.value.ratingStars,
-        user: "64bf84c3250ea85bcae7e757",
+        user: "64bf84c3250ea85bcae7e757", // here is where the current logged in user id goes
       };
       this.reviewRestaurantService.addReview(Instance);
       console.log(Instance);

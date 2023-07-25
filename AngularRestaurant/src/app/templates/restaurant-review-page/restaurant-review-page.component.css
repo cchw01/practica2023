@@ -1,8 +1,6 @@
 .review-page{
   max-height: 100vh;
   overflow-x: hidden;
-  background-image: linear-gradient(#202020,#000000);
-  height: 100%;
 }
 
 .review-page::-webkit-scrollbar {

@@ -3,30 +3,33 @@
 .comment-section{
   display: flex;
   justify-content:center;
-
   padding-top: 20px;
 }
 
 .comment-backcard{
-  background-image: linear-gradient(90deg,#093028,#237A57);
+  background-color: white;
   width: 700px;
+  border-radius: 10px;
 
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 20px;
   padding-bottom: 10px;
+  margin-bottom:50px;
 }
 .message{
-  outline: 1px solid white;
+  outline: 1px solid rgb(0, 0, 0);
   border-radius: 1px;
   outline-offset: 4px;
-  color: white;
+  color: rgb(0, 0, 0);
+
 }
 
 .username{
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   line-height: 30px;
   font-size: 30px;
-  color:white;
+  color:rgb(0, 0, 0);
   padding-bottom: 15px;
 }
