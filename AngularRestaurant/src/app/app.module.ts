@@ -14,9 +14,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
+import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
 
 @NgModule({
-  declarations: [AppComponent, UserAdminComponent, EditUserAdminComponent],
+  declarations: [AppComponent, UserAdminComponent, EditUserAdminComponent, AddUserAdminComponent],
   imports: [
     BrowserModule,
     MatIconModule,

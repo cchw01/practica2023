@@ -1,0 +1,97 @@
+
+<div class="main">
+    <div class="container">
+      <div class="header-container">
+        <h1>Add user</h1>
+      </div>
+      <form (ngSubmit)="OnSubmit()" [formGroup]="AddUserForm">
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>First Name</mat-label>
+              <input
+                matInput
+                placeholder="First name"
+                type="text"
+                formControlName="firstName"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>Last Name</mat-label>
+              <input
+                matInput
+                placeholder="Last name"
+                type="text"
+                formControlName="lastName"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>Phone Number</mat-label>
+              <input
+                matInput
+                placeholder="Phone Number"
+                type="string"
+                formControlName="phoneNumber"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                placeholder="Email"
+                type="email"
+                formControlName="email"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>Password</mat-label>
+              <input
+                matInput
+                type="password"
+                placeholder="Password"
+                formControlName="password"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>Role</mat-label>
+              <mat-select formControlName="role">
+                <mat-option value="User">User</mat-option>
+                <mat-option value="Admin">Admin</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="options">
+          <button
+            mat-raised-button
+            type="submit"
+            class="submit-button"
+          >
+            Submit
+            <mat-icon fontIcon="check" color="primary"></mat-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

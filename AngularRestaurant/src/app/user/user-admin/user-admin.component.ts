@@ -18,6 +18,7 @@ export class UserAdminComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort?: MatSort | undefined;
   userAdmin: any;
   userList!: Array<User>;
+element: any;
   ngOnInit(): void {
     this.userList = this.userService.getData();
     console.log('Test1 ' + this.userService.getData());
