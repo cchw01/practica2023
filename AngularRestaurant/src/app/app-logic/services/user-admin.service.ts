@@ -29,4 +29,9 @@ export class UserAdminService {
   getUserById(id?: string): Observable<User> {
     return this.http.get<User>('http://localhost:80/user/' + id);
   }
+  deleteUser(id?: string) {
+    return this.http
+      .delete<User>('http://localhost:80/user/' + id)
+      .subscribe(() => console.log('Delete successful'));
+  }
 }

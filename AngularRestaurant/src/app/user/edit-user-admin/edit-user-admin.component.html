@@ -80,14 +80,21 @@
           </mat-form-field>
         </p>
       </div>
-      <button
-        mat-raised-button
-        type="submit"
-        class="submit-button"
-        (click)="redirectToMainPage()"
-      >
-        Submit
-      </button>
+      <div class="options">
+        <button mat-raised-button class="submit-button" (click)="deleteUser()">
+          <mat-icon fontIcon="delete"></mat-icon>
+          Delete
+        </button>
+        <button
+          mat-raised-button
+          type="submit"
+          class="submit-button"
+          (click)="redirectToMainPage()"
+        >
+          Submit
+          <mat-icon fontIcon="check" color="primary"></mat-icon>
+        </button>
+      </div>
     </form>
   </div>
 </div>

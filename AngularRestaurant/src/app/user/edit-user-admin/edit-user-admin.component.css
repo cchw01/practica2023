@@ -49,3 +49,8 @@ form {
   width: 10vw;
   align-self: flex-end;
 }
+.options {
+  display: flex;
+  justify-content: space-between;
+  width: 34vw;
+}

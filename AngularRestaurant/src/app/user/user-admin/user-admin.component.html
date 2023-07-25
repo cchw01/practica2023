@@ -36,14 +36,8 @@
         <!-- <a routerLink="/edit/{{ element._id }}">Edit</a> -->
         <a
           ><mat-icon
-            routerLink="/edit/{{ element._id }}"
+            routerLink="edit/{{ element._id }}"
             fontIcon="edit"
-          ></mat-icon
-        ></a>
-        <a
-          ><mat-icon
-            routerLink="/edit/{{ element._id }}"
-            fontIcon="delete"
           ></mat-icon
         ></a>
       </td>
@@ -52,6 +46,7 @@
     <tr mat-row *matRowDef="let row; columns: userAdminColumn"></tr>
   </table>
   <div class="paginator">
+    <button mat-raised-button routerLink="">Add user</button>
     <mat-paginator
       [pageSizeOptions]="[3, 6, 10, 20]"
       showFirstLastButtons

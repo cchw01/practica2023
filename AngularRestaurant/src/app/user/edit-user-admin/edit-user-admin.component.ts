@@ -60,4 +60,7 @@ export class EditUserAdminComponent implements OnInit {
       this.router.navigate(['']);
     }, 1000);
   }
+  deleteUser() {
+    this.userAdmin.deleteUser(this.identifier);
+  }
 }

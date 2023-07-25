@@ -4,8 +4,8 @@ import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.c
 import { UserAdminComponent } from './user/user-admin/user-admin.component';
 
 const routes: Routes = [
-  { path: '', component: UserAdminComponent },
-  { path: 'edit/:id', component: EditUserAdminComponent },
+  { path: 'user-admin', component: UserAdminComponent },
+  { path: 'user-admin/edit/:id', component: EditUserAdminComponent },
 ];
 
 @NgModule({
