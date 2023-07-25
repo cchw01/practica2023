@@ -2,18 +2,29 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { HomePageComponent } from './home-page/home-page.component';
+
 
 const routes: Routes = [
-  {
-    path: '', component: MenuComponent
-  },
-  {
-    path: 'product/:id', component: ProductPageComponent
-  }
+  { path: '', component: HomePageComponent },
+
+  //to modify component for the rest of the pages
+
+  {path: 'menu', component: MenuComponent},
+  {path: 'orders', component: HomePageComponent},
+  {path: 'reservations', component: HomePageComponent},
+  {path: 'contact', component: HomePageComponent},
+  {path: 'reviewRestaurant', component: HomePageComponent},
+  {path: 'login', component: HomePageComponent},
+  {path: 'register', component: HomePageComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
+export const RoutingComponents = {
+  HomePageComponent,
+  MenuComponent
+};

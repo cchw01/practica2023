@@ -1,0 +1,29 @@
+<div class="content">
+   <h1><b>Bine ati venit!</b></h1>
+   <app-image-carousel [images]="images"></app-image-carousel>
+   <p>Bun venit <i>La Studenți!</i> - locul unde savoarea întâlnește bugetul!</p>
+   <p>Locul perfect pentru a-ți potoli pofta de mâncare și a petrece momente plăcute alături de colegi și prieteni. Savurează meniurile noastre gustoase la prețuri prietenoase și bucură-te de o atmosferă relaxantă!</p>
+   <div class="page-cards">
+       <app-page-card
+           [text]="'Caută aici cele mai gustoase preparate pentru orice moment al zilei!'"
+           [src]="'../../assets/images/menuPage.png'"
+           [alt]="'Vezi Meniul'"
+           [buttonText]="'Vezi meniul!'"
+           [link]="'menu'"
+       ></app-page-card>
+       <app-page-card
+           [text]="'Ai vreo întâlnire sau vreo petrecere? Găsește masa potrivită aici!'"
+           [src]="'../../assets/images/reservationPage.png'"
+           [alt]="'Rezerva Acum'"
+           [buttonText]="'Rezervă acum!'"
+           [link]="'reservations'"
+       ></app-page-card>
+       <app-page-card
+           [text]="'Ne bucurăm că ați venit la noi! Cum vi s-a părut atmosfera?'"
+           [src]="'../../assets/images/reviewPage.png'"
+           [alt]="'Lasa o Recenzie'"
+           [buttonText]="'Lasă o recenzie!'"
+           [link]="'reviewRestaurant'"
+       ></app-page-card>
+   </div>
+</div>
