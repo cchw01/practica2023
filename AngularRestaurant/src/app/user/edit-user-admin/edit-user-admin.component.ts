@@ -57,7 +57,7 @@ export class EditUserAdminComponent implements OnInit {
   }
   redirectToMainPage() {
     setTimeout(() => {
-      this.router.navigate(['']);
+      this.router.navigate(['/user-admin']);
     }, 1000);
   }
   deleteUser() {

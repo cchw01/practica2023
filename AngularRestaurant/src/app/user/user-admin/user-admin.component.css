@@ -6,3 +6,7 @@ mat-icon {
   flex-direction: row;
   justify-content: space-between;
 }
+.table {
+  margin: auto;
+  width: 40vw;
+}

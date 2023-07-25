@@ -21,7 +21,7 @@ form {
   background-color: aliceblue;
   display: flex;
   flex-direction: column;
-  width: 45vw;
+  width: 40vw;
 }
 .field {
   padding: 0 1vw;
