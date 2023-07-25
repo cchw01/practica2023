@@ -6,7 +6,6 @@
       transform: translateY(-150px);
     }
   }
-  
   .scroll-bg {
     height: 100%;
     width: 100%;
@@ -18,6 +17,18 @@
     background-size: cover;
     animation: scrollBg 35s linear forwards;
   }
+  
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust the height to your preference */
+}
+
+.product-info {
+  text-align: center;
+  /* Add any other styles you want for the product info container */
+}
 
   
 .h1{
