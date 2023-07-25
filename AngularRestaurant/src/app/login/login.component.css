@@ -1,16 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
-/*
 form {
   margin: auto;
   margin-top: 50px;
-  width: 300px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   font-family: "Lato", sans-serif;
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 
 label {
@@ -20,35 +25,28 @@ label {
 
 input[type="text"],
 input[type="password"] {
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px;
-  margin-top: 15px;
-  margin-bottom: 20px;
   font-family: "Lato", sans-serif;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(204, 204, 204);
   box-sizing: border-box;
 }
 
 button {
   background-color: black;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 20px;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
+  padding: 14px 80px;
+  border: 4px solid rgb(228, 170, 61);
+  border-radius: 100px;
   font-family: "Lato", sans-serif;
   cursor: pointer;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
 }
 
 button:hover {
-  opacity: 0.8;
-}
-
-.container {
-  padding: 16px;
+  background-color: rgb(228, 170, 61);
 }
 
 #wrapper {
@@ -59,13 +57,13 @@ button:hover {
 }
 
 .copy {
+  font-size: 16px;
   background-color: black;
   color: white;
   font-family: "Lato", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 245px;
+  margin-top: 160px;
   padding: 12px;
 }
-*/

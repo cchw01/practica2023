@@ -1,39 +1,33 @@
-
 <div id="wrapper">
   <form [formGroup]="loginUserForm" (ngSubmit)="OnSubmit()">
-    <div class="container">
-      <h1>Login</h1>
-      <p>
-        <mat-form-field appearance="outline" class="email">
-          <mat-label>Username</mat-label>
-
-          <input
-            matInput
-            placeholder="Enter email"
-            type="text"
-            formControlName="email"
-            required
-          />
-         
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field appearance="outline" class="password">
-          <label for="psw"><b>Password</b></label>
-          <input
+    <h1>Login</h1>
+    <p>
+      <mat-form-field appearance="outline" class="email">
+        <mat-label>Username</mat-label>
+        <input
           matInput
-            type="password"
-            placeholder="Enter Password"
-            name="password"
-            required
-          />
-        </mat-form-field>
-      </p>
-      <button type="submit">Login</button>
-    </div>
+          type="text"
+          placeholder="Enter Username"
+          formControlName="email"
+          required
+        />
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline" class="password">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Enter Password"
+          name="password"
+          required
+        />
+      </mat-form-field>
+    </p>
+    <button type="submit">Send</button>
   </form>
 </div>
-
 <footer>
   <p class="copy">&copy; Restaurant 2023.</p>
 </footer>

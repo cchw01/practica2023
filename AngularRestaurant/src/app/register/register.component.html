@@ -5,6 +5,8 @@
     </div>
     <form (ngSubmit)="OnSubmit()" [formGroup]="addUserForm">
       <!-- First Name -->
+      <div class="section">
+        <div class="section1">
       <div class="row">
         <p class="field">
           <mat-form-field appearance="outline" class="firstName">
@@ -32,6 +34,7 @@
       </p>
       <!-- Email -->
       <div class="row">
+
         <p class="field">
           <mat-form-field appearance="outline" class="email">
             <mat-label>Email</mat-label>
@@ -40,6 +43,7 @@
           </mat-form-field>
         </p>
       </div>
+
       <!-- Password -->
       <div class="row">
         <p class="field">
@@ -70,3 +74,6 @@
     </form>
   </div>
 </div>
+<footer>
+  <p class="copy">&copy; Restaurant 2023.</p>
+</footer>
