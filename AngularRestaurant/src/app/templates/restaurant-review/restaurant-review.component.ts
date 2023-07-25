@@ -61,7 +61,9 @@ export class RestaurantReviewComponent implements OnInit {
         user: "64bf84c3250ea85bcae7e757", // here is where the current logged in user id goes
       };
       this.reviewRestaurantService.addReview(Instance);
+
       console.log(Instance);
+      window.location.reload();
     }
   }
 }
