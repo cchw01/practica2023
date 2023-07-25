@@ -58,22 +58,6 @@ export class RegisterComponent implements OnInit {
     this.registerservice.addUser(this.user);
   }
 
-  // // Custom role validator function
-  // roleValidator(): ValidatorFn {
-  //   return (formGroup: FormGroup): ValidationErrors | null => {
-  //     const roleControl = formGroup.get('role');
-
-  //     // Check if the role is neither 'admin' nor 'user'
-  //     if (roleControl && roleControl.value !== 'admin' && roleControl.value !== 'user') {
-  //       roleControl.setErrors({ invalidRole: true });
-  //       return { invalidRole: true };
-  //     }
-
-  //     roleControl.setErrors(null);
-  //     return null;
-  //   };
-  // }
-
   public hasError = (controlName: string, errorName: string) => {
     return this.addUserForm.controls[controlName].hasError(errorName);
   };
