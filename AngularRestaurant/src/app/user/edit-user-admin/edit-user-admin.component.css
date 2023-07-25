@@ -27,6 +27,9 @@ form {
   padding: 0 1vw;
   display: flex;
 }
+.row:first-child {
+  margin-top: 4vh;
+}
 .row {
   display: flex;
   flex-direction: row;

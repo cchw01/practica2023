@@ -73,12 +73,10 @@
         <p class="field">
           <mat-form-field class="all">
             <mat-label>Role</mat-label>
-            <input
-              matInput
-              type="string"
-              formControlName="role"
-              placeholder="Role"
-            />
+            <mat-select formControlName="role">
+              <mat-option value="User">User</mat-option>
+              <mat-option value="Admin">Admin</mat-option>
+            </mat-select>
           </mat-form-field>
         </p>
       </div>
@@ -86,10 +84,9 @@
         mat-raised-button
         type="submit"
         class="submit-button"
-        [disabled]="!addUserForm.valid"
         (click)="redirectToMainPage()"
       >
-        Send Request
+        Submit
       </button>
     </form>
   </div>

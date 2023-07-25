@@ -12,12 +12,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [AppComponent, UserAdminComponent, EditUserAdminComponent],
   imports: [
     BrowserModule,
+    MatIconModule,
     AppRoutingModule,
+    MatSelectModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatFormFieldModule,

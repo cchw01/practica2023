@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -11,12 +12,6 @@ export class UserAdminService {
 
   getData(): any {
     return this.http.get<any>('http://localhost:80/user');
-  }
-
-  addItem(user: User): void {
-    this.http
-      .post<any>('http://localhost:80/user', user)
-      .subscribe((data) => {});
   }
 
   updateUser(user: User, id: any): void {
@@ -30,5 +25,8 @@ export class UserAdminService {
       email: user.email,
     };
     this.http.put<any>('http://localhost:80/user/', body).subscribe();
+  }
+  getUserById(id?: string): Observable<User> {
+    return this.http.get<User>('http://localhost:80/user/' + id);
   }
 }
