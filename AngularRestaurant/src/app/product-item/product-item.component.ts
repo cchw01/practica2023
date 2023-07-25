@@ -13,6 +13,7 @@ import { Photo } from '../interfaces/photo.interface';
 export class ProductItemComponent implements OnInit {
 
   @Input() product: Product = new Product();
+  @Input() isLast: boolean = false;
   photo: Photo = new Photo();
   ingredientsList: string[] = [];
 

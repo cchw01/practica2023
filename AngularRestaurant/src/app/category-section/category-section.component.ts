@@ -23,4 +23,8 @@ export class CategorySectionComponent implements OnInit {
       });
     });
   }
+
+  isLastProduct(product: Product): boolean {
+    return product == this.productsByCategoryList[this.productsByCategoryList.length - 1];
+  }
 }

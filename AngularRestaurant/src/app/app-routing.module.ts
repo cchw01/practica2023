@@ -11,6 +11,8 @@ const routes: Routes = [
   //to modify component for the rest of the pages
 
   {path: 'menu', component: MenuComponent},
+  {path: 'product/:id', component: ProductPageComponent},
+
   {path: 'orders', component: HomePageComponent},
   {path: 'reservations', component: HomePageComponent},
   {path: 'contact', component: HomePageComponent},

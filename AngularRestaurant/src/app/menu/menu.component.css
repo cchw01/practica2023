@@ -5,12 +5,18 @@
     display: inline;
 }
 
+.main-container::-webkit-scrollbar {
+    display: none;
+}
+
 .main-container h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
     padding-bottom: 30px;
+    font-size: 40px;
     border-bottom: 3px solid #aaa;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
     margin-bottom: 40px;
 }

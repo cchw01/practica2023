@@ -1,7 +1,7 @@
 <div class="category-container">
     <h1>{{category.name}}</h1>
     <div *ngFor="let product of productsByCategoryList">
-        <app-product-item class="app-product-item" [product]="product">
+        <app-product-item class="app-product-item" [product]="product" [isLast]="isLastProduct(product)">
         </app-product-item> 
     </div>
 </div>

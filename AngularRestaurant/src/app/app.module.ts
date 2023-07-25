@@ -14,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { CategorySectionComponent } from './category-section/category-section.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [

@@ -1,8 +1,11 @@
 <div *ngIf="product.isAvailable" class="product-container">
-    <img class="photo" src={{photo.photoLink}}>
-    <div class="product-content">
-        <h5 (click)="viewProduct()">{{product.name}}</h5><span>{{product.price}} RON</span>
-        <p>Ingredients: {{ingredientsList.join(', ')}}</p>
+    <div class="photo-container">
+        <img class="photo" src={{photo.photoLink}}>
     </div>
-    <p class="ingredients"></p>
+    <div class="product-content">
+        <h5 class="product-name" (click)="viewProduct()">{{product.name}}</h5>
+        <p class="product-ingredients">Ingredients: {{ingredientsList.join(', ')}}</p>
+    </div>
+    <span class="product-price">{{product.price}} RON</span>
 </div>
+<hr *ngIf="!isLast">
