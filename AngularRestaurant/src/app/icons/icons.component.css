@@ -1,0 +1,15 @@
+.icons{
+    margin-left:10vh;
+  }
+  
+  .icons li{
+      display:inline-block;
+      padding-top: 7vh;
+      padding-left: 2vh;
+  }
+  
+  .icons li a svg:hover {
+    transition: 0.15s all;
+    opacity:0.7;
+  }
+  

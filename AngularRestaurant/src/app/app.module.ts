@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, platformBrowser } from '@angular/platform-browser';
-
+import { MatIconModule } from '@angular/material/icon';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatDividerModule } from '@angular/material/divider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RestaurantReviewComponent } from './templates/restaurant-review/restaurant-review.component';
@@ -21,20 +23,30 @@ import { AllReviewsComponent } from './templates/all-reviews/all-reviews.compone
 import { ProductComponent } from './admin-pages/product/product.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
+import { LoginRegisterNavComponent } from './login-register-nav/login-register-nav.component';
+import { IconsComponent } from './icons/icons.component';
+import { HomePageModule } from './home-page/home-page.module';
 import { RestaurantReviewSingleComponent } from './templates/restaurant-review-single/restaurant-review-single.component';
 
 
 @NgModule({
-  declarations: [AppComponent,
+  declarations: [
+    AppComponent,
     RestaurantReviewComponent,
     RestaurantReviewPageComponent,
     AllReviewsComponent,
     ProductComponent,
+
     NavbarComponent,
-    RestaurantReviewSingleComponent
+    RestaurantReviewSingleComponent,
+
+    LoginRegisterNavComponent,
+    IconsComponent,
   ],
   imports: [
+
     BrowserModule,
+
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTableModule,
@@ -46,7 +58,13 @@ import { RestaurantReviewSingleComponent } from './templates/restaurant-review-s
     MatButtonModule,
     StarRatingModule.forRoot(),
     MatCardModule,
-    HttpClientModule],
+    HttpClientModule,
+    MatIconModule,
+    ScrollingModule,
+    MatDividerModule,
+    HomePageModule,
+    MatButtonModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
