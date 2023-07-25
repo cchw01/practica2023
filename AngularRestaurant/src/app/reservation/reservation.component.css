@@ -5,20 +5,21 @@
   align-items: center;
   flex-wrap: wrap;
 }
+h1 {
+  font-size: 3em;
+}
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .header-container {
-  background-color: aliceblue;
   text-align: center;
-  padding: 2vh 10vw;
+  align-items: center;
+  padding: 2vh 21.5vw;
   border-bottom: 0.3vh solid #999;
 }
 .container {
-  padding-top: 4vh;
-  background-color: aliceblue;
   display: flex;
   flex-direction: column;
 }
@@ -30,15 +31,21 @@ form {
   display: flex;
   flex-direction: row;
 }
+textarea {
+  resize: none;
+}
 .fullName,
 .comments,
 .numberOfGuests {
-  width: 32vw;
+  width: 42vw;
 }
 .date,
 .time-start,
 .time-end {
-  width: 15vw;
+  width: 20vw;
+}
+.comments {
+  height: 20vh;
 }
 .date {
   align-self: flex-end;
@@ -46,9 +53,11 @@ form {
 .desc {
   padding: 5vh;
   text-align: center;
+  width: 40vw;
 }
 .submit-button {
   margin: 1vh 1vw;
+  margin-top: 20vh;
   width: 10vw;
   align-self: flex-end;
 }
