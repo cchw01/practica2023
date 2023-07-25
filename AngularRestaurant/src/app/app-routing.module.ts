@@ -4,6 +4,7 @@ import { RestaurantReviewPageComponent } from './templates/restaurant-review-pag
 
 import { HomePageComponent } from './home-page/home-page.component';
 
+import { ProductComponent } from './admin-pages/product/product.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -17,6 +18,8 @@ const routes: Routes = [
   {path: 'reviewRestaurant', component: RestaurantReviewPageComponent},
   {path: 'login', component: HomePageComponent},
   {path: 'register', component: HomePageComponent},
+  {path:'productAdmin', component: ProductComponent}
+
 ];
 
 @NgModule({

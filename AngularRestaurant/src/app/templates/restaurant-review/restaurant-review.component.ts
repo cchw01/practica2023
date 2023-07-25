@@ -38,7 +38,7 @@ export class RestaurantReviewComponent implements OnInit {
   }
 
   validateTextField(): boolean {
-    if (this.addReviewFormGroup.value.description == '') {
+    if (this.addReviewFormGroup.value.message == '') {
       alert('Mesajul nu poate fi gol.');
       return false;
     }

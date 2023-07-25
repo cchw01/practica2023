@@ -17,15 +17,25 @@ import { StarRatingModule } from 'angular-star-rating';
 import { RestaurantReviewPageComponent } from './templates/restaurant-review-page/restaurant-review-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { AllReviewsComponent } from './templates/all-reviews/all-reviews.component';
+import { ProductComponent } from './admin-pages/product/product.component';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { RestaurantReviewSingleComponent } from './templates/restaurant-review-single/restaurant-review-single.component';
+
 
 @NgModule({
   declarations: [AppComponent,
     RestaurantReviewComponent,
     RestaurantReviewPageComponent,
-    NavbarComponent, RestaurantReviewSingleComponent,],
-  imports: [BrowserModule, AppRoutingModule,
+    AllReviewsComponent,
+    ProductComponent,
+    NavbarComponent,
+    RestaurantReviewSingleComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
