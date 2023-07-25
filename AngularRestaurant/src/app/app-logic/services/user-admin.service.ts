@@ -34,7 +34,7 @@ export class UserAdminService {
       .delete<User>('http://localhost:80/user/' + id)
       .subscribe(() => console.log('Delete successful'));
   }
-  addUser(user: User){
+  addUser(user: User) {
     this.http.post<User>('http://localhost:80/user/', user).subscribe();
   }
 }
