@@ -31,6 +31,7 @@ async function postProduct(req: Request, res: Response, next: NextFunction) {
 }
 
 async function getProduct(req: Request, res: Response, next: NextFunction) {
+
   const productId: string = req.params.productId;
   let product: Error | Product | null;
 
