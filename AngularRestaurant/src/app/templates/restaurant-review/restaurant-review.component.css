@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 .review-form-card{
-  background-image: linear-gradient(45deg,#093028,#237A57);
-  width: 800px;
+  background-image: linear-gradient(90deg,#093028,#237A57);
+  width: 700px;
 }
 
 .review-helper-text{
@@ -48,7 +48,6 @@
 
   .review-sumbit-button{
     display: flex;
-    justify-content: center;
     padding-top: 20px;
     padding-bottom: 10px;
   }

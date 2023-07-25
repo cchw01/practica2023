@@ -1,5 +1,15 @@
-<div class="scroll-bg"></div>
+<div class="review-page">
 
-<div class="review-component">
-  <restaurant-review></restaurant-review>
+
+  <div class="add-review-component">
+    <restaurant-review></restaurant-review>
+  </div>
+
+  <div *ngFor="let item of reviews">
+    <app-restaurant-review-single
+    [username] = "item.user"
+    [message] = "item.message"
+    [starNumber] = "item.ratingStars">
+    </app-restaurant-review-single>
+  </div>
 </div>

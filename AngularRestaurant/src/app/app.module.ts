@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, platformBrowser } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,18 +17,15 @@ import { StarRatingModule } from 'angular-star-rating';
 import { RestaurantReviewPageComponent } from './templates/restaurant-review-page/restaurant-review-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
-import { AllReviewsComponent } from './templates/all-reviews/all-reviews.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RestaurantReviewSingleComponent } from './templates/restaurant-review-single/restaurant-review-single.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
+  declarations: [AppComponent,
     RestaurantReviewComponent,
     RestaurantReviewPageComponent,
-    AllReviewsComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
+    NavbarComponent, RestaurantReviewSingleComponent,],
+  imports: [BrowserModule, AppRoutingModule,
     BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
@@ -39,9 +36,7 @@ import { AllReviewsComponent } from './templates/all-reviews/all-reviews.compone
     MatButtonModule,
     StarRatingModule.forRoot(),
     MatCardModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    HttpClientModule],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

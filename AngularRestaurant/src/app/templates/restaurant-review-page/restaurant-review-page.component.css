@@ -1,26 +1,15 @@
-@keyframes scrollBg {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-150px);
-  }
-}
-
-.scroll-bg {
+.review-page{
+  max-height: 100vh;
+  overflow-x: hidden;
+  background-image: linear-gradient(#202020,#000000);
   height: 100%;
-  width: 100%;
-  position: fixed;
-  padding-bottom: 330px;
-  background-color: #E8BA9B;
-  background-image: url('https://andreivictor.ro/codepen/scroll-bg-animation-pinterest/bg_pasta_grid-3f880df3.jpg');
-  background-size: cover;
-  animation: scrollBg 35s linear forwards;
 }
 
-.review-component{
-  display: flex;
-  justify-content:center;
-  padding-top: 200px;
-  filter: drop-shadow(30px 30px 10px #0000009f);
+.review-page::-webkit-scrollbar {
+  display: none;
+}
+
+.add-review-component{
+  padding-top: 20px;
+  display: flex; justify-content:center; align-items:center;
 }

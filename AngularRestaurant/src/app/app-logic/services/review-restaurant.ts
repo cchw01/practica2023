@@ -4,7 +4,6 @@ export class ReviewRestaurant {
     ratingStars!: number;
     user!: string;
 
-  
     constructor(reviewRestaurant?: Partial<ReviewRestaurant>) {
       Object.assign(this, reviewRestaurant);
     }
