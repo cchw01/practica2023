@@ -2,10 +2,13 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RestaurantReviewPageComponent } from './templates/restaurant-review-page/restaurant-review-page.component';
 import { AllReviewsComponent } from './templates/all-reviews/all-reviews.component';
+import { ProductComponent } from './admin-pages/product/product.component';
 
 const routes: Routes = [
   {path:'allReviews', component:AllReviewsComponent},
-  {path:'review', component:RestaurantReviewPageComponent}
+  {path:'review', component:RestaurantReviewPageComponent},
+  {path:'productAdmin', component: ProductComponent}
+  
 ];
 
 @NgModule({

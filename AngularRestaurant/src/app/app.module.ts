@@ -18,13 +18,15 @@ import { RestaurantReviewPageComponent } from './templates/restaurant-review-pag
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { AllReviewsComponent } from './templates/all-reviews/all-reviews.component';
+import { ProductComponent } from './admin-pages/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantReviewComponent,
     RestaurantReviewPageComponent,
-    AllReviewsComponent
+    AllReviewsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
