@@ -63,14 +63,11 @@ export async function postUser(user: User): Promise<Error | User> {
 }
 
 export async function getByEmail(email: string): Promise<Error | User | null> {
-  console.log("mererge acuma?");
   if (!email || typeof email !== "string") {
     return Error("invalid email");
   }
-  console.log("mererge?");
   try {
     const user = await UserDB.findOne<User>({ email: email });
-    console.log("nu merer");
     return user;
   } catch (ex: any) {
     return Error(ex.message);
