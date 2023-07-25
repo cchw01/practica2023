@@ -3,14 +3,8 @@
     <div class="header-container">
       <h1>Reservations</h1>
     </div>
+    <div class="image-header"></div>
     <form (ngSubmit)="OnSubmit()" [formGroup]="addReservationForm">
-      <p class="desc">
-        <i>
-          We’ll reserve a table just for you! Call us at 212-213-3333 or use the
-          form below, and we’ll confirm with you if the date and time is
-          available.</i
-        >
-      </p>
       <div class="row">
         <p class="field">
           <mat-form-field appearance="outline" class="fullName" color="primary">
@@ -78,6 +72,13 @@
           </mat-form-field>
         </p>
       </div>
+      <p class="desc">
+        <i>
+          We’ll reserve a table just for you! Call us at 212-213-3333 or use the
+          form below, and we’ll confirm with you if the date and time is
+          available.</i
+        >
+      </p>
       <button
         mat-raised-button
         type="submit"

@@ -17,7 +17,7 @@ form {
   text-align: center;
   align-items: center;
   padding: 2vh 21.5vw;
-  border-bottom: 0.3vh solid #999;
+  margin-top: 2vh;
 }
 .container {
   display: flex;
@@ -51,13 +51,24 @@ textarea {
   align-self: flex-end;
 }
 .desc {
-  padding: 5vh;
+  padding: 1vh;
   text-align: center;
   width: 40vw;
 }
 .submit-button {
   margin: 1vh 1vw;
-  margin-top: 20vh;
+  margin-top: 13vh;
   width: 10vw;
   align-self: flex-end;
+}
+.image-header {
+  background-image: url("/assets/images/reservation-header.png");
+  align-self: center;
+  justify-self: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 42vw;
+  height: 6vh;
+  margin-bottom: 7vh;
 }
