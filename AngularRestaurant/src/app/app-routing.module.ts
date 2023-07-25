@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { ReservationComponent } from './reservation/reservation.component';
 import { HomePageComponent } from './home-page/home-page.component';
-
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -11,7 +10,7 @@ const routes: Routes = [
 
   {path: 'menu', component: HomePageComponent},
   {path: 'orders', component: HomePageComponent},
-  {path: 'reservations', component: HomePageComponent},
+  {path: 'reservations', component: ReservationComponent },
   {path: 'contact', component: HomePageComponent},
   {path: 'reviewRestaurant', component: HomePageComponent},
   {path: 'login', component: HomePageComponent},
@@ -25,4 +24,5 @@ const routes: Routes = [
 export class AppRoutingModule {}
 export const RoutingComponents = {
   HomePageComponent,
+  ReservationComponent,
 };
