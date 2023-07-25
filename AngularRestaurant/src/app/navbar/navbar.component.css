@@ -1,0 +1,60 @@
+.navbar {
+  display:flexbox;
+}
+
+nav ul li a {
+    display: block;
+    width: 200px;
+    margin-left:100px;
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+
+  nav ul{
+  float: left;
+  margin-top: 50px;
+  margin-bottom:0px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  }
+
+  nav ul li{
+    list-style-type: none;
+    transition: 0.7s all;
+    opacity:1;
+    font-size: 17px;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  nav ul li:hover{
+    background-color:rgb(0, 0, 0);
+    font-weight: bold;
+    transition: 0.15s all;
+  }
+
+  nav ul li a{
+    text-decoration: none;
+    color: #fff;
+  }
+
+.logo{
+  width: 250px;
+  display: block;
+  padding-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.divider{
+  border-top-color:rgb(255, 255, 255);
+  border-top-width:1vh;
+  margin-top:10vh;
+  border-top-style:solid;
+  border-radius: 90%;
+}
+
+
+
+
+
