@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from '../services/menu.service';
+import { MenuService } from '../app-logic/services/menu.service';
 import { Product } from '../interfaces/product.interface';
 import { Ingredient } from '../interfaces/ingredient.interface';
 import { Category } from '../interfaces/category.interface';

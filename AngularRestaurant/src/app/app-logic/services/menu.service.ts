@@ -1,10 +1,10 @@
 import { Injectable, OnInit } from '@angular/core';
-import { Product } from '../interfaces/product.interface';
+import { Product } from '../../interfaces/product.interface';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Ingredient } from '../interfaces/ingredient.interface';
-import { Category } from '../interfaces/category.interface';
-import { Photo } from '../interfaces/photo.interface';
+import { Ingredient } from '../../interfaces/ingredient.interface';
+import { Category } from '../../interfaces/category.interface';
+import { Photo } from '../../interfaces/photo.interface';
 
 @Injectable({
   providedIn: 'root'

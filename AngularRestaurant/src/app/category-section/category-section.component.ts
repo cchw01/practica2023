@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Category } from '../interfaces/category.interface';
 import { Product } from '../interfaces/product.interface';
-import { MenuService } from '../services/menu.service';
+import { MenuService } from '../app-logic/services/menu.service';
 
 @Component({
   selector: 'app-category-section',

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Ingredient } from '../interfaces/ingredient.interface';
 import { Product } from '../interfaces/product.interface';
-import { MenuService } from '../services/menu.service';
+import { MenuService } from '../app-logic/services/menu.service';
 import { Router } from '@angular/router';
 import { Photo } from '../interfaces/photo.interface';
 

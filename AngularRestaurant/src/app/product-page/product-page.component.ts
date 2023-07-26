@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MenuService } from '../services/menu.service';
+import { MenuService } from '../app-logic/services/menu.service';
 import { Product } from '../interfaces/product.interface';
 import { Photo } from '../interfaces/photo.interface';
 
