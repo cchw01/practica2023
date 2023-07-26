@@ -5,6 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { SelectionModel } from '@angular/cdk/collections';
 import { Product } from 'src/app/app-logic/services/product';
 import { ProductAdminService } from 'src/app/app-logic/services/product-admin.service';
+
 @Component({
   selector: 'app-product-admin',
   templateUrl: './product-admin.component.html',
