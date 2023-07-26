@@ -9,5 +9,6 @@
 .category-container h1 {
     font-family: "lato", sans-serif;
     text-align: center;
+    margin-bottom: 40px;
     font-size: 30px;
 }

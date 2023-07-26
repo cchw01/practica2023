@@ -1,69 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
 .product-container {
     width: 100%;
-    min-height: 100vh;
-    display: flex;
+    display: inline;
+    text-align: center;
     align-items: center;
     justify-content: center;
+    font-family: "lato", sans-serif;
 }
 
-.product {
-    width: 90%;
-    max-width: 900px;
-    display: flex;
-    padding: 3px;
-    background: gray;
-    position: relative;
-
+.product-info {
+    margin-top: -120px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "thePhoto theInfo";
 }
 
 .photo {
-    flex-basis: 50%;
-    background: #241e20;
-    transform: scale(1.08);
-    box-shadow: -10px 5px 10px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    grid-area: thePhoto;
 }
 
 .photo img {
-    width: 100%;
-    display: inline;
-}
-
-.details {
-    flex-basis: 50%;
-    background: white;
-    padding: 1vh;
-    padding-left: 60px;
+    max-height: 400px;
+    max-width: 400px;
     box-shadow: -10px 5px 10px 10px rgba(0, 0, 0, 0.1);
-    font-size: 14px;
-    font-weight: 500;
-    color: #777;
 }
 
-.details h1 {
-    color: #333;
-    font-size: 35px;
+.info {
+    text-align: left;
+    padding-left: 40px;
+    padding-top: 20px;
+    grid-area: theInfo;
 }
 
-.details h2 {
-    color: #555;
-    font-size: 25px;
-    margin-top: -10px;
-    font-weight: 600;
-    margin-bottom: 20px;
+
+.product-name {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-top: 40px;
+    font-size: 40px;
 }
 
-button {
-    position: absolute;
-    bottom: 8%;
-    background-color: purple;
-    color: #fff;
-    font-size: 17px;
-    width: 26vw;
-    padding: 10px;
-    border-radius: 30px;
+.product-price {
+    font-size: 20px;
 }
 
-button:hover {
-    cursor: pointer;
-    background-color: plum;
+.separator {
+    display: block;
+    align-content: center;
+    margin-top: -150px;
+    margin-bottom: -80px;
+    margin-left: auto;
+    margin-right: auto;
 }
