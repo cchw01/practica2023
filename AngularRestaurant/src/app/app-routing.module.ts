@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'reviewRestaurant', component: HomePageComponent},
   {path: 'login', component: HomePageComponent},
   {path: 'register', component: HomePageComponent},
-  { path: 'product-admin/edit/:id', component: EditProductAdminComponent },
+  {path: 'product-admin/edit/:id', component: EditProductAdminComponent },
   {path: 'product-admin', component: ProductAdminComponent},
   {path: 'product-admin/add', component: AddProductAdminComponent},
 ];

@@ -7,25 +7,30 @@
   
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-        <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
       </ng-container>
   
       <ng-container matColumnDef="photo">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Photo</th>
-        <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.photo }}</td>
       </ng-container>
   
       <ng-container matColumnDef="price">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
-        <td mat-cell *matCellDef="let element">{{ element.phoneNumber }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.price }}</td>
       </ng-container>
   
       <ng-container matColumnDef="ingredientList">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
-        <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>List of Ingredients</th>
+        <td mat-cell *matCellDef="let element">{{ element.ingredientsList }}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="isAvailable">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Availability</th>
+        <td mat-cell *matCellDef="let element">{{ element.isAvailable }}</td>
       </ng-container>
   
-      <ng-container matColumnDef="isAvailable">
+      <ng-container matColumnDef="Actions">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
         <td mat-cell *matCellDef="let element">
           <!-- <a routerLink="/edit/{{ element._id }}">Edit</a> -->
