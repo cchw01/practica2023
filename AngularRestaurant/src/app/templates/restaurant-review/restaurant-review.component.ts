@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClickEvent } from 'angular-star-rating';
 import { ReviewRestaurant } from 'src/app/app-logic/services/review-restaurant';
 import { ReviewRestaurantService } from 'src/app/app-logic/services/review-restaurant.service';
-
+import { UserCookieManagmentService } from 'src/app/app-logic/services/user-cookie-managment.service';
 @Component({
   selector: 'restaurant-review',
   templateUrl: './restaurant-review.component.html',
@@ -13,7 +13,11 @@ export class RestaurantReviewComponent implements OnInit {
   addReviewFormGroup!: FormGroup;
   onClickResult!: ClickEvent | undefined;
 
-  constructor(private fb: FormBuilder, private reviewRestaurantService: ReviewRestaurantService) {}
+  constructor(
+    private fb: FormBuilder,
+    private reviewRestaurantService: ReviewRestaurantService,
+    private userCookieManagement: UserCookieManagmentService
+    ) {}
   ngOnInit(): void {
     this.addReviewFormGroup = this.fb.group({
       message: ['', Validators.required],
@@ -52,17 +56,19 @@ export class RestaurantReviewComponent implements OnInit {
     return false;
   }
 
+  isUserAuthenticated():boolean{
+    return this.userCookieManagement.isUserAuthenticated()
+  }
+
   onSubmit(): void {
     if (this.validateAllFields()) {
       let Instance = {
         id: "",
         message: this.addReviewFormGroup.value.message,
         ratingStars: this.addReviewFormGroup.value.ratingStars,
-        user: "64bf84c3250ea85bcae7e757", // here is where the current logged in user id goes
+        user: this.userCookieManagement.getUserCookie()._id, // here is where the current logged in user id goes
       };
       this.reviewRestaurantService.addReview(Instance);
-
-      console.log(Instance);
       window.location.reload();
     }
   }

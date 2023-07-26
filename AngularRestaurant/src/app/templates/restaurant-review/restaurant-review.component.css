@@ -55,3 +55,9 @@
   height: 100%;
 }
 /* Aici se termina impelementarile pentru Firefox */
+
+.user-not-loggedin{
+  font-size: 15px;
+  padding-top: 20px;
+  text-align: center;
+}

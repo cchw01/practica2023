@@ -14,7 +14,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
 import { StarRatingModule } from 'angular-star-rating';
 import { RestaurantReviewPageComponent } from './templates/restaurant-review-page/restaurant-review-page.component';
 import { MatCardModule } from '@angular/material/card';
@@ -28,6 +27,16 @@ import { IconsComponent } from './icons/icons.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { RestaurantReviewSingleComponent } from './templates/restaurant-review-single/restaurant-review-single.component';
 
+import { ReservationComponent } from './reservation/reservation.component';
+import {
+  MAT_FORM_FIELD_DEFAULT_OPTIONS,
+  MatFormFieldModule,
+} from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { ConfirmReservationComponent } from './reservation/confirm-reservation/confirm-reservation.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -42,6 +51,10 @@ import { RestaurantReviewSingleComponent } from './templates/restaurant-review-s
 
     LoginRegisterNavComponent,
     IconsComponent,
+    ReservationComponent,
+    ConfirmReservationComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
 
@@ -63,8 +76,27 @@ import { RestaurantReviewSingleComponent } from './templates/restaurant-review-s
     ScrollingModule,
     MatDividerModule,
     HomePageModule,
-    MatButtonModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    HttpClientModule,
   ],
+  providers: [
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'outline' },
+    },
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    CookieService,
+  ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

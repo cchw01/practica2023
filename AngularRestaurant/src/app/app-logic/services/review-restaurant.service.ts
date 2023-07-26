@@ -24,11 +24,6 @@ export class ReviewRestaurantService {
 
     var callback = this.http
     .get<Array<ReviewRestaurant>>('http://localhost:80/reviewRestaurant/restaurant')
-    // .subscribe((reviewReq)=>{
-    //   reviewReq.forEach(element =>{
-    //     tmpReviews.push(element);
-    //   });
-    // })
 
     return callback;
   }

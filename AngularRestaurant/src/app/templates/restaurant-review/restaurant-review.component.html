@@ -1,4 +1,4 @@
-<div class="review-form-card">
+<div class="review-form-card" *ngIf="isUserAuthenticated()">
 <div class="review-helper-text">
     Cum ne-am descurcat?
     <br>
@@ -17,3 +17,8 @@
     </div>
   </form>
 </div>
+
+<p *ngIf="!isUserAuthenticated()" class="user-not-loggedin">
+  Pentru a putea scrie o recenzie, te rugam sa te autentifici.<br>
+  Apasa <a href="/login">aici</a> pentru a te autentifica.
+</p>
