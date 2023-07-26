@@ -33,7 +33,7 @@ export class ProductAdminService {
       .delete<Product>('http://localhost:80/product/' + id)
       .subscribe(() => console.log('Delete successful'));
   }
-  addProduct(user: Product) {
-    this.http.post<Product>('http://localhost:80/product/', user).subscribe();
+  addProduct(product: Product) {
+    this.http.post<Product>('http://localhost:80/product/', product).subscribe();
   }
 }

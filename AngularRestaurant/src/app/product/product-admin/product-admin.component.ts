@@ -30,7 +30,7 @@ export class ProductAdminComponent implements OnInit {
     'name',
     'photo',
     'price',
-    'ingredientList',
+    'ingredientsList',
     'isAvailable',
     'actions',
   ];

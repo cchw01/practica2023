@@ -15,11 +15,11 @@ export class AddProductAdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.AddProductForm = this.fb.group({
-      Name: [this.product?.name, Validators.required],
-      Photo: [this.product?.photo],
-      Price: [this.product?.price, Validators.required],
-      ListOfIngredients: [this.product?.ingredientsList, Validators.required],
-      Availability: [this.product?.isAvailable, Validators.required],
+      name: [this.product?.name, Validators.required],
+      photo: [this.product?.photo],
+      price: [this.product?.price, Validators.required],
+      ingredientsList: [this.product?.ingredientsList, Validators.required],
+      isAvailable: [this.product?.isAvailable, Validators.required],
     });
   }
 
@@ -30,11 +30,11 @@ export class AddProductAdminComponent implements OnInit {
     private productAdmin: ProductAdminService
   ) {
     this.AddProductForm = this.fb.group({
-      Name: [this.product?.name, Validators.required],
-      Photo: [this.product?.photo],
-      Price: [this.product?.price, Validators.required],
-      ListOfIngredients: [this.product?.ingredientsList, Validators.required],
-      Availability: [this.product?.isAvailable, Validators.required],
+      name: [this.product?.name, Validators.required],
+      photo: [this.product?.photo],
+      price: [this.product?.price, Validators.required],
+      ingredientsList: [this.product?.ingredientsList, Validators.required],
+      isAvailable: [this.product?.isAvailable, Validators.required],
     });
   }
 
