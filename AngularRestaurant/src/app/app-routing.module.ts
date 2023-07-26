@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MenuComponent } from './menu/menu.component';
+import { ProductPageComponent } from './product-page/product-page.component';
 import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
 import { UserAdminComponent } from './user/user-admin/user-admin.component';
 import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
@@ -12,7 +14,9 @@ const routes: Routes = [
 
   //to modify component for the rest of the pages
 
-  {path: 'menu', component: HomePageComponent},
+  {path: 'menu', component: MenuComponent},
+  {path: 'product/:id', component: ProductPageComponent},
+
   {path: 'orders', component: HomePageComponent},
   {path: 'reservations', component: ReservationComponent },
   {
@@ -35,6 +39,7 @@ const routes: Routes = [
 export class AppRoutingModule {}
 export const RoutingComponents = {
   HomePageComponent,
+  MenuComponent
   ReservationComponent,
   EditUserAdminComponent,
 };
