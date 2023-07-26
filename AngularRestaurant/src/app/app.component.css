@@ -1,21 +1,33 @@
-body {
-    margin: 0;
+.content {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-image: url("/assets/images/restaurantbg.png");
+  background-size: cover;
+  display: grid;
+  grid-template-areas: "theNav theContent";
+  position: fixed;
 }
 
-nav {
-    background-color: black;;
-    padding: 10px 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 20px;
-    font-family: "Lato", sans-serif;
- 
+.row {
+  display: flex;
+  margin: 0px auto;
 }
 
-nav a {
-    text-decoration: none;
-    color: white;
-    font-size: 17px;
+.column-nav {
+  margin-left: 100px;
+  margin-right: 50px;
+  margin-bottom: 0px;
+  background-color: rgba(185, 110, 6, 0.9);
+  overflow: hidden;
 }
+
+.column-content {
+  margin-top: 0px auto;
+  background-color: aliceblue;
+  width: 110vh;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
 

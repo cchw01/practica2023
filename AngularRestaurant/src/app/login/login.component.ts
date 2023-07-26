@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
   hasError(field: string | number, errorType: string | number) {
     const errors = {
       uname: {
-        required: 'Username is required.',
+        required: 'Email is required.',
       },
     };
     return errors;
@@ -48,6 +48,6 @@ export class LoginComponent implements OnInit {
 
   error = this.hasError('email', 'required');
   if(error: any) {
-    console.log(error); // Output: "Username is required."
+    console.log(error); // Output: "Email is required."
   }
 }
