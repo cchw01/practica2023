@@ -25,16 +25,7 @@ import { RegisterComponent } from './register/register.component';
 import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    LoginRegisterNavComponent,
-    IconsComponent,
-    ReservationComponent,
-    ConfirmReservationComponent,
-    LoginComponent,
-    RegisterComponent,
-  ],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, Contact],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -67,3 +58,4 @@ import { CookieService } from 'ngx-cookie-service';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+  

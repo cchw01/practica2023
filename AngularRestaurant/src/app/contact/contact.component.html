@@ -1,10 +1,9 @@
 <div class="main">
-  <div class="container">
+  <div class="forms">
     <div class="header-container">
-      <h1>Register</h1>
+      <h1>Contact</h1>
     </div>
-    <form (ngSubmit)="OnSubmit()" [formGroup]="addUserForm">
-      <!-- First Name -->
+    <form (ngSubmit)="OnSubmit()" [formGroup]="addReviewForm">
       <div class="section">
         <div class="section1">
           <div class="row">
@@ -17,12 +16,8 @@
                   type="text"
                   formControlName="firstName"
                 />
-                <mat-error *ngIf="hasError('firstName', 'required')"
-                  >First Name required</mat-error
-                >
               </mat-form-field>
             </p>
-            <!-- Last Name -->
             <p class="field">
               <mat-form-field appearance="outline" class="lastName">
                 <mat-label>Last Name</mat-label>
@@ -32,50 +27,39 @@
                   type="text"
                   formControlName="lastName"
                 />
-                <mat-error *ngIf="hasError('lastName', 'required')"
-                  >Last Name required</mat-error
-                >
               </mat-form-field>
             </p>
           </div>
-          <!-- Phone Number -->
           <p class="field">
-            <mat-form-field appearance="outline" class="phoneNumber">
-              <mat-label>Phone</mat-label>
+            <mat-form-field appearance="outline" class="email">
+              <mat-label>Email</mat-label>
               <input
                 matInput
-                placeholder="Phone number"
-                type="text"
-                formControlName="phoneNumber"
+                placeholder="email"
+                type="email"
+                formControlName="email"
               />
-              <mat-error *ngIf="hasError('phoneNumber', 'required')"
-                >Phone number required</mat-error
-              >
             </mat-form-field>
           </p>
         </div>
         <div class="section2">
-          <!-- Email -->
           <div class="row">
             <p class="field">
-              <mat-form-field appearance="outline" class="email">
-                <mat-label>Email</mat-label>
+              <mat-form-field appearance="outline" class="phoneNumber">
+                <mat-label>Phone</mat-label>
                 <input
                   matInput
-                  placeholder="Email"
-                  type="email"
-                  formControlName="email"
+                  placeholder="phoneNumber"
+                  type="text"
+                  formControlName="phoneNumber"
                 />
-                <mat-error *ngIf="hasError('email', 'email')"
-                  >Invalid email</mat-error
-                >
               </mat-form-field>
             </p>
-          </div>    
+          </div>
           <div class="row">
             <p class="field">
               <mat-form-field appearance="outline" class="password">
-                <mat-label>Password</mat-label>
+                <mat-label>Password </mat-label>
                 <input
                   matInput
                   placeholder="Password"
@@ -83,28 +67,20 @@
                   formControlName="password"
                   class="password"
                 />
-
-                <mat-error *ngIf="hasError('password', 'required')"
-                  >Password required</mat-error
-                >
-                <mat-error
-                  class="password-error"
-                  *ngIf="hasError('password', 'passwordRequirements')"
-                >
-                  The password must contain 8 characters long and at least a
-                  number.
-                </mat-error>
               </mat-form-field>
             </p>
           </div>
           <div class="row">
             <p class="field">
               <mat-form-field appearance="outline" class="role">
-                <mat-label>Role:</mat-label>
-                <input matInput formControlName="role" checked="checked" />
-                <mat-error *ngIf="hasError('role', 'required')"
-                  >Role required</mat-error
-                >
+                <mat-label>Role </mat-label>
+                <input
+                  matInput
+                  placeholder="User"
+                  type="text"
+                  formControlName="role"
+                  class="role"
+                />
               </mat-form-field>
             </p>
           </div>
@@ -114,13 +90,21 @@
         mat-raised-button
         type="submit"
         class="submit-button"
-        [disabled]="!addUserForm.valid"
+        [disabled]="!addReviewForm.valid"
       >
         Send
       </button>
     </form>
   </div>
-  <footer>
-    <p class="copy">&copy; Restaurant 2023.</p>
-  </footer>
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2788.1908142440784!2d25.61347566914989!3d45.66706956899054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b35b8b524bcac9%3A0xb350aa0bf5ec0c51!2sWaters%20Rom%C3%A2nia%20S.R.L.!5e0!3m2!1sen!2sro!4v1690266997808!5m2!1sen!2sro"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
 </div>

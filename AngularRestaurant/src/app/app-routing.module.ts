@@ -5,6 +5,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ConfirmReservationComponent } from './reservation/confirm-reservation/confirm-reservation.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ContactComponent } from './contact/contact.component';
+
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'login', component: LoginComponent },
