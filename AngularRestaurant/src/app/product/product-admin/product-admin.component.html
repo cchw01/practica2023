@@ -23,7 +23,7 @@
 
     <ng-container matColumnDef="listOfIngredients">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>List Of Ingredients</th>
-      <td mat-cell *matCellDef="let element"><button mat-raised-button [matTooltipPosition]="'right'" [matTooltip]="objectIdtoString(element.ingredientsList)">List</button>
+      <td mat-cell *matCellDef="let element"><button mat-raised-button [matTooltipPosition]="'right'" [matTooltip]="element.ingredientsList">List</button>
       </td>
     </ng-container>
 

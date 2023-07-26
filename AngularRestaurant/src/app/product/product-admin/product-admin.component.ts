@@ -35,12 +35,4 @@ export class ProductAdminComponent implements OnInit {
     'actions',
   ];
 
-  objectIdtoString(ArrayOfObjectIds: ObjectId[]): string {
-    const arrayOfStrings: string[] = ArrayOfObjectIds.map((ingredientId) => ingredientId.toString());
-    arrayOfStrings.forEach((element) => {
-      let Ingredient = this.productService.getProductById(element);
-      console.log(Ingredient);
-    })
-    return 'aici avem ceva ingrediente';
-  }
 }
