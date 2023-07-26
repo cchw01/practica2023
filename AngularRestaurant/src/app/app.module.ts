@@ -9,9 +9,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, ContactComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,3 +27,4 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+  

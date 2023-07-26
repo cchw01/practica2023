@@ -1,16 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 form {
-  margin: auto;
-  margin-top: 50px;
-  width: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 150px;
 }
 
 h1 {
+  margin-left: 130px;
   text-align: center;
-  font-size: 40px;
+  font-size: 60px;
   font-family: "Lato", sans-serif;
-  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+iframe {
+  width: 1000px;
+  height: 900px;
 }
 
 .section {
@@ -29,6 +44,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"] {
+  font-size: 20px;
   font-family: "Lato", sans-serif;
   display: inline-block;
   border: 1px solid rgb(204, 204, 204);
@@ -47,17 +63,9 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 210px;
   margin-top: 40px;
 }
 
 button:hover {
   background-color: rgb(228, 170, 61);
-}
-
-#wrapper {
-  width: 80%;
-  margin: auto;
-  height: 100%;
-  display: flex;
 }
