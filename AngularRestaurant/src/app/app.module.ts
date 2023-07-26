@@ -14,7 +14,6 @@ import { MenuComponent } from './menu/menu.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { CategorySectionComponent } from './category-section/category-section.component';
-import { HttpClientModule } from '@angular/common/http';
 import { ReservationComponent } from './reservation/reservation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -41,7 +40,7 @@ import { ConfirmReservationComponent } from './reservation/confirm-reservation/c
     MenuComponent,
     ProductItemComponent,
     ProductPageComponent,
-    CategorySectionComponent
+    CategorySectionComponent,
     ReservationComponent,
     UserAdminComponent,
     EditUserAdminComponent,
@@ -56,7 +55,7 @@ import { ConfirmReservationComponent } from './reservation/confirm-reservation/c
     MatDividerModule,
     HomePageModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
