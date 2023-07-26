@@ -5,6 +5,7 @@ import { UserAdminComponent } from './user/user-admin/user-admin.component';
 import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { ConfirmReservationComponent } from './reservation/confirm-reservation/confirm-reservation.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -14,6 +15,10 @@ const routes: Routes = [
   {path: 'menu', component: HomePageComponent},
   {path: 'orders', component: HomePageComponent},
   {path: 'reservations', component: ReservationComponent },
+  {
+    path: 'reservations/confirmedReservation',
+    component: ConfirmReservationComponent,
+  },
   {path: 'contact', component: HomePageComponent},
   {path: 'reviewRestaurant', component: HomePageComponent},
   {path: 'login', component: HomePageComponent},

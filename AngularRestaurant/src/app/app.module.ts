@@ -26,6 +26,7 @@ import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
 } from '@angular/material/form-field';
+import { ConfirmReservationComponent } from './reservation/confirm-reservation/confirm-reservation.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {
     UserAdminComponent,
     EditUserAdminComponent,
     AddUserAdminComponent,
+    ConfirmReservationComponent,
   ],
   imports: [
     BrowserModule,
