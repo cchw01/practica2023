@@ -20,10 +20,10 @@ export class ProductAdminService {
       name: product.name,
       photo: product.photo,
       price: product.price,
-      ingredientList: product.ingredientList,
+      ingredientsList: product.ingredientsList,
       isAvailable: product.isAvailable,
     };
-    this.http.put<any>('http://localhost:80/user/', body).subscribe();
+    this.http.put<any>('http://localhost:80/product/', body).subscribe();
   }
   getProductById(id?: string): Observable<Product> {
     return this.http.get<Product>('http://localhost:80/product/' + id);
@@ -33,7 +33,7 @@ export class ProductAdminService {
       .delete<Product>('http://localhost:80/product/' + id)
       .subscribe(() => console.log('Delete successful'));
   }
-  addProduct(product: Product) {
-    this.http.post<Product>('http://localhost:80/product/', product).subscribe();
+  addProduct(user: Product) {
+    this.http.post<Product>('http://localhost:80/product/', user).subscribe();
   }
 }
