@@ -5,10 +5,11 @@ export async function postProduct(product: Product): Promise<Error | Product> {
   if (
     !product ||
     !product.name ||
-    !product.price ||
-    !product.isAvailable||
     !product.photo ||
-    !product.ingredientsList 
+    !product.price ||
+    !product.ingredientsList ||
+    !product.isAvailable
+    
     ) 
     return Error("The parameters given are not valid!");
     try {
