@@ -1,39 +1,67 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserModule, platformBrowser } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatDividerModule } from '@angular/material/divider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserAdminComponent } from './user/user-admin/user-admin.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoginRegisterNavComponent } from './login-register-nav/login-register-nav.component';
+import { IconsComponent } from './icons/icons.component';
+import { HomePageModule } from './home-page/home-page.module';
+import { MatButtonModule } from '@angular/material/button';
+import { ReservationComponent } from './reservation/reservation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
+import { UserAdminComponent } from './user/user-admin/user-admin.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
+import {
+  MAT_FORM_FIELD_DEFAULT_OPTIONS,
+  MatFormFieldModule,
+} from '@angular/material/form-field';
 
 @NgModule({
-  declarations: [AppComponent, UserAdminComponent, EditUserAdminComponent, AddUserAdminComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    LoginRegisterNavComponent,
+    IconsComponent,
+    ReservationComponent,
+    UserAdminComponent,
+    EditUserAdminComponent,
+    AddUserAdminComponent,
+  ],
   imports: [
     BrowserModule,
-    MatIconModule,
     AppRoutingModule,
-    MatSelectModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatFormFieldModule,
-    MatTableModule,
-    MatInputModule,
+    MatIconModule,
+    ScrollingModule,
+    MatDividerModule,
+    HomePageModule,
     MatButtonModule,
-    MatPaginatorModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    HttpClientModule,
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'outline' },
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

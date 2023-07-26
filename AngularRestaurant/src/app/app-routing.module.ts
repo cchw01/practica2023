@@ -3,8 +3,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
 import { UserAdminComponent } from './user/user-admin/user-admin.component';
 import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
+import { ReservationComponent } from './reservation/reservation.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
+  { path: '', component: HomePageComponent },
+
+  //to modify component for the rest of the pages
+
+  {path: 'menu', component: HomePageComponent},
+  {path: 'orders', component: HomePageComponent},
+  {path: 'reservations', component: ReservationComponent },
+  {path: 'contact', component: HomePageComponent},
+  {path: 'reviewRestaurant', component: HomePageComponent},
+  {path: 'login', component: HomePageComponent},
+  {path: 'register', component: HomePageComponent},
   { path: 'user-admin', component: UserAdminComponent },
   { path: 'user-admin/edit/:id', component: EditUserAdminComponent },
   { path: 'user-admin/add', component: AddUserAdminComponent },
@@ -15,4 +28,8 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
-export const RoutingComponents = [EditUserAdminComponent];
+export const RoutingComponents = {
+  HomePageComponent,
+  ReservationComponent,
+  EditUserAdminComponent,
+};
