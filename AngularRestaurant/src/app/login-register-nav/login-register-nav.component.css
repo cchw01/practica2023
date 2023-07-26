@@ -1,7 +1,6 @@
 .login-register{
     background-color: transparent;
     display: inline-flex;
-    -ms-flex-direction: row;
     align-items: stretch;
     justify-content: center;
     margin-left:7vh;
