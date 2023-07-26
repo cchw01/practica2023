@@ -1,4 +1,8 @@
 <div class="table">
+  <div class="header-container">
+    <h1>Admin-User Page</h1>
+  </div>
+  <div class="align"><div class="image-header"></div></div>
   <table mat-table [dataSource]="userList" matSort class="mat-elevation-28">
     <ng-container matColumnDef="select">
       <th mat-header-cell *matHeaderCellDef></th>
@@ -48,7 +52,7 @@
   <div class="paginator">
     <button mat-raised-button routerLink="/user-admin/add">Add user</button>
     <mat-paginator
-      [pageSizeOptions]="[3, 6, 10, 20]"
+      [pageSizeOptions]="[5, 10]"
       showFirstLastButtons
     ></mat-paginator>
   </div>
