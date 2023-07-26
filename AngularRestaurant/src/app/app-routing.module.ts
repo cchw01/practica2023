@@ -14,19 +14,19 @@ const routes: Routes = [
 
   //to modify component for the rest of the pages
 
-  {path: 'menu', component: MenuComponent},
-  {path: 'product/:id', component: ProductPageComponent},
+  { path: 'menu', component: MenuComponent },
+  { path: 'product/:id', component: ProductPageComponent },
 
-  {path: 'orders', component: HomePageComponent},
-  {path: 'reservations', component: ReservationComponent },
+  { path: 'orders', component: HomePageComponent },
+  { path: 'reservations', component: ReservationComponent },
   {
     path: 'reservations/confirmedReservation',
     component: ConfirmReservationComponent,
   },
-  {path: 'contact', component: HomePageComponent},
-  {path: 'reviewRestaurant', component: HomePageComponent},
-  {path: 'login', component: HomePageComponent},
-  {path: 'register', component: HomePageComponent},
+  { path: 'contact', component: HomePageComponent },
+  { path: 'reviewRestaurant', component: HomePageComponent },
+  { path: 'login', component: HomePageComponent },
+  { path: 'register', component: HomePageComponent },
   { path: 'user-admin', component: UserAdminComponent },
   { path: 'user-admin/edit/:id', component: EditUserAdminComponent },
   { path: 'user-admin/add', component: AddUserAdminComponent },
@@ -39,7 +39,7 @@ const routes: Routes = [
 export class AppRoutingModule {}
 export const RoutingComponents = {
   HomePageComponent,
-  MenuComponent
+  MenuComponent,
   ReservationComponent,
   EditUserAdminComponent,
 };
