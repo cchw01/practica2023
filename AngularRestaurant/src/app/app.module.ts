@@ -15,6 +15,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import { UserAdminComponent } from './user/user-admin/user-admin.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
+import { MatSelectModule } from '@angular/material/select';
+import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
@@ -28,6 +34,9 @@ import { ConfirmReservationComponent } from './reservation/confirm-reservation/c
     LoginRegisterNavComponent,
     IconsComponent,
     ReservationComponent,
+    UserAdminComponent,
+    EditUserAdminComponent,
+    AddUserAdminComponent,
     ConfirmReservationComponent,
   ],
   imports: [
@@ -44,6 +53,9 @@ import { ConfirmReservationComponent } from './reservation/confirm-reservation/c
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [
     {
