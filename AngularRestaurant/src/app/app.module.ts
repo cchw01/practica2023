@@ -20,7 +20,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
 import { MatSelectModule } from '@angular/material/select';
-import { MatIconModule } from '@angular/material/icon';
 import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
