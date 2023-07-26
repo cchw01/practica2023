@@ -7,6 +7,7 @@ export class Product {
   price!: number;
   ingredientsList!: ObjectId[];
   isAvailable!: boolean;
+  
   public constructor(init?: Partial<Product>) {
     Object.assign(this, init);
   }
