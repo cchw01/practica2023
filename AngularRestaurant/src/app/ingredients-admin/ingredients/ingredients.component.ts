@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { SelectionModel } from '@angular/cdk/collections';
-import { User } from 'src/app/app-logic/services/user';
+import { Ingredients } from 'src/app/app-logic/services/ingredient';
 import { IngredientAdminService } from 'src/app/app-logic/services/ingredients-admin.service';
 
 @Component({
@@ -21,25 +21,20 @@ export class IngredientsComponent implements OnInit {
   ingredientList!: any;
   ngOnInit(): void {
     this.ingredientsService.getData().subscribe((res: any) => {
-      this.ingredientList = new MatTableDataSource<User>(res);
+      this.ingredientList = new MatTableDataSource<Ingredients>(res);
       this.ingredientList.paginator = this.paginator;
       this.ingredientList.sort = this.sort;
     });
   }
 
-  deleteUser(id?: string) {
-    // let result = confirm('Do you want to delete the user?');
-    // if (result) {
-    //   this.userService.deleteUser();
-    //   var target = id.target || id.srcElement || id.currentTarget;
-    //   var idAttr = target.attributes.id;
-    //   this.userService.deleteUser(idAttr);
-    // }
+  deleteIngredient(id?: string) {
+
   }
 
   ingredientsAdminColumn: string[] = [
     'name',
     'stoc',
     'isAlergen',
+    'actions',
   ];
 }
