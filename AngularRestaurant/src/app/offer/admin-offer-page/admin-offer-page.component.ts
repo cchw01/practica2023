@@ -20,12 +20,10 @@ export class OfferAdminComponent implements OnInit {
   offerList!: Array<OfferService>;
   ngOnInit(): void {
     this.offerList = this.offerService.getData();
-    console.log('Test1 ' + this.offerService.getData());
     //this.userList = new MatTableDataSource<User>(this.user.getData());
 
     //this.userList.paginator = this.paginator;
     // this.userList.sort = this.sort;
-    console.log(this.offerList);
   }
 
   constructor(private offerService: OfferAdminService) {}

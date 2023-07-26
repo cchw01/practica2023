@@ -4,21 +4,23 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { OfferAdminComponent } from './offer/admin-offer-page/admin-offer-page.component';
 import { AddOfferAdminComponent } from './offer/add-offer-admin/add-offer-admin.component';
+import { EditOfferAdminComponent } from './offer/edit-offer-admin/edit-offer-admin.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
 
   //to modify component for the rest of the pages
 
-  {path: 'menu', component: HomePageComponent},
-  {path: 'orders', component: HomePageComponent},
-  {path: 'reservations', component: ReservationComponent },
-  {path: 'contact', component: HomePageComponent},
-  {path: 'offer-admin', component: OfferAdminComponent},
-  {path: 'offer-admin/add', component: AddOfferAdminComponent},
-  {path: 'reviewRestaurant', component: HomePageComponent},
-  {path: 'login', component: HomePageComponent},
-  {path: 'register', component: HomePageComponent},
+  { path: 'menu', component: HomePageComponent },
+  { path: 'orders', component: HomePageComponent },
+  { path: 'reservations', component: ReservationComponent },
+  { path: 'contact', component: HomePageComponent },
+  { path: 'offer-admin', component: OfferAdminComponent },
+  { path: 'offer-admin/add', component: AddOfferAdminComponent },
+  { path: 'offer-admin/edit/:id', component: EditOfferAdminComponent },
+  { path: 'reviewRestaurant', component: HomePageComponent },
+  { path: 'login', component: HomePageComponent },
+  { path: 'register', component: HomePageComponent },
 ];
 
 @NgModule({
@@ -31,4 +33,5 @@ export const RoutingComponents = {
   ReservationComponent,
   OfferAdminComponent,
   AddOfferAdminComponent,
+  EditOfferAdminComponent,
 };

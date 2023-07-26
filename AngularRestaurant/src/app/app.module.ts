@@ -23,6 +23,7 @@ import { OfferAdminComponent } from './offer/admin-offer-page/admin-offer-page.c
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { AddOfferAdminComponent } from './offer/add-offer-admin/add-offer-admin.component';
+import { EditOfferAdminComponent } from './offer/edit-offer-admin/edit-offer-admin.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AddOfferAdminComponent } from './offer/add-offer-admin/add-offer-admin.
     IconsComponent,
     ReservationComponent,
     OfferAdminComponent,
-    AddOfferAdminComponent ,
+    AddOfferAdminComponent,
+    EditOfferAdminComponent ,
   ],
   imports: [
     BrowserModule,

@@ -29,10 +29,8 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
         <td mat-cell *matCellDef="let element">
-          <!-- <a routerLink="/edit/{{ element._id }}">Edit</a> -->
-          <a
+          <a routerLink="edit/{{element._id}}"
             ><mat-icon
-              routerLink="offer-admin/edit/{{ element._id }}"
               fontIcon="edit"
             ></mat-icon
           ></a>
