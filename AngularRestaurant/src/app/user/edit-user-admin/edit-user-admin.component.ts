@@ -62,5 +62,6 @@ export class EditUserAdminComponent implements OnInit {
   }
   deleteUser() {
     this.userAdmin.deleteUser(this.identifier);
+    this.router.navigate(['/user-admin']);
   }
 }
