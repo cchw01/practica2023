@@ -15,6 +15,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+
 // import { MomentInput } from 'moment';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
@@ -49,6 +53,8 @@ import { ProductAdminComponent } from './product/product-admin/product-admin.com
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [
     {
