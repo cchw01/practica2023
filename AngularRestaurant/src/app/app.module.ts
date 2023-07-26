@@ -12,6 +12,7 @@ import { IconsComponent } from './icons/icons.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { MatButtonModule } from '@angular/material/button';
 import { ReservationComponent } from './reservation/reservation.component';
+import { ContactComponent } from './contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -25,7 +26,16 @@ import { RegisterComponent } from './register/register.component';
 import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, Contact],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    NavbarComponent,
+    LoginRegisterNavComponent,
+    IconsComponent,
+    ReservationComponent,
+    ContactComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -58,4 +68,3 @@ import { CookieService } from 'ngx-cookie-service';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-  
