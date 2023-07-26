@@ -11,7 +11,7 @@ export class ProductAdminService {
   constructor(private http: HttpClient) {}
 
   getData(): any {
-    return this.http.get<any>('http://localhost:80/user');
+    return this.http.get<any>('http://localhost:80/product');
   }
 
   updateProduct(product: Product, id: any): void {
@@ -23,7 +23,7 @@ export class ProductAdminService {
       ingredientsList: product.ingredientsList,
       isAvailable: product.isAvailable,
     };
-    this.http.put<any>('http://localhost:80/user/', body).subscribe();
+    this.http.put<any>('http://localhost:80/product/', body).subscribe();
   }
   getProductById(id?: string): Observable<Product> {
     return this.http.get<Product>('http://localhost:80/product/' + id);

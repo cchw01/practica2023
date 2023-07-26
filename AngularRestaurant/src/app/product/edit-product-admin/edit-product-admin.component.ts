@@ -26,10 +26,10 @@ export class EditProductAdminComponent implements OnInit {
     });
     this.addProductForm = this.fb.group({
       name: [this.product?.name,Validators.required],
-      isAvalable: [this.product?.isAvailable,Validators.required],
+      isAvailable: [this.product?.isAvailable,Validators.requiredTrue],
       ingredientsList: [this.product?.ingredientsList],
       photo: [this.product?.photo],
-      price:[this.product?.price]
+      price:[this.product?.price,Validators.required]
     });
   }
   async getProduct(): Promise<Product | null> {
@@ -38,11 +38,11 @@ export class EditProductAdminComponent implements OnInit {
   ngOnInit(): void {
     this.getProduct().then((x) => {
       if (x) this.product = new Product(x);
-      console.log(this.product);
       this.addProductForm = this.fb.group({
         name: [this.product?.name],
         price: [this.product?.price],
-        isAvailable: [this.product?.isAvailable, Validators.requiredTrue],
+        photo:[this.product?.photo],
+        isAvailable: [this.product?.isAvailable],
         ingredientsList: [this.product?.ingredientsList],
       });
     });
@@ -51,13 +51,14 @@ export class EditProductAdminComponent implements OnInit {
   OnSubmit() {
     this.product = new Product(this.addProductForm.value);
     this.productAdmin.updateProduct(this.product, this.identifier);
+    this.redirectToMainPage();
   }
   redirectToMainPage() {
     setTimeout(() => {
-      this.router.navigate(['/user-admin']);
+      this.router.navigate(['/product-admin']);
     }, 1000);
   }
-  deleteUser() {
+  deleteProduct() {
     this.productAdmin.deleteProduct(this.identifier);
   }
 }
