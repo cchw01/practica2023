@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 h1 {
   font-size: 3em;
@@ -12,11 +13,12 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
 }
 .header-container {
   text-align: center;
   align-items: center;
-  padding: 2vh 21.5vw;
+  padding: 2vh 20vw;
   margin-top: 2vh;
 }
 .container {
@@ -56,10 +58,10 @@ textarea {
   width: 40vw;
 }
 .submit-button {
-  margin: 1vh 1vw;
-  margin-top: 13vh;
+  margin: 1vh 0vw;
+  margin-top: 3.5vh;
   width: 10vw;
-  align-self: flex-end;
+  align-self: center;
 }
 .image-header {
   background-image: url("/assets/images/reservation-header.png");
@@ -68,7 +70,7 @@ textarea {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 42vw;
+  width: 30vw;
   height: 6vh;
-  margin-bottom: 7vh;
+  margin-bottom: 4vh;
 }
