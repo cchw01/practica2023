@@ -1,3 +1,11 @@
-<div *ngFor="let photo of photoList">
-    <img src={{photo.photoLink}}>
-</div>
+<html>
+    <body>
+        <h1>Photo Gallery</h1>
+
+<div class="center-container">
+    <div *ngFor="let photo of photoList">
+      <img src="{{ photo.photoLink }}">
+    </div>
+  </div>
+    </body>
+</html> 
