@@ -19,7 +19,6 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { HttpClientModule } from '@angular/common/http';
 import { UserAdminComponent } from './user/user-admin/user-admin.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -41,7 +40,7 @@ import { ConfirmReservationComponent } from './reservation/confirm-reservation/c
     MenuComponent,
     ProductItemComponent,
     ProductPageComponent,
-    CategorySectionComponent
+    CategorySectionComponent,
     ReservationComponent,
     UserAdminComponent,
     EditUserAdminComponent,
@@ -56,7 +55,7 @@ import { ConfirmReservationComponent } from './reservation/confirm-reservation/c
     MatDividerModule,
     HomePageModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

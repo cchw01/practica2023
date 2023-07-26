@@ -39,7 +39,7 @@ const routes: Routes = [
 export class AppRoutingModule {}
 export const RoutingComponents = {
   HomePageComponent,
-  MenuComponent
+  MenuComponent,
   ReservationComponent,
   EditUserAdminComponent,
 };
