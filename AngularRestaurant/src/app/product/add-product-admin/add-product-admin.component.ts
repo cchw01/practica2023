@@ -39,6 +39,7 @@ export class AddProductAdminComponent implements OnInit {
   }
 
   OnSubmit(): void {
+    this.AddProductForm.value.ingredientsList = this.parseIngredientsList(this.AddProductForm.value.ingredientsList)
     this.product = new Product(this.AddProductForm.value);
     this.productAdmin.addProduct(this.product);
     this.redirectToMainPage();
@@ -48,5 +49,24 @@ export class AddProductAdminComponent implements OnInit {
     setTimeout(() => {
       this.router.navigate(['/product-admin']);
     }, 1000);
+  }
+
+  isValidHexadecimal(hexString: string): boolean {
+    const hexRegex = /^[0-9a-fA-F]{24}$/; // ObjectID is 24 characters hexadecimal string
+    return hexRegex.test(hexString);
+  }
+
+  parseIngredientsList(ingredientsListString: string): string[] {
+    const objectIdStrings = ingredientsListString.split(',').map((str) => str.trim());
+    const objectIds: string[] = [];
+  
+    for (const objectIdString of objectIdStrings) {
+      if (this.isValidHexadecimal(objectIdString)) {
+        objectIds.push(objectIdString);
+      } else {
+        console.error(`Invalid ObjectID: ${objectIdString}`);
+      }
+    }
+    return objectIds;
   }
 }
