@@ -6,18 +6,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RestaurantReviewComponent } from './templates/restaurant-review/restaurant-review.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
 import { StarRatingModule } from 'angular-star-rating';
 import { RestaurantReviewPageComponent } from './templates/restaurant-review-page/restaurant-review-page.component';
 import { MatCardModule } from '@angular/material/card';
-import { HttpClientModule } from '@angular/common/http';
 import { AllReviewsComponent } from './templates/all-reviews/all-reviews.component';
 import { ProductComponent } from './admin-pages/product/product.component';
 
@@ -27,7 +20,21 @@ import { IconsComponent } from './icons/icons.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { RestaurantReviewSingleComponent } from './templates/restaurant-review-single/restaurant-review-single.component';
 
+import { MenuComponent } from './menu/menu.component';
+import { ProductItemComponent } from './product-item/product-item.component';
+import { ProductPageComponent } from './product-page/product-page.component';
+import { CategorySectionComponent } from './category-section/category-section.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
+import { UserAdminComponent } from './user/user-admin/user-admin.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
+import { MatSelectModule } from '@angular/material/select';
+import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
@@ -51,7 +58,14 @@ import { CookieService } from 'ngx-cookie-service';
 
     LoginRegisterNavComponent,
     IconsComponent,
+    MenuComponent,
+    ProductItemComponent,
+    ProductPageComponent,
+    CategorySectionComponent,
     ReservationComponent,
+    UserAdminComponent,
+    EditUserAdminComponent,
+    AddUserAdminComponent,
     ConfirmReservationComponent,
     LoginComponent,
     RegisterComponent,
@@ -76,12 +90,17 @@ import { CookieService } from 'ngx-cookie-service';
     ScrollingModule,
     MatDividerModule,
     HomePageModule,
+    MatButtonModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [
     {

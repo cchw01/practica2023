@@ -1,0 +1,8 @@
+<div class="main-container">
+    <h1>MENU</h1>
+    <img src="../../assets/images/menu-separator.png">
+    <div *ngFor="let category of categoryList">
+        <app-category-section class="app-category-section" [category]="category">
+        </app-category-section> 
+    </div>
+</div>
