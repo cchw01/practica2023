@@ -19,9 +19,10 @@ import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
 } from '@angular/material/form-field';
-import { OfferAdminComponent } from './admin-offer-page/admin-offer-page.component';
+import { OfferAdminComponent } from './offer/admin-offer-page/admin-offer-page.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { AddOfferAdminComponent } from './offer/add-offer-admin/add-offer-admin.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     LoginRegisterNavComponent,
     IconsComponent,
     ReservationComponent,
-    OfferAdminComponent ,
+    OfferAdminComponent,
+    AddOfferAdminComponent ,
   ],
   imports: [
     BrowserModule,

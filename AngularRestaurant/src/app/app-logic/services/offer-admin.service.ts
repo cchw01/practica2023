@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class OfferAdminService {
-  userList?: Array<OfferService>;
+  offerList?: Array<OfferService>;
 
   constructor(private http: HttpClient) {}
 
@@ -14,7 +14,7 @@ export class OfferAdminService {
     return this.http.get<any>('http://localhost:80/offer');
   }
 
-  updateUser(offer: OfferService, id: any): void {
+  updateOffer(offer: OfferService, id: any): void {
     const body = {
       _id: id,
       productList:offer.productList,
@@ -22,17 +22,17 @@ export class OfferAdminService {
       startDate:offer.startDate,
       endDate:offer.endDate,
     };
-    this.http.put<any>('http://localhost:80/user/', body).subscribe();
+    this.http.put<any>('http://localhost:80/offer/', body).subscribe();
   }
   getOfferById(id?: string): Observable<OfferService> {
-    return this.http.get<OfferService>('http://localhost:80/user/' + id);
+    return this.http.get<OfferService>('http://localhost:80/offer/' + id);
   }
-  deleteUser(id?: string) {
+  deleteOffer(id?: string) {
     return this.http
-      .delete<OfferService>('http://localhost:80/user/' + id)
+      .delete<OfferService>('http://localhost:80/offer/' + id)
       .subscribe(() => console.log('Delete successful'));
   }
-  addUser(offer: OfferService) {
-    this.http.post<OfferService>('http://localhost:80/user/', offer).subscribe();
+  addOffer(offer: OfferService) {
+    this.http.post<OfferService>('http://localhost:80/offer/', offer).subscribe(()=>{console.log("Add successful")});
   }
 }

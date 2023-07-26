@@ -1,0 +1,68 @@
+<div class="main">
+    <div class="container">
+      <div class="header-container">
+        <h1>Add offer</h1>
+      </div>
+      <form (ngSubmit)="OnSubmit()" [formGroup]="AddOfferForm">
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>productList</mat-label>
+              <input
+                matInput
+                placeholder="Product List"
+                type="text"
+                formControlName="productList"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>discountPercent</mat-label>
+              <input
+                matInput
+                placeholder="Discount Percent"
+                type="number"
+                formControlName="discountPercent"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>Start Date</mat-label>
+              <input
+                matInput
+                placeholder="Start Date"
+                type="date"
+                formControlName="startDate"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>End Date</mat-label>
+              <input
+                matInput
+                placeholder="End Date"
+                type="date"
+                formControlName="endDate"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        
+        <div class="options">
+          <button mat-raised-button type="submit" class="submit-button">
+            Submit
+            <mat-icon fontIcon="check" color="primary"></mat-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
