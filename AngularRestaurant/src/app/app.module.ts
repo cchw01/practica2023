@@ -20,6 +20,9 @@ import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
 } from '@angular/material/form-field';
+import { AddProductAdminComponent } from './product/add-product-admin/add-product-admin.component';
+import { EditProductAdminComponent } from './product/edit-product-admin/edit-product-admin.component';
+import { ProductAdminComponent } from './product/product-admin/product-admin.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import {
     LoginRegisterNavComponent,
     IconsComponent,
     ReservationComponent,
+    AddProductAdminComponent,
+    EditProductAdminComponent,
+    ProductAdminComponent,
   ],
   imports: [
     BrowserModule,
