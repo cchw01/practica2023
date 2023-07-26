@@ -15,11 +15,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
-import { MomentInput } from 'moment';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
 } from '@angular/material/form-field';
+import { OfferAdminComponent } from './admin-offer-page/admin-offer-page.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import {
     LoginRegisterNavComponent,
     IconsComponent,
     ReservationComponent,
+    OfferAdminComponent ,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,8 @@ import {
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     {

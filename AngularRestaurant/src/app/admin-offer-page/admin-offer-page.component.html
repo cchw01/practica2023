@@ -1,0 +1,51 @@
+<div class="table">
+    <table mat-table [dataSource]="offerList" matSort class="mat-elevation-28">
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row"></td>
+      </ng-container>
+  
+      <ng-container matColumnDef="productList">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Product List</th>
+        <td mat-cell *matCellDef="let element">{{ element.productList }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="discountPercent">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Discount Percent</th>
+        <td mat-cell *matCellDef="let element">{{ element.discountPercent }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="startDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Start Date</th>
+        <td mat-cell *matCellDef="let element">{{ element.startDate}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="endDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>End Date</th>
+        <td mat-cell *matCellDef="let element">{{ element.endDate}}</td>
+      </ng-container>
+  
+      
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+        <td mat-cell *matCellDef="let element">
+          <!-- <a routerLink="/edit/{{ element._id }}">Edit</a> -->
+          <a
+            ><mat-icon
+              routerLink="edit/{{ element._id }}"
+              fontIcon="edit"
+            ></mat-icon
+          ></a>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="offerAdminColumn"></tr>
+      <tr mat-row *matRowDef="let row; columns: offerAdminColumn"></tr>
+    </table>
+    <div class="paginator">
+      <button mat-raised-button routerLink="/offer-admin/add">Add offer</button>
+      <mat-paginator
+        [pageSizeOptions]="[3, 6, 10, 20]"
+        showFirstLastButtons
+      ></mat-paginator>
+    </div>
+  </div>
