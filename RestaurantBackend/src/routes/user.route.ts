@@ -11,7 +11,7 @@ function setUserRouter(router: Router): Router {
   router.get("/", getUsers);
   router.delete("/:userId", deleteUser);
   router.put("/", updateUser);
-  router.get("/email/:userEmail", getByEmail);
+  router.post("/user/email", getUserByEmailAndPassword);
   return router;
 }
 
@@ -30,24 +30,46 @@ async function postUser(req: Request, res: Response, next: NextFunction) {
   }
 }
 
-async function getByEmail(req: Request, res: Response, next: NextFunction) {
-  const userEmail: string = req.params.userEmail;
-  let user: Error | User | null;
-  console.log("user route");
+// async function getByEmail(req: Request, res: Response, next: NextFunction) {
+//   const userEmail: string = req.params.userEmail;
+//   let user: Error | User | null;
+//   console.log("user route");
+//   try {
+//     user = await userService.getByEmail(userEmail);
+//   } catch (ex) {
+//     return next(ex);
+//   }
+//   if (user instanceof Error) {
+//     return next(user);
+//   }
+
+//   if (user === null) {
+//     return res.status(404).end();
+//   }
+
+//   return res.json(user);
+// }
+
+async function getUserByEmailAndPassword(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  const userEmail: string = req.body.email;
+  const userPassword: string = req.body.password;
+
   try {
-    user = await userService.getByEmail(userEmail);
+    const user = await userService.getUserByEmailAndPassword(
+      userEmail,
+      userPassword
+    );
+    if (user === null) {
+      return res.status(401).json({ message: "Invalid email or password" });
+    }
+    return res.json(user);
   } catch (ex) {
     return next(ex);
   }
-  if (user instanceof Error) {
-    return next(user);
-  }
-
-  if (user === null) {
-    return res.status(404).end();
-  }
-
-  return res.json(user);
 }
 
 async function getUser(req: Request, res: Response, next: NextFunction) {
@@ -82,8 +104,6 @@ async function getUsers(_req: Request, res: Response, next: NextFunction) {
   if (users instanceof Error) {
     return next(users);
   }
-
-  console.log("getPhotos(), photos ", users);
   return res.json(users);
 }
 

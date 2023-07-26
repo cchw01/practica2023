@@ -62,15 +62,32 @@ export async function postUser(user: User): Promise<Error | User> {
   return NewUser;
 }
 
-export async function getByEmail(email: string): Promise<Error | User | null> {
-  if (!email || typeof email !== "string") {
-    return Error("invalid email");
+export async function getUserByEmailAndPassword(
+  email: string,
+  password: string
+): Promise<Error | User | null> {
+  if (
+    !email ||
+    typeof email !== "string" ||
+    !password ||
+    typeof password !== "string"
+  ) {
+    return Error("Invalid email or password");
   }
+
   try {
     const user = await UserDB.findOne<User>({ email: email });
+    if (!user) {
+      return null; // Utilizatorul nu a fost găsit în baza de date
+    }
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if (!passwordMatch) {
+      return null; // Parola introdusă nu se potrivește cu cea din baza de date
+    }
+    console.log("merge");
     return user;
   } catch (ex: any) {
-    return Error(ex.message);
+    return ex;
   }
 }
 

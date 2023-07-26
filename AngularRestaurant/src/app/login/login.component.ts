@@ -32,8 +32,9 @@ export class LoginComponent implements OnInit {
   }
 
   OnSubmit() {
-    this.user = new User(this.loginUserForm.value);
-    this.loginService.loginUser(this.user);
+    const email = this.loginUserForm.value.email;
+    const password = this.loginUserForm.value.password;
+    this.loginService.loginUser(email, password);
   }
 
   hasError(field: string | number, errorType: string | number) {
