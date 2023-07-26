@@ -8,6 +8,9 @@ import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.comp
 import { ReservationComponent } from './reservation/reservation.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ConfirmReservationComponent } from './reservation/confirm-reservation/confirm-reservation.component';
+import { IngredientsComponent } from './ingredients-admin/ingredients/ingredients.component';
+import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/edit-ingredients.component';
+import { AddIngredientComponent } from './ingredients-admin/add-ingredient/add-ingredient.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -30,6 +33,10 @@ const routes: Routes = [
   { path: 'user-admin', component: UserAdminComponent },
   { path: 'user-admin/edit/:id', component: EditUserAdminComponent },
   { path: 'user-admin/add', component: AddUserAdminComponent },
+
+  { path: 'ingredients', component: IngredientsComponent },
+  { path: 'ingredients/edit/:id', component: EditIngredientsComponent },
+  { path: 'ingredients/add', component: AddIngredientComponent },
 ];
 
 @NgModule({
@@ -39,7 +46,8 @@ const routes: Routes = [
 export class AppRoutingModule {}
 export const RoutingComponents = {
   HomePageComponent,
-  MenuComponent
+  MenuComponent,
   ReservationComponent,
   EditUserAdminComponent,
+  EditIngredientsComponent,
 };
