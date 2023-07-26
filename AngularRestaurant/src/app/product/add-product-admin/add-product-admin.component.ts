@@ -7,9 +7,9 @@ import { ProductAdminService } from 'src/app/app-logic/services/product-admin.se
 @Component({
   selector: 'app-add-product-admin',
   templateUrl: './add-product-admin.component.html',
-  styleUrls: ['./add-product-admin.component.css']
+  styleUrls: ['./add-product-admin.component.css'],
 })
-export class AddProductAdminComponent implements OnInit{
+export class AddProductAdminComponent implements OnInit {
   product?: Product;
   AddProductForm!: FormGroup;
 
@@ -19,27 +19,26 @@ export class AddProductAdminComponent implements OnInit{
       Photo: [this.product?.photo],
       Price: [this.product?.price, Validators.required],
       ListOfIngredients: [this.product?.ingredientList, Validators.required],
-      Availability: [this.product?.isAvailable, Validators.required]
-    })
+      Availability: [this.product?.isAvailable, Validators.required],
+    });
   }
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private productAdmin: ProductAdminService,
-  )
-  {
+    private productAdmin: ProductAdminService
+  ) {
     this.AddProductForm = this.fb.group({
       Name: [this.product?.name, Validators.required],
       Photo: [this.product?.photo],
       Price: [this.product?.price, Validators.required],
       ListOfIngredients: [this.product?.ingredientList, Validators.required],
-      Availability: [this.product?.isAvailable, Validators.required]
-    })
+      Availability: [this.product?.isAvailable, Validators.required],
+    });
   }
 
-  OnSubmit(): void{
+  OnSubmit(): void {
     this.product = new Product(this.AddProductForm.value);
     this.productAdmin.addProduct(this.product);
     this.redirectToMainPage();

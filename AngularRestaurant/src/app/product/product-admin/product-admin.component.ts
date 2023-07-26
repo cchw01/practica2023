@@ -20,7 +20,6 @@ export class ProductAdminComponent implements OnInit {
   productList!: Array<Product>;
   ngOnInit(): void {
     this.productList = this.productService.getData();
-    
   }
 
   constructor(private productService: ProductAdminService) {}
