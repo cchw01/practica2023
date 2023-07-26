@@ -11,7 +11,7 @@ export class ProductAdminService {
   constructor(private http: HttpClient) {}
 
   getData(): any {
-    return this.http.get<any>('http://localhost:80/product');
+    return this.http.get<any>('http://localhost:80/user');
   }
 
   updateProduct(product: Product, id: any): void {
@@ -20,7 +20,7 @@ export class ProductAdminService {
       name: product.name,
       photo: product.photo,
       price: product.price,
-      ingredientList: product.ingredientList,
+      ingredientsList: product.ingredientsList,
       isAvailable: product.isAvailable,
     };
     this.http.put<any>('http://localhost:80/user/', body).subscribe();
@@ -33,7 +33,7 @@ export class ProductAdminService {
       .delete<Product>('http://localhost:80/product/' + id)
       .subscribe(() => console.log('Delete successful'));
   }
-  addProduct(product: Product) {
-    this.http.post<Product>('http://localhost:80/product/', product).subscribe();
+  addProduct(user: Product) {
+    this.http.post<Product>('http://localhost:80/product/', user).subscribe();
   }
 }

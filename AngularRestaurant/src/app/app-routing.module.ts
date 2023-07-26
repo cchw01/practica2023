@@ -4,6 +4,7 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductAdminComponent } from './product/product-admin/product-admin.component';
 import { AddProductAdminComponent } from './product/add-product-admin/add-product-admin.component';
+import { EditProductAdminComponent } from './product/edit-product-admin/edit-product-admin.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'reviewRestaurant', component: HomePageComponent},
   {path: 'login', component: HomePageComponent},
   {path: 'register', component: HomePageComponent},
+  { path: 'product-admin/edit/:id', component: EditProductAdminComponent },
   {path: 'product-admin', component: ProductAdminComponent},
   {path: 'product-admin/add', component: AddProductAdminComponent},
 ];
