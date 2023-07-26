@@ -15,11 +15,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
-import { MomentInput } from 'moment';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
 } from '@angular/material/form-field';
+import { ConfirmReservationComponent } from './reservation/confirm-reservation/confirm-reservation.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import {
     LoginRegisterNavComponent,
     IconsComponent,
     ReservationComponent,
+    ConfirmReservationComponent,
   ],
   imports: [
     BrowserModule,
