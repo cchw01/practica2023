@@ -1,5 +1,11 @@
-<nav>
-  <a routerLink href="/login">Login</a>
-  <a routerLink href="/register">Register</a>
-</nav>
-<router-outlet></router-outlet>
+<div class="content">
+  <div class="row">
+    <div class="column-nav">
+      <app-navbar></app-navbar>
+
+    </div>
+    <div class="column-content">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
