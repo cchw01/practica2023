@@ -1,58 +1,52 @@
 <div class="table">
-    <table mat-table [dataSource]="productList" matSort class="mat-elevation-28">
-      <ng-container matColumnDef="select">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let row"></td>
-      </ng-container>
-  
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-      </ng-container>
-  
-      <ng-container matColumnDef="photo">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Photo</th>
-            <td mat-cell *matCellDef="let element"><img [src]="element?.photo?.url" alt="Product Photo" *ngIf="element?.photo?.url"></td>
-      </ng-container>
-  
-      <ng-container matColumnDef="price">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
-        <td mat-cell *matCellDef="let element">{{ element.price }}</td>
-      </ng-container>
-  
-      <ng-container matColumnDef="ingredientsList">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Ingredients List</th>
-        <td mat-cell *matCellDef="let element">{{ element.ingredientsList }}</td>
-      </ng-container>
-      
-      <ng-container matColumnDef="isAvailable">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>IsAvailable</th>
-        <td mat-cell *matCellDef="let element">{{ element.isAvailable }}</td>
-      </ng-container>
-  
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
-        <td mat-cell *matCellDef="let element">
-          <!-- <a routerLink="/edit/{{ element._id }}">Edit</a> -->
-          <a
-            ><mat-icon
-              routerLink="edit/{{ element._id }}"
-              fontIcon="edit"
-            ></mat-icon
-          ></a>
-        </td>
-      </ng-container>
+  <table mat-table [dataSource]="productList" matSort class="mat-elevation-28">
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row"></td>
+    </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="productAdminColumn"></tr>
-      <tr mat-row *matRowDef="let row; columns: productAdminColumn"></tr>
-    </table>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
 
-    <div class="paginator">
-      <button mat-raised-button routerLink="/product-admin/add">Add Product</button>
-      <mat-paginator
-        [pageSizeOptions]="[1, 5, 10, 20]"
-        showFirstLastButtons
-      ></mat-paginator>
-    </div>
-    
+    <ng-container matColumnDef="photo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Photo</th>
+      <td mat-cell *matCellDef="let element"><img [src]="element?.photo?.url" alt="Product Photo"
+          *ngIf="element?.photo?.url"></td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+      <td mat-cell *matCellDef="let element">{{ element.price }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="listOfIngredients">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>List Of Ingredients</th>
+      <td mat-cell *matCellDef="let element"><button mat-raised-button [matTooltipPosition]="'right'" [matTooltip]="objectIdtoString(element.ingredientsList)">List</button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="isAvailable">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>IsAvailable</th>
+      <td mat-cell *matCellDef="let element">{{ element.isAvailable }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <!-- <a routerLink="/edit/{{ element._id }}">Edit</a> -->
+        <a><mat-icon routerLink="edit/{{ element._id }}" fontIcon="edit"></mat-icon></a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="productAdminColumn"></tr>
+    <tr mat-row *matRowDef="let row; columns: productAdminColumn"></tr>
+  </table>
+
+  <div class="paginator">
+    <button mat-raised-button routerLink="/product-admin/add">Add Product</button>
+    <mat-paginator [pageSizeOptions]="[1, 5, 10, 20]" showFirstLastButtons></mat-paginator>
   </div>
+
+</div>

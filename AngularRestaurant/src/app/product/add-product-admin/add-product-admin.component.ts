@@ -51,6 +51,10 @@ export class AddProductAdminComponent implements OnInit {
     }, 1000);
   }
 
+  instantRedirect() {
+    this.router.navigate(['product-admin']);
+  }
+
   isValidHexadecimal(hexString: string): boolean {
     const hexRegex = /^[0-9a-fA-F]{24}$/; // ObjectID is 24 characters hexadecimal string
     return hexRegex.test(hexString);

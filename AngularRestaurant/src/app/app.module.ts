@@ -17,8 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatFormField } from '@angular/material/form-field';
-
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
@@ -55,6 +54,7 @@ import { ProductAdminComponent } from './product/product-admin/product-admin.com
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
+    MatTooltipModule,
   ],
   providers: [
     {
