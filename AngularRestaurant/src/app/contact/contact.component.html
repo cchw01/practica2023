@@ -1,0 +1,110 @@
+<div class="main">
+  <div class="forms">
+    <div class="header-container">
+      <h1>Contact</h1>
+    </div>
+    <form (ngSubmit)="OnSubmit()" [formGroup]="addReviewForm">
+      <div class="section">
+        <div class="section1">
+          <div class="row">
+            <p class="field">
+              <mat-form-field appearance="outline" class="firstName">
+                <mat-label>First Name</mat-label>
+                <input
+                  matInput
+                  placeholder="First Name"
+                  type="text"
+                  formControlName="firstName"
+                />
+              </mat-form-field>
+            </p>
+            <p class="field">
+              <mat-form-field appearance="outline" class="lastName">
+                <mat-label>Last Name</mat-label>
+                <input
+                  matInput
+                  placeholder="Last Name"
+                  type="text"
+                  formControlName="lastName"
+                />
+              </mat-form-field>
+            </p>
+          </div>
+          <p class="field">
+            <mat-form-field appearance="outline" class="email">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                placeholder="email"
+                type="email"
+                formControlName="email"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="section2">
+          <div class="row">
+            <p class="field">
+              <mat-form-field appearance="outline" class="phoneNumber">
+                <mat-label>Phone</mat-label>
+                <input
+                  matInput
+                  placeholder="phoneNumber"
+                  type="text"
+                  formControlName="phoneNumber"
+                />
+              </mat-form-field>
+            </p>
+          </div>
+          <div class="row">
+            <p class="field">
+              <mat-form-field appearance="outline" class="password">
+                <mat-label>Password </mat-label>
+                <input
+                  matInput
+                  placeholder="Password"
+                  type="password"
+                  formControlName="password"
+                  class="password"
+                />
+              </mat-form-field>
+            </p>
+          </div>
+          <div class="row">
+            <p class="field">
+              <mat-form-field appearance="outline" class="role">
+                <mat-label>Role </mat-label>
+                <input
+                  matInput
+                  placeholder="User"
+                  type="text"
+                  formControlName="role"
+                  class="role"
+                />
+              </mat-form-field>
+            </p>
+          </div>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        type="submit"
+        class="submit-button"
+        [disabled]="!addReviewForm.valid"
+      >
+        Send
+      </button>
+    </form>
+  </div>
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2788.1908142440784!2d25.61347566914989!3d45.66706956899054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b35b8b524bcac9%3A0xb350aa0bf5ec0c51!2sWaters%20Rom%C3%A2nia%20S.R.L.!5e0!3m2!1sen!2sro!4v1690266997808!5m2!1sen!2sro"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</div>
