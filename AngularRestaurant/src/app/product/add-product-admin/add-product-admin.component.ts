@@ -18,7 +18,7 @@ export class AddProductAdminComponent implements OnInit {
       Name: [this.product?.name, Validators.required],
       Photo: [this.product?.photo],
       Price: [this.product?.price, Validators.required],
-      ListOfIngredients: [this.product?.ingredientList, Validators.required],
+      ListOfIngredients: [this.product?.ingredientsList, Validators.required],
       Availability: [this.product?.isAvailable, Validators.required],
     });
   }
@@ -33,7 +33,7 @@ export class AddProductAdminComponent implements OnInit {
       Name: [this.product?.name, Validators.required],
       Photo: [this.product?.photo],
       Price: [this.product?.price, Validators.required],
-      ListOfIngredients: [this.product?.ingredientList, Validators.required],
+      ListOfIngredients: [this.product?.ingredientsList, Validators.required],
       Availability: [this.product?.isAvailable, Validators.required],
     });
   }
