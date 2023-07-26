@@ -14,21 +14,19 @@ form {
   background-color: aliceblue;
   text-align: center;
   padding: 2vh 5vw;
-  border-bottom: 0.3vh solid #999;
 }
 .container {
-  padding-top: 2vh;
   background-color: aliceblue;
   display: flex;
   flex-direction: column;
   width: 40vw;
 }
+h1 {
+  font-size: 3em;
+}
 .field {
   padding: 0 1vw;
   display: flex;
-}
-.row:first-child {
-  margin-top: 4vh;
 }
 .row {
   display: flex;
@@ -53,4 +51,15 @@ form {
   display: flex;
   justify-content: space-between;
   width: 34vw;
+}
+.image-header {
+  background-image: url("/assets/images/reservation-header.png");
+  align-self: center;
+  justify-self: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30vw;
+  height: 6vh;
+  margin-bottom: 4vh;
 }

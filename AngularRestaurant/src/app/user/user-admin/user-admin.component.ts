@@ -12,23 +12,21 @@ import { UserAdminService } from 'src/app/app-logic/services/user-admin.service'
   styleUrls: ['./user-admin.component.css'],
 })
 export class UserAdminComponent implements OnInit {
+  constructor(private userService: UserAdminService) {}
   @ViewChild(MatPaginator, { static: true }) paginator?:
     | MatPaginator
     | undefined;
   @ViewChild(MatSort, { static: true }) sort?: MatSort | undefined;
   userAdmin: any;
-  userList!: Array<User>;
+  userList!: any;
   ngOnInit(): void {
-    this.userList = this.userService.getData();
-    console.log('Test1 ' + this.userService.getData());
-    //this.userList = new MatTableDataSource<User>(this.user.getData());
-
-    //this.userList.paginator = this.paginator;
-    // this.userList.sort = this.sort;
-    console.log(this.userList);
+    this.userService.getData().subscribe((res: any) => {
+      this.userList = new MatTableDataSource<User>(res);
+      this.userList.paginator = this.paginator;
+      this.userList.sort = this.sort;
+    });
   }
 
-  constructor(private userService: UserAdminService) {}
   deleteUser(id?: string) {
     // let result = confirm('Do you want to delete the user?');
     // if (result) {

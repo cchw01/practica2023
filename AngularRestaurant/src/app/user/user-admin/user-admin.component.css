@@ -5,8 +5,33 @@ mat-icon {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: white;
 }
 .table {
-  margin: auto;
-  width: 40vw;
+  margin: 1vw;
+}
+.align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header-container {
+  text-align: center;
+  align-items: center;
+  padding: 2vh 5vw;
+  margin-top: 2vh;
+}
+h1 {
+  font-size: 3em;
+}
+.image-header {
+  background-image: url("/assets/images/reservation-header.png");
+  align-self: center;
+  justify-self: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30vw;
+  height: 6vh;
+  margin-bottom: 4vh;
 }
