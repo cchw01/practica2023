@@ -1,16 +1,18 @@
 <div *ngIf="!userCookies.isUserAuthenticated()" class="login-register">
-
-    <li><button mat-button><a routerLink="login" >
-     Login
-   </a></button><i></i></li>
-   <li><button mat-button ><a routerLink="register">
-     Register
-   </a></button><i></i></li>
- </div>
+  <div class="auth-buttons">
+    <button mat-button>
+      <a routerLink="login">Login</a>
+    </button>
+    <i></i>
+    <button mat-button>
+      <a routerLink="register">Register</a>
+    </button>
+    <i></i>
+  </div>
+</div>
 <div *ngIf="userCookies.isUserAuthenticated()" class="login-register">
-  <li>Salut, {{user.firstName + " " + user.lastName}}</li>
-  <br><br>
-  <li>
-    <button mat-button (click)="logout()">Logout</button>
-  </li>
+  <div class="user-info">
+    <span class="greeting">Salut, {{user?.firstName + " " + user?.lastName}}</span>
+    <button mat-button (click)="logout() " >Logout</button>
+  </div>
 </div>

@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { User } from './user';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserCookieManagmentService {
   constructor(private cookieService: CookieService) {}
+  private userSubject: BehaviorSubject<User | null> =
+    new BehaviorSubject<User | null>(null);
+  public user$: Observable<User | null> = this.userSubject.asObservable();
 
+  private setUser(user: User | null) {
+    this.userSubject.next(user);
+  }
   setUserCookie(user: User) {
     this.cookieService.set('user', JSON.stringify(user));
     this.cookieService.set('IsLoggedIn', 'true');
@@ -41,5 +48,6 @@ export class UserCookieManagmentService {
   removeUserCookie() {
     this.cookieService.deleteAll();
     this.cookieService.set('IsLoggedIn', 'false');
+    // this.setUser(null);
   }
 }
