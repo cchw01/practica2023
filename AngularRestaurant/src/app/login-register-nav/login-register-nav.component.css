@@ -34,3 +34,17 @@
     opacity:0.7;
   }
   
+  button b{
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    padding:0.em;
+  
+  }
+  button b:hover{
+    color: rgb(228, 170, 61);
+    transition: 0.15s all;
+    opacity:0.7;
+  }

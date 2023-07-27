@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
       phoneNumber: ['', Validators.required],
       password: ['', [Validators.required, this.passwordValidator]],
       email: ['', Validators.email],
-      role: ['', Validators.required],
+      role: ['user'],
     }); // Apply the custom role validator
   }
 
