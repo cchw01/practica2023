@@ -5,7 +5,6 @@
     </div>
     <form (ngSubmit)="OnSubmit()" [formGroup]="addReviewForm">
       <div class="section">
-        <div class="section1">
           <div class="row">
             <p class="field">
               <mat-form-field appearance="outline" class="firstName">
@@ -41,8 +40,6 @@
               />
             </mat-form-field>
           </p>
-        </div>
-        <div class="section2">
           <div class="row">
             <p class="field">
               <mat-form-field appearance="outline" class="phoneNumber">
@@ -58,33 +55,15 @@
           </div>
           <div class="row">
             <p class="field">
-              <mat-form-field appearance="outline" class="password">
-                <mat-label>Password </mat-label>
-                <input
-                  matInput
-                  placeholder="Password"
-                  type="password"
-                  formControlName="password"
-                  class="password"
-                />
+              <mat-form-field appearance="outline" class="text">
+                <mat-label>Text</mat-label>
+                <textarea matInput
+                placeholder="text"
+                formControlName="text">
+                </textarea> 
               </mat-form-field>
             </p>
           </div>
-          <div class="row">
-            <p class="field">
-              <mat-form-field appearance="outline" class="role">
-                <mat-label>Role </mat-label>
-                <input
-                  matInput
-                  placeholder="User"
-                  type="text"
-                  formControlName="role"
-                  class="role"
-                />
-              </mat-form-field>
-            </p>
-          </div>
-        </div>
       </div>
       <button
         mat-raised-button

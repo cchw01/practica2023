@@ -7,16 +7,20 @@
   align-items: center;
 }
 
+.forms {
+  padding: 0 20px;
+  margin: 0 30px;
+}
 form {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-left: 150px;
+  /* margin-left: 150px; */
 }
 
 h1 {
-  margin-left: 130px;
+  /* margin-left: 130px; */
   text-align: center;
   font-size: 60px;
   font-family: "Lato", sans-serif;
@@ -30,9 +34,9 @@ iframe {
 
 .section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  gap: 50px;
+
 }
 
 label {
