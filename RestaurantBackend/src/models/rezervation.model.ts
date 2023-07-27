@@ -3,7 +3,7 @@ import { ObjectId } from 'mongoose';
 export class rezervation {
   id!: ObjectId;
   user!: ObjectId;
-  table: ObjectId;
+  table: string;
   reservationStart: Date;
   reservationEnd: Date;
   userNotes: String;

@@ -16,7 +16,7 @@ const rezervationSchema = new Schema<rezervation>(
     userNotes: { type: String, required: false, default: '' },
     status: { type: String, required: false, default: 'In asteptare' },
     user: { type: Schema.Types.ObjectId, ref: 'User' },
-    table: { type: Schema.Types.ObjectId, ref: 'Table' },
+    table: { type: String, default: 'Brasov' },
   },
   {
     collection: env.rezervationDB,

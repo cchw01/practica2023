@@ -1,20 +1,19 @@
 <div class="main">
   <div class="container">
     <div class="header-container">
-      <h1>Edit reservation</h1>
+      <h1>Editare rezervare</h1>
     </div>
     <div class="image-header"></div>
     <form (ngSubmit)="OnSubmit()" [formGroup]="addReservationForm">
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>User</mat-label>
+            <mat-label>Utilizator</mat-label>
             <input
               matInput
-              placeholder="User"
+              placeholder="Utilizator"
               type="text"
               formControlName="user"
-              [disabled]="true"
             />
           </mat-form-field>
         </p>
@@ -22,23 +21,22 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Table</mat-label>
-            <input
-              matInput
-              placeholder="Table"
-              type="text"
-              formControlName="table"
-            />
+            <mat-label>Masă</mat-label>
+            <mat-select formControlName="status">
+              <mat-option value="In asteptare">Braşov</mat-option>
+              <mat-option value="Confirmata">Bucureşti</mat-option>
+              <mat-option value="Anulata">Iaşi</mat-option>
+            </mat-select>
           </mat-form-field>
         </p>
       </div>
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Reservation Start</mat-label>
+            <mat-label>Începutul rezervării</mat-label>
             <input
               matInput
-              placeholder="Reservation Start"
+              placeholder="Începutul rezervării"
               type="datetime-local"
               formControlName="reservationStart"
             />
@@ -48,37 +46,25 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Reservation End</mat-label>
+            <mat-label>Sfârşitul rezervării</mat-label>
             <input
               matInput
-              placeholder="Reservation End"
+              placeholder="Sfârşitul rezervării"
               type="datetime-local"
               formControlName="reservationEnd"
             />
           </mat-form-field>
         </p>
       </div>
+
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>User Notes</mat-label>
+            <mat-label>Comentarii</mat-label>
             <input
               matInput
               type="text"
-              placeholder="User Notes"
-              formControlName="userNotes"
-            />
-          </mat-form-field>
-        </p>
-      </div>
-      <div class="row">
-        <p class="field">
-          <mat-form-field class="all">
-            <mat-label>Number Of Persons</mat-label>
-            <input
-              matInput
-              type="text"
-              placeholder="User Notes"
+              placeholder="Comentarii"
               formControlName="numberOfPersons"
             />
           </mat-form-field>
@@ -89,9 +75,9 @@
           <mat-form-field class="all">
             <mat-label>Status</mat-label>
             <mat-select formControlName="status">
-              <mat-option value="1">1</mat-option>
-              <mat-option value="2">2</mat-option>
-              <mat-option value="3">3</mat-option>
+              <mat-option value="In asteptare">În aşteptare</mat-option>
+              <mat-option value="Confirmata">Confirmată</mat-option>
+              <mat-option value="Anulata">Anulată</mat-option>
             </mat-select>
           </mat-form-field>
         </p>
@@ -99,7 +85,7 @@
       <div class="options">
         <button mat-raised-button class="submit-button" (click)="deleteUser()">
           <mat-icon fontIcon="delete"></mat-icon>
-          Delete
+          Şterge
         </button>
         <button
           mat-raised-button
@@ -107,7 +93,7 @@
           class="submit-button"
           (click)="redirectToMainPage()"
         >
-          Submit
+          Finalizează
           <mat-icon fontIcon="check" color="primary"></mat-icon>
         </button>
       </div>

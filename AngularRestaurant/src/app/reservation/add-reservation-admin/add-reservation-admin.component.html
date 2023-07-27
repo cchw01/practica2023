@@ -1,7 +1,7 @@
 <div class="main">
   <div class="container">
     <div class="header-container">
-      <h1>Add reservation</h1>
+      <h1>Adaugă rezervare</h1>
     </div>
     <div class="image-header"></div>
 
@@ -9,10 +9,10 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>User</mat-label>
+            <mat-label>Utilizator</mat-label>
             <input
               matInput
-              placeholder="User"
+              placeholder="Utilizator"
               type="text"
               formControlName="user"
             />
@@ -22,23 +22,22 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Table</mat-label>
-            <input
-              matInput
-              placeholder="Table"
-              type="text"
-              formControlName="table"
-            />
+            <mat-label>Masă</mat-label>
+            <mat-select formControlName="table">
+              <mat-option value="Brasov">Braşov</mat-option>
+              <mat-option value="Bucuresti">Bucureşti</mat-option>
+              <mat-option value="Iasi">Iaşi</mat-option>
+            </mat-select>
           </mat-form-field>
         </p>
       </div>
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Reservation start</mat-label>
+            <mat-label>Începutul rezervării</mat-label>
             <input
               matInput
-              placeholder="Reservation start"
+              placeholder="Inceputul rezervarii"
               type="datetime-local"
               formControlName="reservationStart"
             />
@@ -48,10 +47,10 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Reservation end</mat-label>
+            <mat-label>Sfârşitul rezervării</mat-label>
             <input
               matInput
-              placeholder="Reservation end"
+              placeholder="Sfarsitul rezervarii"
               type="datetime-local"
               formControlName="reservationEnd"
             />
@@ -61,11 +60,11 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>User Notes</mat-label>
+            <mat-label>Comentarii</mat-label>
             <input
               matInput
               type="text"
-              placeholder="User Notes"
+              placeholder="Comentarii"
               formControlName="userNotes"
             />
           </mat-form-field>
@@ -74,18 +73,18 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Status</mat-label>
+            <mat-label>Statusul rezervării</mat-label>
             <mat-select formControlName="status">
-              <mat-option value="In asteptare">In asteptare</mat-option>
-              <mat-option value="Confirmata">Confirmata</mat-option>
-              <mat-option value="Anulata">Anulata</mat-option>
+              <mat-option value="In asteptare">În aşteptare</mat-option>
+              <mat-option value="Confirmata">Confirmată</mat-option>
+              <mat-option value="Anulata">Anulată</mat-option>
             </mat-select>
           </mat-form-field>
         </p>
       </div>
       <div class="options">
         <button mat-raised-button type="submit" class="submit-button">
-          Submit
+          Finalizare
           <mat-icon fontIcon="check" color="primary"></mat-icon>
         </button>
       </div>

@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 const { model, Schema } = mongoose;
 
-import { env } from "../env";
-import { Table } from "../models/table.model";
+import { env } from '../env';
+import { Table } from '../models/table.model';
 
 const TableSchema = new Schema<Table>(
   {
@@ -14,6 +14,6 @@ const TableSchema = new Schema<Table>(
   }
 );
 
-const TableDb = model<Table>("Table", TableSchema);
+const TableDb = model<Table>('Table', TableSchema);
 
 export { TableDb };

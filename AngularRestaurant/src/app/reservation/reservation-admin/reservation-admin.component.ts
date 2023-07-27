@@ -6,6 +6,8 @@ import { User } from 'src/app/app-logic/services/user';
 import { UserAdminService } from 'src/app/app-logic/services/user-admin.service';
 import { ReservationService } from 'src/app/app-logic/services/reservation.service';
 import { Reservations } from 'src/app/app-logic/services/reservations';
+import { TableService } from 'src/app/app-logic/table.service';
+import { Table } from 'src/app/app-logic/services/table';
 @Component({
   selector: 'app-reservation-admin',
   templateUrl: './reservation-admin.component.html',
@@ -15,6 +17,12 @@ export class ReservationAdminComponent implements OnInit {
   ngOnInit(): void {
     this.reservationService.getData().subscribe((res: Array<Reservations>) => {
       res.map((x) => {
+        this.tableService
+          .getTableById(x.table.toString())
+          .subscribe((theTable: Table) => {
+            x.table = theTable.location!;
+            console.log(theTable.location);
+          });
         this.userService
           .getUserById(x.user.toString())
           .subscribe((theUser: User) => {
@@ -28,7 +36,8 @@ export class ReservationAdminComponent implements OnInit {
   }
   constructor(
     private reservationService: ReservationService,
-    private userService: UserAdminService
+    private userService: UserAdminService,
+    private tableService: TableService
   ) {}
   tempReser?: Array<Reservations[]>;
   @ViewChild(MatPaginator, { static: true }) paginator?:
@@ -47,9 +56,4 @@ export class ReservationAdminComponent implements OnInit {
     'numberOfPersons',
     'actions',
   ];
-  // ObjectIdToString(): string {
-  //   this.userNames?.forEach((element) => {
-  //     return element.firstName;
-  //   });
-  // }
 }
