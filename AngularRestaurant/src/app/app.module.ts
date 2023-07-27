@@ -6,7 +6,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RestaurantReviewComponent } from './templates/restaurant-review/restaurant-review.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
 import { StarRatingModule } from 'angular-star-rating';
 import { RestaurantReviewPageComponent } from './templates/restaurant-review-page/restaurant-review-page.component';
@@ -85,7 +85,6 @@ import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/e
     EditIngredientsComponent,
   ],
   imports: [
-
     BrowserModule,
 
     AppRoutingModule,
