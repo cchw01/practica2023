@@ -23,7 +23,16 @@ export class LoginRegisterNavComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+
+    if (this.userCookies.getUserCookie()._id == '') {
+      const userData = this.userCookies.getUserCookie();
+      if (userData) {
+        this.user = userData; 
+      }  
+    }
+
     this.user = this.userCookies.getUserCookie();
+
   }
 
   ngOnDestroy(): void {
