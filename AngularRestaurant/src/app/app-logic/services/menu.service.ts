@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Ingredient } from '../../interfaces/ingredient.interface';
 import { Category } from '../../interfaces/category.interface';
 import { Photo } from '../../interfaces/photo.interface';
+import { ProductReview } from 'src/app/interfaces/productReview.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -47,5 +48,9 @@ export class MenuService implements OnInit {
 
   getPhotoById(id: string): Observable<Photo> {
     return this.httpClient.get<Photo>(this.httpUrl + '/photo/' + id);
+  }
+
+  getProductReviewList(): Observable<ProductReview[]> {
+    return this.httpClient.get<ProductReview[]>(this.httpUrl + "/product_review");
   }
 }

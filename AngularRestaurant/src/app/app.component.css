@@ -27,6 +27,7 @@ body::-webkit-scrollbar {
 }
 
 
+
 .column-content {
     margin-top: 0px auto;
     background-color: white;
@@ -67,4 +68,6 @@ body::-webkit-scrollbar {
   overflow-y: scroll;
   overflow-x:scroll;
 }
+
+
 

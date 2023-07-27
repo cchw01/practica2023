@@ -1,0 +1,15 @@
+
+<div class="scroll-bg" *ngFor="let product of products">
+    <div class="centered-container">
+        <div class="product-info">
+    <h2>{{ product.name }}</h2>
+    <p>Price: {{ product.price }}</p>
+    <p>Availability: {{ product.isAvailable ? 'Available' : 'Not Available' }}</p>
+    <img [src]="product.photo" alt="Product Photo" width="200" height="150">
+    <ul>
+      <li *ngFor="let ingredient of product.ingredientsList">{{ ingredient }}</li>
+    </ul>
+    <hr>
+  </div>
+</div>
+</div>

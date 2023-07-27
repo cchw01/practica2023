@@ -20,14 +20,12 @@ export class ProductAdminComponent implements OnInit {
   productAdmin: any;
   productList!: Array<Product>;
   ingredientsList: Ingredient[] = [];
+  ArrayOfIngredients: string[] = [];
   IngredientsString!: string;
-  currentIngredients!: string;
   ngOnInit(): void {
     this.productService.getData().subscribe((data: Product[]) => {
       this.productList = data;
-      this.IngredientsString = this.productList
-        .map((product) => this.ObjectIdtoProductName(product.ingredientsList))
-        .join(',');
+      this.ObjectIdtoString();
     });
   }
 
@@ -48,16 +46,11 @@ export class ProductAdminComponent implements OnInit {
     'actions',
   ];
 
-  ObjectIdtoProductName(ingredientIds: Schema.Types.ObjectId[]): string {
-    const StringsArray: string[] = [];
-    ingredientIds.forEach((itemId) => {
-      const ingredient = this.ingredientsList.find(
-        (ingredient) => ingredient._id === itemId.toString()
-      );
-      if (ingredient) {
-        StringsArray.push(ingredient.name);
-      }
-    });
-    return StringsArray.join(',');
+  ObjectIdtoString(): string {
+    this.ingredientsList.forEach((element) => {
+      this.ArrayOfIngredients.push(element.name);
+    })
+    this.IngredientsString = this.ArrayOfIngredients.join(",");
+    return this.IngredientsString;
   }
 }

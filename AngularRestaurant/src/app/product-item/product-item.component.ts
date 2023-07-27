@@ -27,8 +27,6 @@ export class ProductItemComponent implements OnInit {
       this.photo = photo;
     });
 
-    // WHY ???
-
     let ingredients: string[] = [];
 
     this.productMenuService.getIngredientList().subscribe(ingredient => {

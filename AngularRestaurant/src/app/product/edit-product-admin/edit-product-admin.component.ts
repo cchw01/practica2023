@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductAdminService } from '../../app-logic/services/product-admin.service';
-import {Product } from '../../../../../RestaurantBackend/src/models/product.model'
+import { Product } from 'src/app/app-logic/services/product';
 import { firstValueFrom } from 'rxjs';
 
 @Component({
@@ -35,6 +35,7 @@ export class EditProductAdminComponent implements OnInit {
   async getProduct(): Promise<Product | null> {
     return await firstValueFrom(this.productAdmin.getProductById(this.identifier));
   }
+
   ngOnInit(): void {
     this.getProduct().then((x) => {
       if (x) this.product = new Product(x);

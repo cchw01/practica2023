@@ -7,10 +7,9 @@
             <img src={{photo.photoLink}}>
         </div>
         <div class="info">
-            <h1>{{product.name}}</h1>
-            <h2>{{product.price}} RON</h2>
             <p>{{photo.description}}</p>
             <p>Ingredients: {{ingredientsList.join(', ')}}</p>
+            <h2>Rating: {{getProductRating()}}/5 ({{productReviews.length}})</h2>
         </div>
     </div>
 </div>
