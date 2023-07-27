@@ -14,6 +14,7 @@ import { setPhotoRouter } from "./routes/photo.route";
 import { setProductRouter } from "./routes/product.route";
 import { setOrderRouter } from "./routes/order.route";
 import * as cors from 'cors';
+import { setProduct_reviewRouter } from "./routes/product_review.route";
 
 
 
@@ -40,6 +41,7 @@ async function makeApp() {
   app.use(env.Ingredients_MANAGEMENT, IngredientsRouter);
   app.use(env.ReviewRestaurant_MANAGEMENT, reviewRestaurantRouter);
   app.use(env.USER_MANAGEMENT, setUserRouter(express.Router()));
+  app.use(env.ProductReview_ROUTE, setProduct_reviewRouter(express.Router()));
 
   // routes
   app.use(env.TABLE_ROUTE, setTableRouter(express.Router()));
