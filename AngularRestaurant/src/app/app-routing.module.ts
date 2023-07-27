@@ -18,17 +18,13 @@ const routes: Routes = [
     path: 'reservations/confirmedReservation',
     component: ConfirmReservationComponent,
   },
-  { path: 'contact', component: HomePageComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'reviewRestaurant', component: HomePageComponent },
   { path: 'login', component: HomePageComponent },
   { path: 'register', component: HomePageComponent },
 ];
 
-
-  //to modify component for the rest of the pages
-
-
-
+//to modify component for the rest of the pages
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -39,5 +35,5 @@ export const RoutingComponents = {
   HomePageComponent,
   ReservationComponent,
   LoginComponent,
-  RegisterComponent
+  RegisterComponent,
 };

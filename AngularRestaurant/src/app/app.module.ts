@@ -35,6 +35,7 @@ import { CookieService } from 'ngx-cookie-service';
     IconsComponent,
     ReservationComponent,
     ContactComponent,
+    ConfirmReservationComponent,
   ],
   imports: [
     BrowserModule,
