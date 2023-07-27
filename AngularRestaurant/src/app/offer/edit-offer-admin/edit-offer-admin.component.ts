@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OfferAdminService } from '../../app-logic/services/offer-admin.service';
 import { OfferService } from '../../app-logic/services/offer.service';
@@ -24,7 +30,9 @@ export class EditOfferAdminComponent implements OnInit {
       this.identifier = params['id'] ?? 0;
       console.log(params['id']);
       this.editOfferForm = this.fb.group({
-        productList: [''],
+        productList: new FormArray([
+          new FormControl(null, Validators.required),
+        ]),
         discountPercent: [''],
         startDate: [''],
         endDate: [''],
@@ -39,12 +47,32 @@ export class EditOfferAdminComponent implements OnInit {
       if (x) this.offer = new OfferService(x);
       console.log(this.offer);
       this.editOfferForm = this.fb.group({
-        productList: [this.offer?.productList],
+        productList: new FormArray([
+          new FormControl(this.offer?.productList, Validators.required), //to do sa arate mai multe campuri
+        ]),
         discountPercent: [this.offer?.discountPercent],
         startDate: [this.offer?.startDate.toString().split('T')[0]],
         endDate: [this.offer?.endDate.toString().split('T')[0]],
       });
     });
+  }
+
+  get productListLength() {
+    const productListFormArray = this.editOfferForm.get(
+      'productList'
+    ) as FormArray;
+    return productListFormArray.length;
+  }
+
+  addProduct() {
+    (<FormArray>this.editOfferForm.get('productList')).push(
+      new FormControl(null, Validators.required)
+    );
+  }
+
+  removeProduct() {
+    const len = this.productListLength;
+    (<FormArray>this.editOfferForm.get('productList')).removeAt(len - 1);
   }
 
   OnSubmit() {
