@@ -20,6 +20,7 @@ import { ContactComponent } from './contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
 import { UserAdminComponent } from './user/user-admin/user-admin.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -30,6 +31,11 @@ import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
 } from '@angular/material/form-field';
+import { OfferAdminComponent } from './offer/admin-offer-page/admin-offer-page.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { AddOfferAdminComponent } from './offer/add-offer-admin/add-offer-admin.component';
+import { EditOfferAdminComponent } from './offer/edit-offer-admin/edit-offer-admin.component';
 import { ConfirmReservationComponent } from './reservation/confirm-reservation/confirm-reservation.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -51,6 +57,9 @@ import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/e
     ProductPageComponent,
     CategorySectionComponent,
     ReservationComponent,
+    OfferAdminComponent,
+    AddOfferAdminComponent,
+    EditOfferAdminComponent ,
     UserAdminComponent,
     EditUserAdminComponent,
     AddUserAdminComponent,

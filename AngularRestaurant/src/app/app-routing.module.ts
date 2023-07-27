@@ -7,6 +7,9 @@ import { UserAdminComponent } from './user/user-admin/user-admin.component';
 import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { OfferAdminComponent } from './offer/admin-offer-page/admin-offer-page.component';
+import { AddOfferAdminComponent } from './offer/add-offer-admin/add-offer-admin.component';
+import { EditOfferAdminComponent } from './offer/edit-offer-admin/edit-offer-admin.component';
 import { ConfirmReservationComponent } from './reservation/confirm-reservation/confirm-reservation.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -21,9 +24,17 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'product/:id', component: ProductPageComponent },
-
   { path: 'orders', component: HomePageComponent },
   { path: 'reservations', component: ReservationComponent },
+  { path: 'offer-admin', component: OfferAdminComponent },
+  { path: 'offer-admin/add', component: AddOfferAdminComponent },
+  { path: 'offer-admin/edit/:id', component: EditOfferAdminComponent },
+
+  {path: 'menu', component: MenuComponent},
+  {path: 'product/:id', component: ProductPageComponent},
+
+  {path: 'orders', component: HomePageComponent},
+  {path: 'reservations', component: ReservationComponent },
   {
     path: 'reservations/confirmedReservation',
     component: ConfirmReservationComponent,
@@ -38,6 +49,7 @@ const routes: Routes = [
   { path: 'ingredients', component: IngredientsComponent },
   { path: 'ingredients/edit/:id', component: EditIngredientsComponent },
   { path: 'ingredients/add', component: AddIngredientComponent },
+
 ];
 
 //to modify component for the rest of the pages
@@ -53,6 +65,9 @@ export const RoutingComponents = {
   ReservationComponent,
   LoginComponent,
   RegisterComponent,
+  OfferAdminComponent,
+  AddOfferAdminComponent,
+  EditOfferAdminComponent,
   EditUserAdminComponent,
   EditIngredientsComponent,
 };

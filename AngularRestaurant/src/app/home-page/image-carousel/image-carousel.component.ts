@@ -28,3 +28,4 @@ export class ImageCarouselComponent implements OnInit {
     else this.selectedIndex++;
   }
 }
+
