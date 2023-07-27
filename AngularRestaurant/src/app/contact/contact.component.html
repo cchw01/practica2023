@@ -34,8 +34,8 @@
             </p>
           </div>
           <p class="field">
-            <mat-form-field appearance="outline" class="lastName">
-              <mat-label>Last Name</mat-label>
+            <mat-form-field appearance="outline" class="email">
+              <mat-label>Email</mat-label>
               <input
                 matInput
                 placeholder="email"
@@ -59,7 +59,7 @@
             />
           </mat-form-field>
         </p>
-      </div>
+      
       <div class="row">
         <p class="field">
           <mat-form-field appearance="outline" class="phoneNumber">
@@ -77,14 +77,14 @@
         <p class="field">
           <mat-form-field appearance="outline" class= "text">
             <mat-label>Text </mat-label>
-            <textarea
+            <input
                   matInput
                   placeholder="phoneNumber"
                   type="text"
                   formControlName="phoneNumber"
-                />
+                >
                 <mat-error *ngIf="hasError('phoneNumber', 'required')"
-                >First Name required</mat-error>
+                >Phone number required</mat-error>
               </mat-form-field>
             </p>
           </div>
@@ -100,7 +100,7 @@
               </mat-form-field>
             </p>
           </div>
-      </div>
+      
       <button 
         mat-raised-button
         type="submit"

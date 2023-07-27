@@ -80,7 +80,7 @@
             <mat-icon fontIcon="clear"></mat-icon>
             Close
           </button>
-          <button mat-raised-button type="submit" class="submit-button">
+          <button mat-raised-button type="submit" class="submit-button" [disabled]="!AddProductForm.valid">
             Submit
             <mat-icon fontIcon="check" color="primary"></mat-icon>
           </button>

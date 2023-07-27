@@ -1,49 +1,71 @@
-.login-register{
-    background-color: transparent;
-    display: inline-flex;
-    align-items: stretch;
-    justify-content: center;
-    margin-left:7vh;
-    padding-top: 3vh;
-  }
-  .login-register li{
-    list-style-type: none;
-    align-items: center;
-    
-  }
-  
-  button{
-    background-color: transparent;
-    border-color: transparent;
-  }
-  
-  button a{
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: bolder;
-    color: rgb(255, 255, 255);
-    font-family: 'Courier New', Courier, monospace;
-    padding:0.em;
-  
-  }
-  
-  button a:hover{
-    color: rgb(228, 170, 61);
-    transition: 0.15s all;
-    opacity:0.7;
-  }
-  
-  button b{
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: bolder;
-    color: rgb(255, 255, 255);
-    font-family: 'Courier New', Courier, monospace;
-    padding:0.em;
-  
-  }
-  button b:hover{
-    color: rgb(228, 170, 61);
-    transition: 0.15s all;
-    opacity:0.7;
-  }
+.login-register {
+  background-color: transparent;
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: center;
+  margin-left: 4vh;
+  padding-top: 3vh;
+}
+
+.login-register li {
+  list-style-type: none;
+  align-items: center;
+}
+
+button {
+  background-color: transparent;
+  border-color: transparent;
+  color:antiquewhite;
+  font-size: 1.3em;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0;
+}
+
+button a {
+  text-decoration: none; /* Remove underline for anchor elements */
+  color: inherit; /* Inherit text color from the parent button */
+  display: block; /* Make anchor elements behave like block elements */
+  padding: 10px 20px; /* Add padding to make them look like buttons */
+}
+
+button:hover {
+  transition: 0.15s all;
+  background-color: black; /* No background color on hover */
+}
+
+.login-register .auth-buttons {
+  display: flex; /* Display the buttons on the same line */
+  justify-content: center; /* Center the buttons horizontally */
+}
+
+.login-register .auth-buttons button {
+  margin: 0 3px; /* Add space between the buttons */
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+}
+
+.login-register .user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center elements horizontally */
+  text-align: center; /* Align text to the center */
+  margin-top: 10px;
+  margin-left:10px; /* Add a bit of margin at the top to move it down */
+}
+
+.login-register .user-info .greeting {
+  font-size: 1.4em;
+  color: rgb(255, 255, 255);
+}
+
+.login-register .user-info button {
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+}
+
+.login-register .user-info button:hover {
+  background-color: black;
+}

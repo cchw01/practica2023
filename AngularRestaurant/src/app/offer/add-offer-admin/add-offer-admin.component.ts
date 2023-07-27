@@ -71,4 +71,7 @@ export class AddOfferAdminComponent implements OnInit {
       this.router.navigate(['/offer-admin']);
     }, 1000);
   }
+  instantRedirect() {
+    this.router.navigate(['product-admin']);
+  }
 }
