@@ -25,6 +25,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
 import { MatSelectModule } from '@angular/material/select';
 import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
+import { MatMenuModule } from '@angular/material/menu';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
@@ -71,6 +72,7 @@ import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/e
     MatSelectModule,
     MatTableModule,
     MatPaginatorModule,
+    MatMenuModule,
   ],
   providers: [
     {
