@@ -67,12 +67,10 @@
           <p class="field">
             <mat-form-field class="all">
               <mat-label>Availability</mat-label>
-              <input
-                matInput
-                type="boolean"
-                placeholder="isAvailable"
-                formControlName="isAvailable"
-              />
+              <mat-select formControlName="isAvailable">
+                <mat-option value="true">True</mat-option>
+                <mat-option value="false">False</mat-option>
+              </mat-select>
             </mat-form-field>
           </p>
         </div>

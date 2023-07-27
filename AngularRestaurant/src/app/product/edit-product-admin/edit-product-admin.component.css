@@ -11,14 +11,14 @@
     align-items: center;
   }
   .header-container {
-    background-color: aliceblue;
+    background-color: white;
     text-align: center;
     padding: 2vh 5vw;
     border-bottom: 0.3vh solid #999;
   }
   .container {
     padding-top: 2vh;
-    background-color: aliceblue;
+    background-color: white;
     display: flex;
     flex-direction: column;
     width: 40vw;
