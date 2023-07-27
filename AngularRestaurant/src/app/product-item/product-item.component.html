@@ -1,0 +1,11 @@
+<div *ngIf="product.isAvailable" class="product-container">
+    <div class="photo-container">
+        <img class="photo" src={{photo.photoLink}}>
+    </div>
+    <div class="product-content">
+        <h5 class="product-name" (click)="viewProduct()">{{product.name}}</h5>
+        <p class="product-description">{{photo.description}}</p>
+    </div>
+    <span class="product-price">{{product.price}} RON</span>
+</div>
+<hr *ngIf="!isLast">
