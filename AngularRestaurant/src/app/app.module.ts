@@ -66,9 +66,9 @@ import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/e
     ConfirmReservationComponent,
     IngredientsComponent,
     AddIngredientComponent,
+    PopupComponent,
     EditIngredientsComponent,
   ],
-  declarations: [AppComponent, IconsComponent, PopupComponent, ContactComponent, ConfirmReservationComponent, LoginComponent, RegisterComponent, ConfirmReservationComponent, ContactComponent, NavbarComponent, LoginRegisterNavComponent, ReservationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
