@@ -13,7 +13,6 @@ function getEnv() {
     Ingredients_MANAGEMENT: "/ingredients",
     ProductReview_ROUTE: "/product_review",
     PHOTO_ROUTE: "/photo",
-    ProductReview_ROUTE: "/product_review",
     PRODUCT_MANAGEMENT: "/product",
     ORDER_ROUTE: "/order",
 
