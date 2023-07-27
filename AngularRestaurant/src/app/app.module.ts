@@ -14,15 +14,13 @@ import { MenuComponent } from './menu/menu.component';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { CategorySectionComponent } from './category-section/category-section.component';
-import { HttpClientModule } from '@angular/common/http';
 import { ReservationComponent } from './reservation/reservation.component';
+import { ContactComponent } from './contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { UserAdminComponent } from './user/user-admin/user-admin.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
 import { MatSelectModule } from '@angular/material/select';
 import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
@@ -36,6 +34,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { AddOfferAdminComponent } from './offer/add-offer-admin/add-offer-admin.component';
 import { EditOfferAdminComponent } from './offer/edit-offer-admin/edit-offer-admin.component';
 import { ConfirmReservationComponent } from './reservation/confirm-reservation/confirm-reservation.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { CookieService } from 'ngx-cookie-service';
 import { IngredientsComponent } from './ingredients-admin/ingredients/ingredients.component';
 import { AddIngredientComponent } from './ingredients-admin/add-ingredient/add-ingredient.component';
 import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/edit-ingredients.component';
@@ -43,6 +44,8 @@ import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/e
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    RegisterComponent,
     NavbarComponent,
     LoginRegisterNavComponent,
     IconsComponent,
@@ -57,6 +60,7 @@ import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/e
     UserAdminComponent,
     EditUserAdminComponent,
     AddUserAdminComponent,
+    ContactComponent,
     ConfirmReservationComponent,
     IngredientsComponent,
     AddIngredientComponent,
@@ -86,7 +90,15 @@ import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/e
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' },
     },
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    CookieService,
   ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

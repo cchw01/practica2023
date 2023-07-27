@@ -11,16 +11,21 @@ import { OfferAdminComponent } from './offer/admin-offer-page/admin-offer-page.c
 import { AddOfferAdminComponent } from './offer/add-offer-admin/add-offer-admin.component';
 import { EditOfferAdminComponent } from './offer/edit-offer-admin/edit-offer-admin.component';
 import { ConfirmReservationComponent } from './reservation/confirm-reservation/confirm-reservation.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ContactComponent } from './contact/contact.component';
 import { IngredientsComponent } from './ingredients-admin/ingredients/ingredients.component';
 import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/edit-ingredients.component';
 import { AddIngredientComponent } from './ingredients-admin/add-ingredient/add-ingredient.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-
-  //to modify component for the rest of the pages
-
-
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'menu', component: MenuComponent },
+  { path: 'product/:id', component: ProductPageComponent },
+  { path: 'orders', component: HomePageComponent },
+  { path: 'reservations', component: ReservationComponent },
   { path: 'offer-admin', component: OfferAdminComponent },
   { path: 'offer-admin/add', component: AddOfferAdminComponent },
   { path: 'offer-admin/edit/:id', component: EditOfferAdminComponent },
@@ -34,10 +39,9 @@ const routes: Routes = [
     path: 'reservations/confirmedReservation',
     component: ConfirmReservationComponent,
   },
-  {path: 'contact', component: HomePageComponent},
-  {path: 'reviewRestaurant', component: HomePageComponent},
-  {path: 'login', component: HomePageComponent},
-  {path: 'register', component: HomePageComponent},
+  { path: 'contact', component: ContactComponent },
+  { path: 'reviewRestaurant', component: HomePageComponent },
+
   { path: 'user-admin', component: UserAdminComponent },
   { path: 'user-admin/edit/:id', component: EditUserAdminComponent },
   { path: 'user-admin/add', component: AddUserAdminComponent },
@@ -48,6 +52,8 @@ const routes: Routes = [
 
 ];
 
+//to modify component for the rest of the pages
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
@@ -57,6 +63,8 @@ export const RoutingComponents = {
   HomePageComponent,
   MenuComponent,
   ReservationComponent,
+  LoginComponent,
+  RegisterComponent,
   OfferAdminComponent,
   AddOfferAdminComponent,
   EditOfferAdminComponent,

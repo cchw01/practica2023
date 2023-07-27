@@ -17,8 +17,18 @@ async function getProduct_review(
     return Error("invalid params");
   }
   try {
-    const photo = await Product_reviewDB.findOne<Product_review>({ _id: _id });
-    return photo;
+    const product_review = await Product_reviewDB.findOne<Product_review>({
+      _id: _id,
+    });
+    return product_review;
+  } catch (ex: any) {
+    return Error(ex.message);
+  }
+}
+async function getProduct_reviews(): Promise<Error | Product_review[]> {
+  try {
+    const product_reviews = await Product_reviewDB.find<Product_review>({});
+    return product_reviews;
   } catch (ex: any) {
     return Error(ex.message);
   }
@@ -55,15 +65,6 @@ async function saveProduct_review(
   console.log("mere");
   product_reviewModel.save();
   return product_reviewModel;
-}
-
-async function getProduct_reviews(): Promise<Error | Product_review[]> {
-  try {
-    const product_reviews = await Product_reviewDB.find<Product_review>({});
-    return product_reviews;
-  } catch (ex: any) {
-    return Error(ex.message);
-  }
 }
 
 async function deleteProduct_review(

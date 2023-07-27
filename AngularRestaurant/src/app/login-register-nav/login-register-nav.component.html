@@ -1,4 +1,5 @@
-<div class="login-register">
+<div *ngIf="!userCookies.isUserAuthenticated()" class="login-register">
+
     <li><button mat-button><a routerLink="login" >
      Login
    </a></button><i></i></li>
@@ -6,3 +7,9 @@
      Register
    </a></button><i></i></li>
  </div>
+<div *ngIf="userCookies.isUserAuthenticated()" class="login-register">
+  <li>Salut, {{user.firstName + " " + user.lastName}}</li>
+  <li>
+    <button mat-button (click)="logout()">Logout</button>
+  </li>
+</div>
