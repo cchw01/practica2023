@@ -1,5 +1,5 @@
 export class Reservations {
-  id!: string;
+  _id!: string;
   user!: string;
   table!: string;
   reservationStart!: Date;

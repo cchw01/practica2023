@@ -57,6 +57,9 @@ import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/e
 import { ProductAdminComponent } from './product/product-admin/product-admin.component';
 import { EditProductAdminComponent } from './product/edit-product-admin/edit-product-admin.component';
 import { AddProductAdminComponent } from './product/add-product-admin/add-product-admin.component';
+import { ReservationAdminComponent } from './reservation/reservation-admin/reservation-admin.component';
+import { AddReservationAdminComponent } from './reservation/add-reservation-admin/add-reservation-admin.component';
+import { EditReservationAdminComponent } from './reservation/edit-reservation-admin/edit-reservation-admin.component';
 
 @NgModule({
   declarations: [
@@ -93,10 +96,12 @@ import { AddProductAdminComponent } from './product/add-product-admin/add-produc
     ProductAdminComponent,
     EditProductAdminComponent,
     AddProductAdminComponent,
+    ReservationAdminComponent,
+    AddReservationAdminComponent,
+    EditReservationAdminComponent,
   ],
   imports: [
     BrowserModule,
-
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTableModule,

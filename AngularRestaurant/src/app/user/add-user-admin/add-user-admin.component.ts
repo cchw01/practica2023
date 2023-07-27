@@ -17,8 +17,16 @@ export class AddUserAdminComponent implements OnInit {
       firstName: [this.user?.firstName, Validators.required],
       lastName: [this.user?.lastName, Validators.required],
       email: [this.user?.email, Validators.email, Validators.required],
-      phoneNumber: [this.user?.phoneNumber, Validators.maxLength(10), Validators.required],
-      password: [this.user?.password, Validators.minLength(8), Validators.required],
+      phoneNumber: [
+        this.user?.phoneNumber,
+        Validators.maxLength(10),
+        Validators.required,
+      ],
+      password: [
+        this.user?.password,
+        Validators.minLength(8),
+        Validators.required,
+      ],
       role: [this.user?.role, Validators.required],
     });
   }
@@ -50,6 +58,6 @@ export class AddUserAdminComponent implements OnInit {
     }, 1000);
   }
   instantRedirect() {
-    this.router.navigate(['product-admin']);
+    this.router.navigate(['/user-admin']);
   }
 }

@@ -22,6 +22,9 @@ import { AddIngredientComponent } from './ingredients-admin/add-ingredient/add-i
 import { ProductAdminComponent } from './product/product-admin/product-admin.component';
 import { EditProductAdminComponent } from './product/edit-product-admin/edit-product-admin.component';
 import { AddProductAdminComponent } from './product/add-product-admin/add-product-admin.component';
+import { ReservationAdminComponent } from './reservation/reservation-admin/reservation-admin.component';
+import { AddReservationAdminComponent } from './reservation/add-reservation-admin/add-reservation-admin.component';
+import { EditReservationAdminComponent } from './reservation/edit-reservation-admin/edit-reservation-admin.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -39,6 +42,15 @@ const routes: Routes = [
     component: ConfirmReservationComponent,
   },
   { path: 'contact', component: ContactComponent },
+  { path: 'reservation-admin', component: ReservationAdminComponent },
+  { path: 'reservation-admin/add', component: AddReservationAdminComponent },
+  {
+    path: 'reservation-admin/edit/:id',
+    component: EditReservationAdminComponent,
+  },
+  { path: 'reviewRestaurant', component: HomePageComponent },
+  { path: 'login', component: HomePageComponent },
+  { path: 'register', component: HomePageComponent },
   { path: 'user-admin', component: UserAdminComponent },
   { path: 'user-admin/edit/:id', component: EditUserAdminComponent },
   { path: 'user-admin/add', component: AddUserAdminComponent },
@@ -68,6 +80,7 @@ export const RoutingComponents = {
   OfferAdminComponent,
   AddOfferAdminComponent,
   EditOfferAdminComponent,
+  ReservationAdminComponent,
   EditUserAdminComponent,
   EditIngredientsComponent,
   ProductAdminComponent,
