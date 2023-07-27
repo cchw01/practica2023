@@ -48,7 +48,7 @@ export class EditOfferAdminComponent implements OnInit {
       console.log(this.offer);
       this.editOfferForm = this.fb.group({
         productList: new FormArray([
-          new FormControl(this.offer?.productList, Validators.required), //to do sa arate mai multe campuri
+          new FormControl(null, Validators.required),
         ]),
         discountPercent: [this.offer?.discountPercent],
         startDate: [this.offer?.startDate.toString().split('T')[0]],
