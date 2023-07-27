@@ -13,6 +13,7 @@ export class ProductPageComponent {
 
   productId!: string;
   product: Product = new Product();
+  productRating: any;
   photo: Photo = new Photo();
   ingredientsList: string[] = [];
   
@@ -27,8 +28,6 @@ export class ProductPageComponent {
         this.productMenuService.getPhotoById(this.product.photo).subscribe(photo => {
           this.photo = photo;
         });
-
-        // WHY ???
 
         let ingredients: string[] = [];
 
