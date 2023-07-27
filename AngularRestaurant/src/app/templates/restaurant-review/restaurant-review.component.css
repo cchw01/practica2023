@@ -39,7 +39,11 @@
     height: 100%;
   }
 }
-
+.bold-times-new-roman {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-weight: bold;
+}
 /* Firefox nu accepta nested elements */
 .review-sumbit-button{
   display: flex;

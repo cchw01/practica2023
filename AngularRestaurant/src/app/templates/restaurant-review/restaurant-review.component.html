@@ -5,6 +5,7 @@
     <p>Scrie-ne o recenzie</p>
   </div>
 
+  <label class="bold-times-new-roman" >Media ratingurilor noastre este: (Rating: {{ totalRating | number: '1.1-1' }}/5)</label>
   <form [formGroup]="addReviewFormGroup" (ngSubmit)="onSubmit()" class="reviewForm">
     <mat-form-field appearance="outline" class="review-form-field">
       <mat-label >Recenzia ta</mat-label>

@@ -12,7 +12,7 @@ import { UserCookieManagmentService } from 'src/app/app-logic/services/user-cook
 export class RestaurantReviewComponent implements OnInit {
   addReviewFormGroup!: FormGroup;
   onClickResult!: ClickEvent | undefined;
-
+  totalRating: number = 0;
   constructor(
     private fb: FormBuilder,
     private reviewRestaurantService: ReviewRestaurantService,
@@ -23,6 +23,7 @@ export class RestaurantReviewComponent implements OnInit {
       message: ['', Validators.required],
       ratingStars: ['', Validators.required],
     });
+    this.updateTotalRating();
   }
 
   onClick = ($event: ClickEvent) => {
@@ -40,7 +41,12 @@ export class RestaurantReviewComponent implements OnInit {
     this.addReviewFormGroup.value.ratingStars = this.onClickResult.rating;
     return true;
   }
-
+  updateTotalRating(): void {
+    this.reviewRestaurantService.getAllReviews().subscribe((reviews: ReviewRestaurant[]) => {
+      const totalStars = reviews.reduce((acc, review) => acc + review.ratingStars, 0);
+      this.totalRating = totalStars / reviews.length;
+    });}
+  
   validateTextField(): boolean {
     if (this.addReviewFormGroup.value.message == '') {
       alert('Mesajul nu poate fi gol.');
