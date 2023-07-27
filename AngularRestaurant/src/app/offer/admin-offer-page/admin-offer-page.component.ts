@@ -5,7 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { SelectionModel } from '@angular/cdk/collections';
 import { OfferService } from 'src/app/app-logic/services/offer.service';
 import { OfferAdminService } from 'src/app/app-logic/services/offer-admin.service';
-
+import { Offer } from 'src/app/app-logic/services/offer';
 @Component({
   selector: 'app-admin-offer-page',
   templateUrl: './admin-offer-page.component.html',
@@ -17,13 +17,13 @@ export class OfferAdminComponent implements OnInit {
     | undefined;
   @ViewChild(MatSort, { static: true }) sort?: MatSort | undefined;
   offerAdmin: any;
-  offerList!: Array<OfferService>;
+  offerList!: any;
   ngOnInit(): void {
-    this.offerList = this.offerService.getData();
-    //this.userList = new MatTableDataSource<User>(this.user.getData());
-
-    //this.userList.paginator = this.paginator;
-    // this.userList.sort = this.sort;
+    this.offerService.getData().subscribe((res: any) => {
+      this.offerList = new MatTableDataSource<Offer>(res);
+      this.offerList.paginator = this.paginator;
+      this.offerList.sort = this.sort;
+    });
   }
 
   constructor(private offerService: OfferAdminService) {}
