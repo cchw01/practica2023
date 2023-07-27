@@ -49,6 +49,8 @@ import { ConfirmReservationComponent } from './reservation/confirm-reservation/c
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CookieService } from 'ngx-cookie-service';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+import { PopupComponent } from './popup/popup.component';
 import { IngredientsComponent } from './ingredients-admin/ingredients/ingredients.component';
 import { AddIngredientComponent } from './ingredients-admin/add-ingredient/add-ingredient.component';
 import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/edit-ingredients.component';
@@ -86,6 +88,7 @@ import { AddProductAdminComponent } from './product/add-product-admin/add-produc
     ConfirmReservationComponent,
     IngredientsComponent,
     AddIngredientComponent,
+    PopupComponent,
     EditIngredientsComponent,
     ProductAdminComponent,
     EditProductAdminComponent,
@@ -109,11 +112,11 @@ import { AddProductAdminComponent } from './product/add-product-admin/add-produc
     MatIconModule,
     ScrollingModule,
     MatDividerModule,
-    HomePageModule,
     MatButtonModule,
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatDialogModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
