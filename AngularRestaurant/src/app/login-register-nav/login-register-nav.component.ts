@@ -18,7 +18,10 @@ export class LoginRegisterNavComponent implements OnInit {
   }
   ngOnInit(): void {
     if (this.userCookies.getUserCookie()._id == '') {
-      this.user = this.userCookies.getUserCookie();
+      const userData = this.userCookies.getUserCookie();
+      if (userData) {
+        this.user = userData; 
+      }  
     }
   }
   logout() {
