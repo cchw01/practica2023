@@ -58,10 +58,10 @@
         </div>
         <div>
             <label>Is Available?</label>
-            <select formControlName="isAvailable" id="isAvailable">
-              <option [value]="true">Yes</option>
-              <option [value]="false">No</option>
-            </select>
+            <mat-select formControlName="isAvailable" id="isAvailable">
+              <mat-option [value]="true">Yes</mat-option>
+              <mat-option [value]="false">No</mat-option>
+            </mat-select>
             <div *ngIf="addProductForm.get('isAvailable')?.invalid && addProductForm.get('isAvailable')?.touched">
               <span class="error-message">Please select availability.</span>
             </div>
