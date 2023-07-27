@@ -49,6 +49,9 @@ export class ProductPageComponent {
   }
 
   getProductRating(): number {
+    if(this.productReviews.length == 0) {
+      return 0;
+    }
     let average: number = 0;
     this.productReviews.forEach(productReview => {
       average += productReview.starRating;
