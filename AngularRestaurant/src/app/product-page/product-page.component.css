@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.product-container {
+    width: 100%;
+    display: inline;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: "lato", sans-serif;
+}
+
+.product-info {
+    margin-top: -120px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "thePhoto theInfo";
+}
+
+.photo {
+    padding: 20px;
+    grid-area: thePhoto;
+}
+
+.photo img {
+    max-height: 400px;
+    max-width: 400px;
+    box-shadow: -10px 5px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    text-align: left;
+    padding-left: 40px;
+    padding-top: 20px;
+    grid-area: theInfo;
+}
+
+
+.product-name {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-top: 40px;
+    font-size: 40px;
+}
+
+.product-price {
+    font-size: 20px;
+}
+
+.separator {
+    display: block;
+    align-content: center;
+    margin-top: -150px;
+    margin-bottom: -80px;
+    margin-left: auto;
+    margin-right: auto;
+}

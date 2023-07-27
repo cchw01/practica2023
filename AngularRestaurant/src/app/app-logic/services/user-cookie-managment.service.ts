@@ -13,26 +13,29 @@ export class UserCookieManagmentService {
     this.cookieService.set('IsLoggedIn', 'true');
   }
   isUserAuthenticated(): boolean {
-    if (this.cookieService.get('IsLoggedIn')) {
+    if (this.cookieService.get('IsLoggedIn') === 'true') {
       return true;
     }
     return false;
   }
-  getUserCookie(): User {
-    var res = JSON.parse(this.cookieService.get('user'));
-    var usr: User = {
-      _id: res._id,
-      firstName: res.firstName,
-      lastName: res.lastName,
-      phoneNumber: res.phoneNumber,
-      password: res.password,
-      role: res.role,
-      email: res.email,
-    };
-    return usr;
+  getUserCookie() {
+    if (this.cookieService.check('user')) {
+      var res = JSON.parse(this.cookieService.get('user'));
+      var usr: User = {
+        _id: res._id,
+        firstName: res.firstName,
+        lastName: res.lastName,
+        phoneNumber: res.phoneNumber,
+        password: res.password,
+        role: res.role,
+        email: res.email,
+      };
+      return usr;
+    }
+    return new User();
   }
   removeUserCookie() {
-    this.cookieService.delete('user');
+    this.cookieService.deleteAll();
     this.cookieService.set('IsLoggedIn', 'false');
   }
 }

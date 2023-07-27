@@ -7,6 +7,10 @@
   align-items: center;
 }
 
+.forms {
+  padding: 0 20px;
+  margin: 0 30px;
+}
 form {
   display: flex;
   justify-content: center;
