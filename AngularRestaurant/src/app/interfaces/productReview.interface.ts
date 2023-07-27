@@ -1,5 +1,5 @@
 export class ProductReview {
-    id!: string;
+    _id!: string;
     Product!: string;
     reviewDate!: Date;
     User!: string;

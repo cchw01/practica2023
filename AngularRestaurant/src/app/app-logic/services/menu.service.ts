@@ -50,7 +50,7 @@ export class MenuService implements OnInit {
     return this.httpClient.get<Photo>(this.httpUrl + '/photo/' + id);
   }
 
-  getProductReviewList(): Observable<ProductReview> {
-    return this.httpClient.get<ProductReview>(this.httpUrl + "/product_review");
+  getProductReviewList(): Observable<ProductReview[]> {
+    return this.httpClient.get<ProductReview[]>(this.httpUrl + "/product_review");
   }
 }
