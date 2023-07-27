@@ -8,10 +8,10 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>First Name</mat-label>
+            <mat-label>Nume</mat-label>
             <input
               matInput
-              placeholder="First name"
+              placeholder="Nume"
               type="text"
               formControlName="firstName"
             />
@@ -21,10 +21,10 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Last Name</mat-label>
+            <mat-label>Prenume</mat-label>
             <input
               matInput
-              placeholder="Last name"
+              placeholder="Prenume"
               type="text"
               formControlName="lastName"
             />
@@ -34,10 +34,10 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Phone Number</mat-label>
+            <mat-label>Telefon</mat-label>
             <input
               matInput
-              placeholder="Phone Number"
+              placeholder="Telefon"
               type="string"
               formControlName="phoneNumber"
             />
@@ -60,11 +60,11 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Password</mat-label>
+            <mat-label>Parola</mat-label>
             <input
               matInput
               type="password"
-              placeholder="Password"
+              placeholder="Parola"
               formControlName="password"
             />
           </mat-form-field>
@@ -73,7 +73,7 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Role</mat-label>
+            <mat-label>Rol</mat-label>
             <mat-select formControlName="role">
               <mat-option value="User">User</mat-option>
               <mat-option value="Admin">Admin</mat-option>
@@ -84,7 +84,7 @@
       <div class="options">
         <button mat-raised-button class="submit-button" (click)="deleteUser()">
           <mat-icon fontIcon="delete"></mat-icon>
-          Delete
+          Sterge
         </button>
         <button
           mat-raised-button
@@ -92,7 +92,7 @@
           class="submit-button"
           (click)="redirectToMainPage()"
         >
-          Submit
+          Finalizeaza
           <mat-icon fontIcon="check" color="primary"></mat-icon>
         </button>
       </div>
