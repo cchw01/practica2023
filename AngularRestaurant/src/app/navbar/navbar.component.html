@@ -4,10 +4,22 @@
     <ul>
       <li><a routerLink="">Home</a></li>
       <li><a routerLink="menu">Menu</a></li>
-      <li><a routerLink="orders">Orders</a></li>
       <li><a routerLink="reservations">Reservations</a></li>
       <li><a routerLink="contact">Contact</a></li>
       <li><a routerLink="reviewRestaurant">Review Restaurant</a></li>
+      <li><button mat-button [matMenuTriggerFor]="menu">
+        Administration</button></li>
+
+    <mat-menu
+    #menu="matMenu"
+    xPosition="before"
+    yPosition="below">
+        <button mat-menu-item routerLink="/ingredients"><mat-icon>workspaces</mat-icon>Ingredients</button>
+        <button mat-menu-item routerLink="/user-admin"><mat-icon>person</mat-icon>Users</button>
+        <!-- to modify routerLink if not correct -->
+        <button mat-menu-item routerLink="/reservation-admin"><mat-icon>alarm_on</mat-icon>Reservations</button>
+        <button mat-menu-item routerLink="/product-admin"><mat-icon>shopping_cart</mat-icon>Products</button>
+    </mat-menu>
       <mat-divider class = "divider"> </mat-divider>
     </ul>
     </nav>

@@ -5,8 +5,8 @@ export async function postProduct(product: Product): Promise<Error | Product> {
   if (
     !product ||
     !product.name ||
-    !product.price ||
     !product.isAvailable||
+    !product.price ||
     !product.photo ||
     !product.ingredientsList 
     ) 
@@ -51,6 +51,7 @@ export async function getProducts(): Promise<Error | Product[]> {
   } catch (ex: any) {
     return Error(ex.message);
   }
+  
 }
 
 

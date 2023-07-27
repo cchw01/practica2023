@@ -1,0 +1,25 @@
+<div class="review-form-card" *ngIf="isUserAuthenticated()">
+<div class="review-helper-text">
+    Cum ne-am descurcat?
+    <br>
+    <p>Scrie-ne o recenzie</p>
+  </div>
+
+  <label class="bold-times-new-roman" >Media ratingurilor noastre este: (Rating: {{ totalRating | number: '1.1-1' }}/5)</label>
+  <form [formGroup]="addReviewFormGroup" (ngSubmit)="onSubmit()" class="reviewForm">
+    <mat-form-field appearance="outline" class="review-form-field">
+      <mat-label >Recenzia ta</mat-label>
+        <textarea matInput formControlName="message"></textarea>
+      <mat-error *ngIf="false">Campul este obligatoriu</mat-error>
+    </mat-form-field>
+    <star-rating [starType]="'svg'" [rating]="0" (starClickChange)="onClick($event)"></star-rating>
+    <div class="review-sumbit-button">
+      <button mat-raised-button type="submit">Trimite</button>
+    </div>
+  </form>
+</div>
+
+<p *ngIf="!isUserAuthenticated()" class="user-not-loggedin">
+  Pentru a putea scrie o recenzie, te rugam sa te autentifici.<br>
+  Apasa <a href="/login">aici</a> pentru a te autentifica.
+</p>
