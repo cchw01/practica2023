@@ -7,6 +7,9 @@ import { UserAdminComponent } from './user/user-admin/user-admin.component';
 import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { OfferAdminComponent } from './offer/admin-offer-page/admin-offer-page.component';
+import { AddOfferAdminComponent } from './offer/add-offer-admin/add-offer-admin.component';
+import { EditOfferAdminComponent } from './offer/edit-offer-admin/edit-offer-admin.component';
 import { ConfirmReservationComponent } from './reservation/confirm-reservation/confirm-reservation.component';
 import { IngredientsComponent } from './ingredients-admin/ingredients/ingredients.component';
 import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/edit-ingredients.component';
@@ -16,6 +19,11 @@ const routes: Routes = [
   { path: '', component: HomePageComponent },
 
   //to modify component for the rest of the pages
+
+
+  { path: 'offer-admin', component: OfferAdminComponent },
+  { path: 'offer-admin/add', component: AddOfferAdminComponent },
+  { path: 'offer-admin/edit/:id', component: EditOfferAdminComponent },
 
   {path: 'menu', component: MenuComponent},
   {path: 'product/:id', component: ProductPageComponent},
@@ -37,6 +45,7 @@ const routes: Routes = [
   { path: 'ingredients', component: IngredientsComponent },
   { path: 'ingredients/edit/:id', component: EditIngredientsComponent },
   { path: 'ingredients/add', component: AddIngredientComponent },
+
 ];
 
 @NgModule({
@@ -48,6 +57,9 @@ export const RoutingComponents = {
   HomePageComponent,
   MenuComponent,
   ReservationComponent,
+  OfferAdminComponent,
+  AddOfferAdminComponent,
+  EditOfferAdminComponent,
   EditUserAdminComponent,
   EditIngredientsComponent,
 };
