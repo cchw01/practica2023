@@ -9,6 +9,7 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { OfferService } from 'src/app/app-logic/services/offer.service';
 import { OfferAdminService } from 'src/app/app-logic/services/offer-admin.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-add-offer-admin',

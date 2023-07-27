@@ -7,18 +7,18 @@
         <div class="row">
           
           <div formArrayName="productList">
+            <button mat-raised-button type="button" (click)="addProduct()">Add</button>
+            <div *ngIf="productListLength>1">
+              <button mat-raised-button type="button" (click)="removeProduct()">Remove</button>
+            </div>
             <div *ngFor="let prod of [].constructor(productListLength); let i = index">
               <mat-form-field class="all">
                 <mat-label>Product {{i+1}}</mat-label>
                 <input matInput formControlName="{{i}}" placeholder="Product {{i + 1}}">
               </mat-form-field>
             </div>
-            <button mat-raised-button type="button" (click)="addProduct()">Add</button>
-            <div *ngIf="productListLength>1">
-              <button mat-raised-button type="button" (click)="removeProduct()">Remove</button>
-            </div>
           </div>
-
+          <br>
         </div>
         <div class="row">
           <p class="field">

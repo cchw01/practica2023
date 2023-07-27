@@ -23,12 +23,12 @@ export class EditOfferAdminComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.identifier = params['id'] ?? 0;
       console.log(params['id']);
-    });
-    this.editOfferForm = this.fb.group({
-      productList: [this.offer?.productList],
-      discountPercent: [this.offer?.discountPercent],
-      startDate: [this.offer?.startDate],
-      endDate: [this.offer?.endDate],
+      this.editOfferForm = this.fb.group({
+        productList: [''],
+        discountPercent: [''],
+        startDate: [''],
+        endDate: [''],
+      });
     });
   }
   async getOffer(): Promise<OfferService | null> {
@@ -41,8 +41,8 @@ export class EditOfferAdminComponent implements OnInit {
       this.editOfferForm = this.fb.group({
         productList: [this.offer?.productList],
         discountPercent: [this.offer?.discountPercent],
-        startDate: [this.offer?.startDate],
-        endDate: [this.offer?.endDate],
+        startDate: [this.offer?.startDate.toString().split('T')[0]],
+        endDate: [this.offer?.endDate.toString().split('T')[0]],
       });
     });
   }

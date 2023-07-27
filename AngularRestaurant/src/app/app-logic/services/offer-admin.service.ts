@@ -17,12 +17,12 @@ export class OfferAdminService {
   updateOffer(offer: OfferService, id: any): void {
     const body = {
       _id: id,
-      productList:offer.productList,
-      discountPercent:offer.discountPercent,
-      startDate:offer.startDate,
-      endDate:offer.endDate,
+      productList: offer.productList,
+      discountPercent: offer.discountPercent,
+      startDate: offer.startDate,
+      endDate: offer.endDate,
     };
-    this.http.put<any>('http://localhost:80/offer/', body).subscribe();
+    this.http.put<any>('http://localhost:80/offer/' + id, body).subscribe();
   }
   getOfferById(id?: string): Observable<OfferService> {
     return this.http.get<OfferService>('http://localhost:80/offer/' + id);
@@ -33,6 +33,10 @@ export class OfferAdminService {
       .subscribe(() => console.log('Delete successful'));
   }
   addOffer(offer: OfferService) {
-    this.http.post<OfferService>('http://localhost:80/offer/', offer).subscribe(()=>{console.log("Add successful")});
+    this.http
+      .post<OfferService>('http://localhost:80/offer/', offer)
+      .subscribe(() => {
+        console.log('Add successful');
+      });
   }
 }

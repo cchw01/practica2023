@@ -17,12 +17,12 @@
   
       <ng-container matColumnDef="startDate">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Start Date</th>
-        <td mat-cell *matCellDef="let element">{{ element.startDate}}</td>
+        <td mat-cell *matCellDef="let element">{{ element.startDate | date}}</td>
       </ng-container>
   
       <ng-container matColumnDef="endDate">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>End Date</th>
-        <td mat-cell *matCellDef="let element">{{ element.endDate}}</td>
+        <td mat-cell *matCellDef="let element">{{ element.endDate | date}}</td>
       </ng-container>
   
       
