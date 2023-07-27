@@ -41,9 +41,8 @@ export class ReservationComponent implements OnInit {
   OnSubmit() {
     this.reservation = new Reservations(this.addReservationForm.value);
     this.reservation.status = 1;
-    console.log(this.reservation);
     this.reservationService.addReservation(this.reservation);
-    console.log(this.collect_date);
+    this.router.navigate(['reservations/confirmedReservation']);
   }
   //We take the start-date and we put in the end-date 2h later automatically
   takeDate(value: string) {
@@ -59,6 +58,5 @@ export class ReservationComponent implements OnInit {
         : this.numberHour.toString(),
       this.temporarySecondPartOfDate
     );
-    console.log(this.collect_date);
   }
 }

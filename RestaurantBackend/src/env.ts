@@ -11,6 +11,7 @@ function getEnv() {
     CATEGORY_MANAGEMENT: "/category",
     USER_MANAGEMENT: "/user",
     Ingredients_MANAGEMENT: "/ingredients",
+    ProductReview_ROUTE: "/product_review",
     PHOTO_ROUTE: "/photo",
     PRODUCT_MANAGEMENT: "/product",    ORDER_ROUTE: "/order",
 

@@ -1,0 +1,15 @@
+<div class="product-container">
+    <h1 class="product-name">{{product.name}}</h1>
+    <h2 class="product-price">{{product.price}} RON</h2>
+    <img class="separator" src="../../assets/images/menu-separator.png">
+    <div class="product-info">
+        <div class="photo">
+            <img src={{photo.photoLink}}>
+        </div>
+        <div class="info">
+            <p>{{photo.description}}</p>
+            <p>Ingredients: {{ingredientsList.join(', ')}}</p>
+            <h2>Rating: {{getProductRating()}}/5 ({{productReviews.length}})</h2>
+        </div>
+    </div>
+</div>

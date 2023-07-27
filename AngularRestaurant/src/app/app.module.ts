@@ -10,11 +10,22 @@ import { LoginRegisterNavComponent } from './login-register-nav/login-register-n
 import { IconsComponent } from './icons/icons.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { MatButtonModule } from '@angular/material/button';
+import { MenuComponent } from './menu/menu.component';
+import { ProductItemComponent } from './product-item/product-item.component';
+import { ProductPageComponent } from './product-page/product-page.component';
+import { CategorySectionComponent } from './category-section/category-section.component';
+import { HttpClientModule } from '@angular/common/http';
 import { ReservationComponent } from './reservation/reservation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import { UserAdminComponent } from './user/user-admin/user-admin.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
+import { MatSelectModule } from '@angular/material/select';
+import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
@@ -24,6 +35,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { AddOfferAdminComponent } from './offer/add-offer-admin/add-offer-admin.component';
 import { EditOfferAdminComponent } from './offer/edit-offer-admin/edit-offer-admin.component';
+import { ConfirmReservationComponent } from './reservation/confirm-reservation/confirm-reservation.component';
+import { IngredientsComponent } from './ingredients-admin/ingredients/ingredients.component';
+import { AddIngredientComponent } from './ingredients-admin/add-ingredient/add-ingredient.component';
+import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/edit-ingredients.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +46,21 @@ import { EditOfferAdminComponent } from './offer/edit-offer-admin/edit-offer-adm
     NavbarComponent,
     LoginRegisterNavComponent,
     IconsComponent,
+    MenuComponent,
+    ProductItemComponent,
+    ProductPageComponent,
+    CategorySectionComponent,
     ReservationComponent,
     OfferAdminComponent,
     AddOfferAdminComponent,
     EditOfferAdminComponent ,
+    UserAdminComponent,
+    EditUserAdminComponent,
+    AddUserAdminComponent,
+    ConfirmReservationComponent,
+    IngredientsComponent,
+    AddIngredientComponent,
+    EditIngredientsComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,14 +70,16 @@ import { EditOfferAdminComponent } from './offer/edit-offer-admin/edit-offer-adm
     MatDividerModule,
     HomePageModule,
     MatButtonModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
+    MatSelectModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ],
   providers: [
     {
