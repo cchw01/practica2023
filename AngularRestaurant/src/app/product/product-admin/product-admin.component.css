@@ -1,4 +1,4 @@
-mat-icon {
+.mat-icon {
     cursor: pointer;
   }
   .paginator {
@@ -9,4 +9,12 @@ mat-icon {
   .table {
     margin: auto;
     width: 40vw;
+  }
+
+  .table{
+    background-color: white;
+  }
+  
+  .column-content{
+    background-color: white;
   }
