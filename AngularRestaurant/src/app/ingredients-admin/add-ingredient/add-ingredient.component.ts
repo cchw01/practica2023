@@ -14,9 +14,9 @@ export class AddIngredientComponent implements OnInit {
   AddIngredientForm!: FormGroup;
   ngOnInit(): void {
     this.AddIngredientForm = this.fb.group({
-      name: [this.ingredient?.name],
-      stoc: [this.ingredient?.stoc],
-      isAlergen: [this.ingredient?.isAlergen],
+      name: [this.ingredient?.name, Validators.required],
+      stoc: [this.ingredient?.stoc, Validators.required],
+      isAlergen: [this.ingredient?.isAlergen, Validators.required],
     });
   }
 
@@ -42,6 +42,9 @@ export class AddIngredientComponent implements OnInit {
     setTimeout(() => {
       this.router.navigate(['/ingredients']);
     }, 1000);
+  }
+  instantRedirect() {
+    this.router.navigate(['product-admin']);
   }
 }
 
