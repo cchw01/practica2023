@@ -82,7 +82,12 @@
         </p>
       </div>
       <div class="options">
-        <button mat-raised-button type="submit" class="submit-button">
+        <button mat-raised-button class="submit-button" (click)="instantRedirect()">
+          Close
+          <mat-icon fontIcon="clear"></mat-icon>
+        </button>
+
+        <button mat-raised-button type="submit" class="submit-button" [disabled]="!AddUserForm.valid">
           Submit
           <mat-icon fontIcon="check" color="primary"></mat-icon>
         </button>

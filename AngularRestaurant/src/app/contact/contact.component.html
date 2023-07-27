@@ -59,7 +59,7 @@
             />
           </mat-form-field>
         </p>
-      </div>
+      
       <div class="row">
         <p class="field">
           <mat-form-field appearance="outline" class="phoneNumber">
@@ -82,7 +82,7 @@
                   placeholder="phoneNumber"
                   type="text"
                   formControlName="phoneNumber"
-                />
+                >
                 <mat-error *ngIf="hasError('phoneNumber', 'required')"
                 >First Name required</mat-error>
               </mat-form-field>
@@ -100,7 +100,7 @@
               </mat-form-field>
             </p>
           </div>
-      </div>
+      
       <button 
         mat-raised-button
         type="submit"
