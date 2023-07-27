@@ -39,7 +39,6 @@ export class RegisterService {
       (data) => {
         console.log(data);
         console.log('Login successful');
-        this.router.navigate(['']);
         this.loggedInUser = {
           _id: data._id,
           firstName: data.firstName,
@@ -50,6 +49,7 @@ export class RegisterService {
           email: data.email,
         };
         this.userCookie.setUserCookie(this.loggedInUser);
+        this.router.navigate(['/']);
       },
       (error) => {
         console.log('Error during login:', error);

@@ -1,0 +1,91 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2.2em;
+}
+
+.header-container {
+  text-align: center;
+  align-items: center;
+  padding: 2vh 20vw;
+  margin-top: 2vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  padding: 0 1vw;
+  display: flex;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+textarea {
+  resize: none;
+}
+
+.fullName,
+.comments,
+.numberOfGuests {
+  width: 42vw;
+}
+
+.date,
+.time-start,
+.time-end {
+  width: 20vw;
+}
+
+.comments {
+  height: 20vh;
+}
+
+.date {
+  align-self: flex-end;
+}
+
+.desc {
+  padding: 1vh;
+  text-align: center;
+  width: 40vw;
+}
+
+.image-header {
+  background-image: url("/assets/images/reservation-header.png");
+  align-self: center;
+  justify-self: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30vw;
+  height: 6vh;
+  margin-bottom: 4vh;
+}
+
+mat-icon {
+  cursor: pointer;
+}
+
+.paginator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.table {
+  margin: auto;
+  width: 40vw;
+}

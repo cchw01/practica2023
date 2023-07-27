@@ -14,11 +14,19 @@ export class AddUserAdminComponent implements OnInit {
   AddUserForm!: FormGroup;
   ngOnInit(): void {
     this.AddUserForm = this.fb.group({
-      firstName: [this.user?.firstName],
-      lastName: [this.user?.lastName],
-      email: [this.user?.email, Validators.email],
-      phoneNumber: [this.user?.phoneNumber, Validators.maxLength(10)],
-      password: [this.user?.password, Validators.minLength(8)],
+      firstName: [this.user?.firstName, Validators.required],
+      lastName: [this.user?.lastName, Validators.required],
+      email: [this.user?.email, Validators.email, Validators.required],
+      phoneNumber: [
+        this.user?.phoneNumber,
+        Validators.maxLength(10),
+        Validators.required,
+      ],
+      password: [
+        this.user?.password,
+        Validators.minLength(8),
+        Validators.required,
+      ],
       role: [this.user?.role, Validators.required],
     });
   }
@@ -48,5 +56,8 @@ export class AddUserAdminComponent implements OnInit {
     setTimeout(() => {
       this.router.navigate(['/user-admin']);
     }, 1000);
+  }
+  instantRedirect() {
+    this.router.navigate(['/user-admin']);
   }
 }

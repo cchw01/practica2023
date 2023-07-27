@@ -10,8 +10,8 @@ export class UserAdminService {
 
   constructor(private http: HttpClient) {}
 
-  getData(): any {
-    return this.http.get<any>('http://localhost:80/user');
+  getData(): Observable<User> {
+    return this.http.get<User>('http://localhost:80/user');
   }
 
   updateUser(user: User, id: any): void {
@@ -29,6 +29,13 @@ export class UserAdminService {
   getUserById(id?: string): Observable<User> {
     return this.http.get<User>('http://localhost:80/user/' + id);
   }
+  getUserByIdString(id?: string): any {
+    this.http.get<User>('http://localhost:80/user/' + id).subscribe((x) => {
+      console.log(x.firstName + ' ' + x.lastName);
+      return x.firstName + ' ' + x.lastName;
+    });
+  }
+
   deleteUser(id?: string) {
     return this.http
       .delete<User>('http://localhost:80/user/' + id)

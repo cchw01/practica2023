@@ -54,6 +54,21 @@ nav ul li a {
   border-radius: 90%;
 }
 
+nav ul li button {
+  display: block;
+  width: 200px;
+  margin-left:80px;
+  margin-top:10px;
+  margin-bottom:10px;
+  transition: 0.7s all;
+  opacity:1;
+  font-size: 17px;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+}
+
 
 
 

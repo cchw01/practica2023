@@ -1,0 +1,13 @@
+.review-page{
+  max-height: 100vh;
+  overflow-x: hidden;
+}
+
+.review-page::-webkit-scrollbar {
+  display: none;
+}
+
+.add-review-component{
+  padding-top: 20px;
+  display: flex; justify-content:center; align-items:center;
+}

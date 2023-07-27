@@ -19,8 +19,12 @@ form {
   /* margin-left: 150px; */
 }
 
+.forms {
+  padding: 0 20px;
+  margin: 0 30px;
+}
+
 h1 {
-  /* margin-left: 130px; */
   text-align: center;
   font-size: 60px;
   font-family: "Lato", sans-serif;
@@ -36,7 +40,6 @@ iframe {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
 
 label {

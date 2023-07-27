@@ -7,10 +7,10 @@ import { Product } from "../models/product.model";
 const ProductSchema = new Schema<Product>(
   {
     name: { type: String, required: true },
-    isAvailable: { type: Boolean, required: true },
-    price: {type: Number, required:true},
     photo: { type: Schema.Types.ObjectId, ref: 'Photo'},
-    ingredientsList:[{ type: Schema.Types.ObjectId, ref: 'Ingredients'}]
+    price: {type: Number, required:true},
+    ingredientsList:[{ type: Schema.Types.ObjectId, ref: 'Ingredients'}],
+    isAvailable: { type: Boolean, required: true },
   },
   {
     collection: env.PRODUCT_DB,

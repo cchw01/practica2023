@@ -1,7 +1,7 @@
 <div class="main">
     <div class="container">
       <div class="header-container">
-        <h1>Edit ingredient</h1>
+        <h1>Add ingredient</h1>
       </div>
       <div class="image-header"></div>
       <form (ngSubmit)="OnSubmit()" [formGroup]="AddIngredientForm">
@@ -46,7 +46,12 @@
         </div>
 
         <div class="options">
-            <button mat-raised-button type="submit" class="submit-button">
+          <button mat-raised-button class="submit-button" (click)="instantRedirect()">
+            Close
+            <mat-icon fontIcon="clear"></mat-icon>
+          </button>
+
+            <button mat-raised-button type="submit" class="submit-button" [disabled]="!AddIngredientForm.valid">
               Submit
               <mat-icon fontIcon="check" color="primary"></mat-icon>
             </button>

@@ -10,6 +10,7 @@ export async function postreviewRestaurant(
   try {
     const exists = await reviewRestaurantDB.findOne({
       user: reviewRestaurant.user,
+      message: reviewRestaurant.message
     });
     if (exists) {
       return Error('The item added to the database already exists!');
