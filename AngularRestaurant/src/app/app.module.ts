@@ -6,7 +6,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RestaurantReviewComponent } from './templates/restaurant-review/restaurant-review.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
 import { StarRatingModule } from 'angular-star-rating';
 import { RestaurantReviewPageComponent } from './templates/restaurant-review-page/restaurant-review-page.component';
@@ -38,6 +38,7 @@ import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
 } from '@angular/material/form-field';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
 import { OfferAdminComponent } from './offer/admin-offer-page/admin-offer-page.component';
 import { MatTableModule } from '@angular/material/table';
@@ -53,6 +54,9 @@ import { PopupComponent } from './popup/popup.component';
 import { IngredientsComponent } from './ingredients-admin/ingredients/ingredients.component';
 import { AddIngredientComponent } from './ingredients-admin/add-ingredient/add-ingredient.component';
 import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/edit-ingredients.component';
+import { ProductAdminComponent } from './product/product-admin/product-admin.component';
+import { EditProductAdminComponent } from './product/edit-product-admin/edit-product-admin.component';
+import { AddProductAdminComponent } from './product/add-product-admin/add-product-admin.component';
 
 @NgModule({
   declarations: [
@@ -86,9 +90,11 @@ import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/e
     AddIngredientComponent,
     PopupComponent,
     EditIngredientsComponent,
+    ProductAdminComponent,
+    EditProductAdminComponent,
+    AddProductAdminComponent,
   ],
   imports: [
-
     BrowserModule,
 
     AppRoutingModule,
@@ -118,6 +124,7 @@ import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/e
     MatSelectModule,
     MatTableModule,
     MatPaginatorModule,
+    MatTooltipModule,
     MatMenuModule,
   ],
   providers: [

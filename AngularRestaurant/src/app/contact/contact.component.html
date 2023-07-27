@@ -5,27 +5,46 @@
     </div>
     <form (ngSubmit)="OnSubmit()" [formGroup]="addReviewForm">
       <div class="section">
-        <div class="row">
-          <p class="field">
-            <mat-form-field appearance="outline" class="firstName">
-              <mat-label>First Name</mat-label>
-              <input
-                matInput
-                placeholder="First Name"
-                type="text"
-                formControlName="firstName"
-              />
-            </mat-form-field>
-          </p>
+          <div class="row">
+            <p class="field">
+              <mat-form-field appearance="outline" class="firstName">
+                <mat-label>First Name</mat-label>
+                <input
+                  matInput
+                  placeholder="First Name"
+                  type="text"
+                  formControlName="firstName"
+                />
+                <mat-error *ngIf="hasError('firstName', 'required')"
+                >First Name required</mat-error>
+              </mat-form-field>
+            </p>
+            <p class="field">
+              <mat-form-field appearance="outline" class="lastName">
+                <mat-label>Last Name</mat-label>
+                <input
+                  matInput
+                  placeholder="Last Name"
+                  type="text"
+                  formControlName="lastName"
+                />
+                <mat-error *ngIf="hasError('lastName', 'required')"
+                >First Name required</mat-error>
+              </mat-form-field>
+            </p>
+          </div>
           <p class="field">
             <mat-form-field appearance="outline" class="lastName">
               <mat-label>Last Name</mat-label>
               <input
                 matInput
-                placeholder="Last Name"
-                type="text"
-                formControlName="lastName"
+                placeholder="email"
+                type="email"
+                formControlName="email" 
               />
+              <mat-error *ngIf="hasError('email', 'email')"
+              >Invalid email</mat-error
+            >
             </mat-form-field>
           </p>
         </div>
@@ -60,12 +79,29 @@
             <mat-label>Text </mat-label>
             <textarea
                   matInput
-                  placeholder="text"
-                  formControlName="text"></textarea>
-          </mat-form-field>
-        </p>
+                  placeholder="phoneNumber"
+                  type="text"
+                  formControlName="phoneNumber"
+                />
+                <mat-error *ngIf="hasError('phoneNumber', 'required')"
+                >First Name required</mat-error>
+              </mat-form-field>
+            </p>
+          </div>
+          <div class="row">
+            <p class="field">
+              <mat-form-field appearance="outline" class="text">
+                <mat-label>Text</mat-label>
+                <textarea matInput
+                placeholder="text"
+                formControlName="text">
+                </textarea> 
+                
+              </mat-form-field>
+            </p>
+          </div>
       </div>
-      <button
+      <button 
         mat-raised-button
         type="submit"
         class="submit-button"

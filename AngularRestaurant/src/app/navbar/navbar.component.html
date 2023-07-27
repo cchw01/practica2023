@@ -7,7 +7,7 @@
       <li><a routerLink="reservations">Reservations</a></li>
       <li><a routerLink="contact">Contact</a></li>
       <li><a routerLink="reviewRestaurant">Review Restaurant</a></li>
-      <li><button mat-button [matMenuTriggerFor]="menu">
+      <li *ngIf="userCookies.getUserRole() === 'admin'"><button mat-button [matMenuTriggerFor]="menu">
         Administration</button></li>
 
     <mat-menu

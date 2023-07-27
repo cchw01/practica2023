@@ -1,0 +1,91 @@
+<div class="main">
+    <div class="container">
+
+      <div class="header-container">
+        <h1>Add Product</h1>
+      </div>
+
+      <form (ngSubmit)="OnSubmit()" [formGroup]="AddProductForm">
+
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>Name</mat-label>
+              <input
+                matInput
+                placeholder="Name"
+                type="text"
+                formControlName="name"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>Photo</mat-label>
+              <input
+                matInput
+                placeholder="Photo"
+                type="text"
+                formControlName="photo"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>Price</mat-label>
+              <input
+                matInput
+                placeholder="Price"
+                type="number"
+                formControlName="price"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>List of Ingredients</mat-label>
+              <input
+                matInput
+                placeholder="List of Ingredients"
+                type="text"
+                formControlName="ingredientsList"
+              />
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div class="row">
+          <p class="field">
+            <mat-form-field class="all">
+              <mat-label>Availability</mat-label>
+              <mat-select formControlName="isAvailable">
+                <mat-option value="true">True</mat-option>
+                <mat-option value="false">False</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </p>
+        </div>
+
+        <div class="options">
+          <button mat-raised-button class="submit-button" (click)="instantRedirect()">
+            <mat-icon fontIcon="clear"></mat-icon>
+            Close
+          </button>
+          <button mat-raised-button type="submit" class="submit-button">
+            Submit
+            <mat-icon fontIcon="check" color="primary"></mat-icon>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>

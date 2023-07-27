@@ -9,7 +9,7 @@ import { PopupComponent } from '../popup/popup.component';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent {
   addReviewForm!: FormGroup;
@@ -29,8 +29,8 @@ export class ContactComponent {
     this.addReviewForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', Validators.email],
       phoneNumber: ['', Validators.required],
+      email: ['', Validators.email],
       text: ['', Validators.required],
     });
   }
@@ -42,4 +42,7 @@ export class ContactComponent {
     });
     this.registerservice.addUser(this.user);
   }
+  public hasError = (controlName: string, errorName: string) => {
+    return this.addReviewForm.controls[controlName].hasError(errorName);
+  };
 }

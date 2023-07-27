@@ -19,6 +19,9 @@ import { ContactComponent } from './contact/contact.component';
 import { IngredientsComponent } from './ingredients-admin/ingredients/ingredients.component';
 import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/edit-ingredients.component';
 import { AddIngredientComponent } from './ingredients-admin/add-ingredient/add-ingredient.component';
+import { ProductAdminComponent } from './product/product-admin/product-admin.component';
+import { EditProductAdminComponent } from './product/edit-product-admin/edit-product-admin.component';
+import { AddProductAdminComponent } from './product/add-product-admin/add-product-admin.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -31,7 +34,10 @@ const routes: Routes = [
   { path: 'offer-admin/add', component: AddOfferAdminComponent },
   { path: 'offer-admin/edit/:id', component: EditOfferAdminComponent },
   { path: 'reservations', component: ReservationComponent },
-  { path: 'reservations/confirmedReservation', component: ConfirmReservationComponent },
+  {
+    path: 'reservations/confirmedReservation',
+    component: ConfirmReservationComponent,
+  },
   { path: 'contact', component: ContactComponent },
   { path: 'user-admin', component: UserAdminComponent },
   { path: 'user-admin/edit/:id', component: EditUserAdminComponent },
@@ -41,19 +47,18 @@ const routes: Routes = [
   { path: 'ingredients', component: IngredientsComponent },
   { path: 'ingredients/edit/:id', component: EditIngredientsComponent },
   { path: 'ingredients/add', component: AddIngredientComponent },
+  { path: 'product-admin', component: ProductAdminComponent },
+  { path: 'product-admin/edit/:id', component: EditProductAdminComponent },
+  { path: 'product-admin/add', component: AddProductAdminComponent },
 ];
 
-
 //to modify component for the rest of the pages
-
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 export const RoutingComponents = {
   HomePageComponent,
   MenuComponent,
@@ -65,4 +70,7 @@ export const RoutingComponents = {
   EditOfferAdminComponent,
   EditUserAdminComponent,
   EditIngredientsComponent,
+  ProductAdminComponent,
+  EditProductAdminComponent,
+  AddProductAdminComponent,
 };

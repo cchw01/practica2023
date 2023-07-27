@@ -1,6 +1,7 @@
+import { ObjectId } from 'mongoose';
 import {Ingredients} from '../../../../../../practica2023/RestaurantBackend/src/models/ingredients.model'
 export class Product {
-    _id!: string;
+    _id!: ObjectId;
     name!: string;
     photo!: string;
     price!: number;
