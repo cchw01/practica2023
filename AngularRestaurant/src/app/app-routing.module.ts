@@ -27,28 +27,15 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'product/:id', component: ProductPageComponent },
   { path: 'orders', component: HomePageComponent },
-  { path: 'reservations', component: ReservationComponent },
   { path: 'offer-admin', component: OfferAdminComponent },
   { path: 'offer-admin/add', component: AddOfferAdminComponent },
   { path: 'offer-admin/edit/:id', component: EditOfferAdminComponent },
-  { path: 'menu', component: MenuComponent },
-  { path: 'product/:id', component: ProductPageComponent },
-  {path: 'menu', component: MenuComponent},
-  {path: 'product/:id', component: ProductPageComponent},
-
-  {path: 'orders', component: HomePageComponent},
-  {path: 'reservations', component: ReservationComponent },
-  {
-    path: 'reservations/confirmedReservation',
-    component: ConfirmReservationComponent,
-  },
+  { path: 'reservations', component: ReservationComponent },
+  { path: 'reservations/confirmedReservation', component: ConfirmReservationComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'reviewRestaurant', component: HomePageComponent },
-
   { path: 'user-admin', component: UserAdminComponent },
   { path: 'user-admin/edit/:id', component: EditUserAdminComponent },
   { path: 'user-admin/add', component: AddUserAdminComponent },
-  { path: 'orders', component: HomePageComponent },
   { path: 'reviewRestaurant', component: RestaurantReviewPageComponent },
   { path: 'productAdmin', component: ProductComponent },
   { path: 'ingredients', component: IngredientsComponent },
@@ -57,7 +44,7 @@ const routes: Routes = [
 ];
 
 
-  //to modify component for the rest of the pages
+//to modify component for the rest of the pages
 
 
 
