@@ -1,14 +1,13 @@
 import { ObjectId } from 'mongoose';
-export enum status{confirmata,in_asteptare,anulata}
 
 export class rezervation {
   id!: ObjectId;
   user!: ObjectId;
   table: ObjectId;
-  rezervationStrat: Date;
-  rezervationEnd: Date;
+  reservationStart: Date;
+  reservationEnd: Date;
   userNotes: String;
-  status: status;
+  status: string;
   numberOfPersons: Number;
 
   public constructor(init?: Partial<rezervation>) {

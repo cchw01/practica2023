@@ -1,12 +1,12 @@
-import { Router, Request, Response, NextFunction } from "express";
-import { rezervation } from "../models/rezervation.model";
-import { rezervationDB } from "../schemas/rezervation.schema";
-import * as rezervationService from "../services/rezervation.service";
+import { Router, Request, Response, NextFunction } from 'express';
+import { rezervation } from '../models/rezervation.model';
+import { rezervationDB } from '../schemas/rezervation.schema';
+import * as rezervationService from '../services/rezervation.service';
 
 const rezervationRouter = Router();
 
 rezervationRouter.post(
-  "/",
+  '/',
   async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
     let addedVariable: Error | rezervation;
@@ -23,26 +23,36 @@ rezervationRouter.post(
   }
 );
 
-//get rezervation
 rezervationRouter.get(
-  "/:id",
-  async (req: Request, res: Response, next: NextFunction) => {
-    const query: any = req.body;
-    let rezervationByName: Error | rezervation | undefined;
+  '/:id',
+  async function getReservation(
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) {
+    const userId: string = req.params.id;
+    let rezervationData: Error | rezervation | null;
+
     try {
-      rezervationByName = await rezervationService.getrezervation(query);
-      res.json(rezervationByName);
+      rezervationData = await rezervationService.getReservationById(userId);
     } catch (ex) {
       return next(ex);
     }
-    if (rezervationByName instanceof Error) {
-      return next(rezervationByName);
+    if (rezervationData instanceof Error) {
+      return next(rezervationData);
     }
+
+    if (rezervationData === null) {
+      return res.status(404).end();
+    }
+
+    return res.json(rezervationData);
   }
 );
+
 //get all rezervation
 rezervationRouter.get(
-  "/",
+  '/',
   async (_req: Request, res: Response, next: NextFunction) => {
     try {
       const Allrezervation = await rezervationDB.find();
@@ -54,7 +64,7 @@ rezervationRouter.get(
 );
 //update rezervation
 rezervationRouter.put(
-  "/",
+  '/',
   async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
     console.log(body);
@@ -64,33 +74,33 @@ rezervationRouter.put(
           { _id: req.body.id },
           {
             table: body.table,
-            rezervationStrat: body.rezervationStrat,
-            rezervationEnd: body.rezervationEnd,
+            reservationStart: body.reservationStart,
+            reservationEnd: body.reservationEnd,
             userNotes: body.userNotes,
             status: body.status,
             numberOfPersons: body.numberOfPersons,
           }
         );
-        if (findrezervation == null) return next("Could not find rezervation!");
-        console.log("updated");
+        if (findrezervation == null) return next('Could not find rezervation!');
+        console.log('updated');
         const rezervationById = await rezervationDB.findById(req.body.id);
         res.send(rezervationById);
       } catch (ex) {
         return next(ex);
       }
     } else {
-      return next("No attributes found!");
+      return next('No attributes found!');
     }
   }
 );
 
 //delete rezervation
 rezervationRouter.delete(
-  "/:id",
+  '/:id',
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       await rezervationDB.findByIdAndDelete(req.params.id);
-      res.send("Deleted rezervation");
+      res.send('Deleted rezervation');
     } catch (ex) {
       return next(ex);
     }

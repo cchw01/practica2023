@@ -49,7 +49,7 @@ h1 {
 }
 .options {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 34vw;
 }
 .image-header {

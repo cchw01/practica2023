@@ -1,0 +1,116 @@
+<div class="main">
+  <div class="container">
+    <div class="header-container">
+      <h1>Edit reservation</h1>
+    </div>
+    <div class="image-header"></div>
+    <form (ngSubmit)="OnSubmit()" [formGroup]="addReservationForm">
+      <div class="row">
+        <p class="field">
+          <mat-form-field class="all">
+            <mat-label>User</mat-label>
+            <input
+              matInput
+              placeholder="User"
+              type="text"
+              formControlName="user"
+              [disabled]="true"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field class="all">
+            <mat-label>Table</mat-label>
+            <input
+              matInput
+              placeholder="Table"
+              type="text"
+              formControlName="table"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field class="all">
+            <mat-label>Reservation Start</mat-label>
+            <input
+              matInput
+              placeholder="Reservation Start"
+              type="datetime-local"
+              formControlName="reservationStart"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field class="all">
+            <mat-label>Reservation End</mat-label>
+            <input
+              matInput
+              placeholder="Reservation End"
+              type="datetime-local"
+              formControlName="reservationEnd"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field class="all">
+            <mat-label>User Notes</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="User Notes"
+              formControlName="userNotes"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field class="all">
+            <mat-label>Number Of Persons</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="User Notes"
+              formControlName="numberOfPersons"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field class="all">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status">
+              <mat-option value="1">1</mat-option>
+              <mat-option value="2">2</mat-option>
+              <mat-option value="3">3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="options">
+        <button mat-raised-button class="submit-button" (click)="deleteUser()">
+          <mat-icon fontIcon="delete"></mat-icon>
+          Delete
+        </button>
+        <button
+          mat-raised-button
+          type="submit"
+          class="submit-button"
+          (click)="redirectToMainPage()"
+        >
+          Submit
+          <mat-icon fontIcon="check" color="primary"></mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

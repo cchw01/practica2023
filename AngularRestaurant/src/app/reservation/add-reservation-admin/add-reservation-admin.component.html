@@ -1,19 +1,20 @@
 <div class="main">
   <div class="container">
     <div class="header-container">
-      <h1>Add user</h1>
+      <h1>Add reservation</h1>
     </div>
+    <div class="image-header"></div>
 
-    <form (ngSubmit)="OnSubmit()" [formGroup]="AddUserForm">
+    <form (ngSubmit)="OnSubmit()" [formGroup]="AddReservationForm">
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>First Name</mat-label>
+            <mat-label>User</mat-label>
             <input
               matInput
-              placeholder="First name"
+              placeholder="User"
               type="text"
-              formControlName="firstName"
+              formControlName="user"
             />
           </mat-form-field>
         </p>
@@ -21,12 +22,12 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Last Name</mat-label>
+            <mat-label>Table</mat-label>
             <input
               matInput
-              placeholder="Last name"
+              placeholder="Table"
               type="text"
-              formControlName="lastName"
+              formControlName="table"
             />
           </mat-form-field>
         </p>
@@ -34,12 +35,12 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Phone Number</mat-label>
+            <mat-label>Reservation start</mat-label>
             <input
               matInput
-              placeholder="Phone Number"
-              type="string"
-              formControlName="phoneNumber"
+              placeholder="Reservation start"
+              type="datetime-local"
+              formControlName="reservationStart"
             />
           </mat-form-field>
         </p>
@@ -47,12 +48,12 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Email</mat-label>
+            <mat-label>Reservation end</mat-label>
             <input
               matInput
-              placeholder="Email"
-              type="email"
-              formControlName="email"
+              placeholder="Reservation end"
+              type="datetime-local"
+              formControlName="reservationEnd"
             />
           </mat-form-field>
         </p>
@@ -60,12 +61,12 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Password</mat-label>
+            <mat-label>User Notes</mat-label>
             <input
               matInput
-              type="password"
-              placeholder="Password"
-              formControlName="password"
+              type="text"
+              placeholder="User Notes"
+              formControlName="userNotes"
             />
           </mat-form-field>
         </p>
@@ -73,21 +74,17 @@
       <div class="row">
         <p class="field">
           <mat-form-field class="all">
-            <mat-label>Role</mat-label>
-            <mat-select formControlName="role">
-              <mat-option value="User">User</mat-option>
-              <mat-option value="Admin">Admin</mat-option>
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status">
+              <mat-option value="In asteptare">In asteptare</mat-option>
+              <mat-option value="Confirmata">Confirmata</mat-option>
+              <mat-option value="Anulata">Anulata</mat-option>
             </mat-select>
           </mat-form-field>
         </p>
       </div>
       <div class="options">
-        <button mat-raised-button class="submit-button" (click)="instantRedirect()">
-          Close
-          <mat-icon fontIcon="clear"></mat-icon>
-        </button>
-
-        <button mat-raised-button type="submit" class="submit-button" [disabled]="!AddUserForm.valid">
+        <button mat-raised-button type="submit" class="submit-button">
           Submit
           <mat-icon fontIcon="check" color="primary"></mat-icon>
         </button>
