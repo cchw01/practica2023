@@ -19,7 +19,6 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { HttpClientModule } from '@angular/common/http';
 import { UserAdminComponent } from './user/user-admin/user-admin.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -31,6 +30,9 @@ import {
   MatFormFieldModule,
 } from '@angular/material/form-field';
 import { ConfirmReservationComponent } from './reservation/confirm-reservation/confirm-reservation.component';
+import { IngredientsComponent } from './ingredients-admin/ingredients/ingredients.component';
+import { AddIngredientComponent } from './ingredients-admin/add-ingredient/add-ingredient.component';
+import { EditIngredientsComponent } from './ingredients-admin/edit-ingredients/edit-ingredients.component';
 
 @NgModule({
   declarations: [
@@ -41,12 +43,15 @@ import { ConfirmReservationComponent } from './reservation/confirm-reservation/c
     MenuComponent,
     ProductItemComponent,
     ProductPageComponent,
-    CategorySectionComponent
+    CategorySectionComponent,
     ReservationComponent,
     UserAdminComponent,
     EditUserAdminComponent,
     AddUserAdminComponent,
     ConfirmReservationComponent,
+    IngredientsComponent,
+    AddIngredientComponent,
+    EditIngredientsComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +61,7 @@ import { ConfirmReservationComponent } from './reservation/confirm-reservation/c
     MatDividerModule,
     HomePageModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

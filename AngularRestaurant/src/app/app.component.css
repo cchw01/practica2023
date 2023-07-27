@@ -61,9 +61,10 @@ body::-webkit-scrollbar {
 
 .column-content {
   margin-top: 0px auto;
-  background-color: aliceblue;
+  background-color: white;
   width: 110vh;
   max-height: 100vh;
   overflow-y: scroll;
+  overflow-x:scroll;
 }
 
