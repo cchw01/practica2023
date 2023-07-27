@@ -5,86 +5,65 @@
     </div>
     <form (ngSubmit)="OnSubmit()" [formGroup]="addReviewForm">
       <div class="section">
-        <div class="section1">
-          <div class="row">
-            <p class="field">
-              <mat-form-field appearance="outline" class="firstName">
-                <mat-label>First Name</mat-label>
-                <input
-                  matInput
-                  placeholder="First Name"
-                  type="text"
-                  formControlName="firstName"
-                />
-              </mat-form-field>
-            </p>
-            <p class="field">
-              <mat-form-field appearance="outline" class="lastName">
-                <mat-label>Last Name</mat-label>
-                <input
-                  matInput
-                  placeholder="Last Name"
-                  type="text"
-                  formControlName="lastName"
-                />
-              </mat-form-field>
-            </p>
-          </div>
+        <div class="row">
           <p class="field">
-            <mat-form-field appearance="outline" class="email">
-              <mat-label>Email</mat-label>
+            <mat-form-field appearance="outline" class="firstName">
+              <mat-label>First Name</mat-label>
               <input
                 matInput
-                placeholder="email"
-                type="email"
-                formControlName="email"
+                placeholder="First Name"
+                type="text"
+                formControlName="firstName"
+              />
+            </mat-form-field>
+          </p>
+          <p class="field">
+            <mat-form-field appearance="outline" class="lastName">
+              <mat-label>Last Name</mat-label>
+              <input
+                matInput
+                placeholder="Last Name"
+                type="text"
+                formControlName="lastName"
               />
             </mat-form-field>
           </p>
         </div>
-        <div class="section2">
-          <div class="row">
-            <p class="field">
-              <mat-form-field appearance="outline" class="phoneNumber">
-                <mat-label>Phone</mat-label>
-                <input
+        <p class="field">
+          <mat-form-field appearance="outline" class="email">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="email"
+              type="email"
+              formControlName="email"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field appearance="outline" class="phoneNumber">
+            <mat-label>Phone</mat-label>
+            <input
+              matInput
+              placeholder="phoneNumber"
+              type="text"
+              formControlName="phoneNumber"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="row">
+        <p class="field">
+          <mat-form-field appearance="outline" class= "text">
+            <mat-label>Text </mat-label>
+            <textarea
                   matInput
-                  placeholder="phoneNumber"
-                  type="text"
-                  formControlName="phoneNumber"
-                />
-              </mat-form-field>
-            </p>
-          </div>
-          <div class="row">
-            <p class="field">
-              <mat-form-field appearance="outline" class="password">
-                <mat-label>Password </mat-label>
-                <input
-                  matInput
-                  placeholder="Password"
-                  type="password"
-                  formControlName="password"
-                  class="password"
-                />
-              </mat-form-field>
-            </p>
-          </div>
-          <div class="row">
-            <p class="field">
-              <mat-form-field appearance="outline" class="role">
-                <mat-label>Role </mat-label>
-                <input
-                  matInput
-                  placeholder="User"
-                  type="text"
-                  formControlName="role"
-                  class="role"
-                />
-              </mat-form-field>
-            </p>
-          </div>
-        </div>
+                  placeholder="text"
+                  formControlName="text"></textarea>
+          </mat-form-field>
+        </p>
       </div>
       <button
         mat-raised-button

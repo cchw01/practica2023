@@ -23,19 +23,22 @@ import { ConfirmReservationComponent } from './reservation/confirm-reservation/c
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CookieService } from 'ngx-cookie-service';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+import { ContactComponent } from './contact/contact.component';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, Contact],
+  declarations: [AppComponent, IconsComponent, PopupComponent, ContactComponent, ConfirmReservationComponent, LoginComponent, RegisterComponent, ConfirmReservationComponent, ContactComponent, NavbarComponent, LoginRegisterNavComponent, ReservationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
     ScrollingModule,
     MatDividerModule,
-    HomePageModule,
     MatButtonModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatDialogModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -57,5 +60,4 @@ import { CookieService } from 'ngx-cookie-service';
 
   bootstrap: [AppComponent],
 })
-export class AppModule {}
-  
+export class AppModule { }

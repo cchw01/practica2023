@@ -18,14 +18,12 @@ const routes: Routes = [
     path: 'reservations/confirmedReservation',
     component: ConfirmReservationComponent,
   },
-  { path: 'contact', component: HomePageComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'reviewRestaurant', component: HomePageComponent },
-  { path: 'login', component: HomePageComponent },
-  { path: 'register', component: HomePageComponent },
 ];
 
 
-  //to modify component for the rest of the pages
+//to modify component for the rest of the pages
 
 
 
@@ -34,7 +32,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 export const RoutingComponents = {
   HomePageComponent,
   ReservationComponent,
