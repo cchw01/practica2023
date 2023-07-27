@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-.password-error {
-  white-space: nowrap;
-  display: inline;
-}
 
-
-
-
-
-/* 
 form {
   margin: auto;
   margin-top: 50px;
@@ -70,15 +61,3 @@ button:hover {
   height: 100%;
   display: flex;
 }
-
-.copy {
-  font-size: 16px;
-  background-color: black;
-  color: white;
-  font-family: "Lato", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 92px;
-  padding: 12px;
-} */ 
