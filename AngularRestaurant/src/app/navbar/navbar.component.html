@@ -1,30 +1,37 @@
 <div class="navbar">
-<img src="../../assets/images/logo.png" class="logo">
-<nav>
+  <img src="../../assets/images/logo.png" class="logo" />
+  <nav>
     <ul>
       <li><a routerLink="">Home</a></li>
       <li><a routerLink="menu">Menu</a></li>
       <li><a routerLink="reservations">Reservations</a></li>
       <li><a routerLink="contact">Contact</a></li>
       <li><a routerLink="reviewRestaurant">Review Restaurant</a></li>
-      <li *ngIf="userCookies.getUserRole() === 'admin'"><button mat-button [matMenuTriggerFor]="menu">
-        Administration</button></li>
+      <li>
+        <button mat-button [matMenuTriggerFor]="menu">Administration</button>
+      </li>
 
-    <mat-menu
-    #menu="matMenu"
-    xPosition="before"
-    yPosition="below">
-        <button mat-menu-item routerLink="/user-admin"><mat-icon>person</mat-icon>Users</button>
-        <button mat-menu-item routerLink="/product-admin"><mat-icon>shopping_cart</mat-icon>Products</button>
+      <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
+        <button mat-menu-item routerLink="/user-admin">
+          <mat-icon>person</mat-icon>Users
+        </button>
+        <button mat-menu-item routerLink="/product-admin">
+          <mat-icon>shopping_cart</mat-icon>Products
+        </button>
         <!-- to modify routerLink if not correct -->
-        <button mat-menu-item routerLink="/reservation-admin"><mat-icon>alarm_on</mat-icon>Reservations</button>
-        <button mat-menu-item routerLink="/ingredients"><mat-icon>workspaces</mat-icon>Ingredients</button>
-        <button mat-menu-item routerLink="/offer-admin"><mat-icon>attach_money</mat-icon>Offers</button>
-    </mat-menu>
-      <mat-divider class = "divider"> </mat-divider>
+        <button mat-menu-item routerLink="/reservation-admin">
+          <mat-icon>alarm_on</mat-icon>Reservations
+        </button>
+        <button mat-menu-item routerLink="/ingredients">
+          <mat-icon>workspaces</mat-icon>Ingredients
+        </button>
+        <button mat-menu-item routerLink="/offer-admin">
+          <mat-icon>attach_money</mat-icon>Offers
+        </button>
+      </mat-menu>
+      <mat-divider class="divider"> </mat-divider>
     </ul>
-    </nav>
-    <app-login-register-nav></app-login-register-nav>
-    <app-icons></app-icons>
-  </div>
-
+  </nav>
+  <app-login-register-nav></app-login-register-nav>
+  <app-icons></app-icons>
+</div>
