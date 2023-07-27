@@ -31,7 +31,10 @@ const routes: Routes = [
   { path: 'offer-admin/add', component: AddOfferAdminComponent },
   { path: 'offer-admin/edit/:id', component: EditOfferAdminComponent },
   { path: 'reservations', component: ReservationComponent },
-  { path: 'reservations/confirmedReservation', component: ConfirmReservationComponent },
+  {
+    path: 'reservations/confirmedReservation',
+    component: ConfirmReservationComponent,
+  },
   { path: 'contact', component: ContactComponent },
   { path: 'user-admin', component: UserAdminComponent },
   { path: 'user-admin/edit/:id', component: EditUserAdminComponent },
@@ -43,17 +46,13 @@ const routes: Routes = [
   { path: 'ingredients/add', component: AddIngredientComponent },
 ];
 
-
 //to modify component for the rest of the pages
-
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 export const RoutingComponents = {
   HomePageComponent,
   MenuComponent,
