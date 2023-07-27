@@ -34,4 +34,5 @@ export class IngredientAdminService {
   addIngredient(ingredient: Ingredients) {
     this.http.post<Ingredients>('http://localhost:80/ingredients/', ingredient).subscribe();
   }
+  
 }
