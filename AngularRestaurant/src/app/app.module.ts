@@ -34,6 +34,7 @@ import { UserAdminComponent } from './user/user-admin/user-admin.component';
 import { EditUserAdminComponent } from './user/edit-user-admin/edit-user-admin.component';
 import { MatSelectModule } from '@angular/material/select';
 import { AddUserAdminComponent } from './user/add-user-admin/add-user-admin.component';
+import { MatMenuModule } from '@angular/material/menu';
 import {
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
   MatFormFieldModule,
@@ -122,6 +123,7 @@ import { AddProductAdminComponent } from './product/add-product-admin/add-produc
     MatTableModule,
     MatPaginatorModule,
     MatTooltipModule,
+    MatMenuModule,
   ],
   providers: [
     {
