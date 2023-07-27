@@ -11,6 +11,7 @@ export class UserCookieManagmentService {
   setUserCookie(user: User) {
     this.cookieService.set('user', JSON.stringify(user));
     this.cookieService.set('IsLoggedIn', 'true');
+    this.cookieService.set('userRole', user.role);
   }
   isUserAuthenticated(): boolean {
     if (this.cookieService.get('IsLoggedIn') === 'true') {
@@ -33,6 +34,9 @@ export class UserCookieManagmentService {
       return usr;
     }
     return new User();
+  }
+  getUserRole(): string {
+    return this.cookieService.get('userRole') || '';
   }
   removeUserCookie() {
     this.cookieService.deleteAll();
