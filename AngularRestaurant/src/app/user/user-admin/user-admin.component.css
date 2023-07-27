@@ -1,29 +1,69 @@
-mat-icon {
-  cursor: pointer;
-}
-.paginator {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: white;
-}
-.table {
-  margin: 1vw;
-}
-.align {
+.main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
+
+h1 {
+  font-size: 2.2em;
+  text-align: center;
+}
+
 .header-container {
   text-align: center;
   align-items: center;
-  padding: 2vh 5vw;
+  padding: 2vh 20vw;
   margin-top: 2vh;
 }
-h1 {
-  font-size: 3em;
+
+.container {
+  display: flex;
+  flex-direction: column;
 }
+
+.field {
+  padding: 0 1vw;
+  display: flex;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+textarea {
+  resize: none;
+}
+
+.fullName,
+.comments,
+.numberOfGuests {
+  width: 42vw;
+}
+
+.date,
+.time-start,
+.time-end {
+  width: 20vw;
+}
+
+.comments {
+  height: 20vh;
+}
+
+.date {
+  align-self: flex-end;
+}
+
+.desc {
+  padding: 1vh;
+  text-align: center;
+  width: 40vw;
+}
+
 .image-header {
   background-image: url("/assets/images/reservation-header.png");
   align-self: center;
@@ -34,4 +74,19 @@ h1 {
   width: 30vw;
   height: 6vh;
   margin-bottom: 4vh;
+}
+
+mat-icon {
+  cursor: pointer;
+}
+
+.paginator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.table {
+  margin: auto;
+  width: 40vw;
 }

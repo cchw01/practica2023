@@ -1,4 +1,10 @@
-<div class="table">
+<div class="main">
+  <div class="container">
+    <div class="header-container">
+      <h1>Offer Admin</h1>
+    </div>
+    <div class="image-header"></div>
+    <div class="table">
     <table mat-table [dataSource]="offerList" matSort class="mat-elevation-28">
       <ng-container matColumnDef="select">
         <th mat-header-cell *matHeaderCellDef></th>
@@ -47,3 +53,4 @@
       ></mat-paginator>
     </div>
   </div>
+</div>
