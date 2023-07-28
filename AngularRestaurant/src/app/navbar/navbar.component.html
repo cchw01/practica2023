@@ -8,7 +8,13 @@
       <li><a routerLink="contact">Contact</a></li>
       <li><a routerLink="reviewRestaurant">Review Restaurant</a></li>
       <li>
-        <button mat-button [matMenuTriggerFor]="menu">Administration</button>
+        <button
+          mat-button
+          *ngIf="userCookies.getUserRole() === 'admin'"
+          [matMenuTriggerFor]="menu"
+        >
+          Administration
+        </button>
       </li>
 
       <mat-menu #menu="matMenu" xPosition="before" yPosition="below">
