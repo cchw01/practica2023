@@ -5,7 +5,7 @@
     </div>
     <form (ngSubmit)="OnSubmit()" [formGroup]="addReviewForm">
       <div class="section">
-          <div class="row">
+          <div class="row">mo
             <p class="field">
               <mat-form-field appearance="outline" class="firstName">
                 <mat-label>First Name</mat-label>
@@ -48,18 +48,6 @@
             </mat-form-field>
           </p>
         </div>
-        <p class="field">
-          <mat-form-field appearance="outline" class="email">
-            <mat-label>Email</mat-label>
-            <input
-              matInput
-              placeholder="email"
-              type="email"
-              formControlName="email"
-            />
-          </mat-form-field>
-        </p>
-      
       <div class="row">
         <p class="field">
           <mat-form-field appearance="outline" class="phoneNumber">
@@ -73,21 +61,7 @@
           </mat-form-field>
         </p>
       </div>
-      <div class="row">
-        <p class="field">
-          <mat-form-field appearance="outline" class= "text">
-            <mat-label>Text </mat-label>
-            <input
-                  matInput
-                  placeholder="phoneNumber"
-                  type="text"
-                  formControlName="phoneNumber"
-                >
-                <mat-error *ngIf="hasError('phoneNumber', 'required')"
-                >Phone number required</mat-error>
-              </mat-form-field>
-            </p>
-          </div>
+     
           <div class="row">
             <p class="field">
               <mat-form-field appearance="outline" class="text">
